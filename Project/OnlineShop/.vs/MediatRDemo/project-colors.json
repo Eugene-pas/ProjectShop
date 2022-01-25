@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "a0fcb705-64f9-4832-8a1e-a4126624b7e0": {
+      "ProjectGuid": "a0fcb705-64f9-4832-8a1e-a4126624b7e0",
+      "DisplayName": "DemoApi",
+      "ColorIndex": 0
+    },
+    "6b4ab204-10d4-4269-a8e2-9abb3a4cff47": {
+      "ProjectGuid": "6b4ab204-10d4-4269-a8e2-9abb3a4cff47",
+      "DisplayName": "DemoLibrary",
+      "ColorIndex": 1
+    },
+    "016428b3-7b85-44a3-8ee6-3203955cda0b": {
+      "ProjectGuid": "016428b3-7b85-44a3-8ee6-3203955cda0b",
+      "DisplayName": "BlazorUI",
+      "ColorIndex": 2
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "44710147-5a14-4dd4-8878-2a73d90f53f2": {
+      "ProjectGuid": "44710147-5a14-4dd4-8878-2a73d90f53f2",
+      "DisplayName": "Shop.Domain",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
+}
