@@ -6003,11 +6003,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\OnlineShop\\DemoApi\\DemoApi.csproj",
+      "projectUniqueName": "D:\\ProjectShop\\ProjectShop\\Project\\OnlineShop\\DemoApi\\DemoApi.csproj",
       "projectName": "DemoApi",
-      "projectPath": "C:\\Users\\User\\Desktop\\OnlineShop\\DemoApi\\DemoApi.csproj",
+      "projectPath": "D:\\ProjectShop\\ProjectShop\\Project\\OnlineShop\\DemoApi\\DemoApi.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\OnlineShop\\DemoApi\\obj\\",
+      "outputPath": "D:\\ProjectShop\\ProjectShop\\Project\\OnlineShop\\DemoApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
