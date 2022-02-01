@@ -1,0 +1,30 @@
+D:\ProjectShop\ProjectShop\Project\OnlineShop\Shop.Domain\bin\Debug\net5.0\Shop.Domain.deps.json
+D:\ProjectShop\ProjectShop\Project\OnlineShop\Shop.Domain\bin\Debug\net5.0\Shop.Domain.runtimeconfig.json
+D:\ProjectShop\ProjectShop\Project\OnlineShop\Shop.Domain\bin\Debug\net5.0\Shop.Domain.runtimeconfig.dev.json
+D:\ProjectShop\ProjectShop\Project\OnlineShop\Shop.Domain\bin\Debug\net5.0\Shop.Domain.dll
+D:\ProjectShop\ProjectShop\Project\OnlineShop\Shop.Domain\bin\Debug\net5.0\ref\Shop.Domain.dll
+D:\ProjectShop\ProjectShop\Project\OnlineShop\Shop.Domain\bin\Debug\net5.0\Shop.Domain.pdb
+D:\ProjectShop\ProjectShop\Project\OnlineShop\Shop.Domain\obj\Debug\net5.0\Shop.Domain.csproj.AssemblyReference.cache
+D:\ProjectShop\ProjectShop\Project\OnlineShop\Shop.Domain\obj\Debug\net5.0\Shop.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\ProjectShop\ProjectShop\Project\OnlineShop\Shop.Domain\obj\Debug\net5.0\Shop.Domain.AssemblyInfoInputs.cache
+D:\ProjectShop\ProjectShop\Project\OnlineShop\Shop.Domain\obj\Debug\net5.0\Shop.Domain.AssemblyInfo.cs
+D:\ProjectShop\ProjectShop\Project\OnlineShop\Shop.Domain\obj\Debug\net5.0\Shop.Domain.csproj.CoreCompileInputs.cache
+D:\ProjectShop\ProjectShop\Project\OnlineShop\Shop.Domain\obj\Debug\net5.0\Shop.Domain.dll
+D:\ProjectShop\ProjectShop\Project\OnlineShop\Shop.Domain\obj\Debug\net5.0\ref\Shop.Domain.dll
+D:\ProjectShop\ProjectShop\Project\OnlineShop\Shop.Domain\obj\Debug\net5.0\Shop.Domain.pdb
+D:\ProjectShop\ProjectShop\Project\OnlineShop\Shop.Domain\obj\Debug\net5.0\Shop.Domain.genruntimeconfig.cache
+C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Domain\bin\Debug\net5.0\Shop.Domain.deps.json
+C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Domain\bin\Debug\net5.0\Shop.Domain.runtimeconfig.json
+C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Domain\bin\Debug\net5.0\Shop.Domain.runtimeconfig.dev.json
+C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Domain\bin\Debug\net5.0\Shop.Domain.dll
+C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Domain\bin\Debug\net5.0\ref\Shop.Domain.dll
+C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Domain\bin\Debug\net5.0\Shop.Domain.pdb
+C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Domain\obj\Debug\net5.0\Shop.Domain.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Domain\obj\Debug\net5.0\Shop.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Domain\obj\Debug\net5.0\Shop.Domain.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Domain\obj\Debug\net5.0\Shop.Domain.AssemblyInfo.cs
+C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Domain\obj\Debug\net5.0\Shop.Domain.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Domain\obj\Debug\net5.0\Shop.Domain.dll
+C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Domain\obj\Debug\net5.0\ref\Shop.Domain.dll
+C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Domain\obj\Debug\net5.0\Shop.Domain.pdb
+C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Domain\obj\Debug\net5.0\Shop.Domain.genruntimeconfig.cache

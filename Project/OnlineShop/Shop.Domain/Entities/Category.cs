@@ -11,14 +11,12 @@ namespace Shop.Domain.Entities
     {
         public Category()
         {
-            this.CategoryConnection = new HashSet<CategoryConnection>();
-            this.CategoryConnection1 = new HashSet<CategoryConnection>();
+            this.ParentCategory = new HashSet<Category>();
             this.Product = new HashSet<Product>();
         }
         public string Name { get; set; }
     
-        public virtual ICollection<CategoryConnection> CategoryConnection { get; set; }
-        public virtual ICollection<CategoryConnection> CategoryConnection1 { get; set; }
+        public virtual ICollection<Category> ParentCategory { get; set; }
         public virtual ICollection<Product> Product { get; set; }
     }
 }

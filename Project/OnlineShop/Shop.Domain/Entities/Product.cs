@@ -1,21 +1,19 @@
 namespace Shop.Domain.Entities
 {
+    using Shop.Domain.Entities.Base;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    public partial class Product
+    public partial class Product : EntityBase
     {
         public Product()
         {
             this.DeliveryProductConnection = new HashSet<DeliveryProductConnection>();
             this.OrderProductConnection = new HashSet<OrderProductConnection>();
             this.ProductImage = new HashSet<ProductImage>();
-        }
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        }      
         public string Name { get; set; }
         public Nullable<decimal> Price { get; set; }
         public string Description { get; set; }

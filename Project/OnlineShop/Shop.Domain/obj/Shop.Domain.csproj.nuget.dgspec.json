@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ProjectShop\\ProjectShop\\Project\\OnlineShop\\Shop.Domain\\Shop.Domain.csproj": {}
+    "C:\\Users\\User\\Desktop\\Новая папка\\Project\\OnlineShop\\Shop.Domain\\Shop.Domain.csproj": {}
   },
   "projects": {
-    "D:\\ProjectShop\\ProjectShop\\Project\\OnlineShop\\Shop.Domain\\Shop.Domain.csproj": {
+    "C:\\Users\\User\\Desktop\\Новая папка\\Project\\OnlineShop\\Shop.Domain\\Shop.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ProjectShop\\ProjectShop\\Project\\OnlineShop\\Shop.Domain\\Shop.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Новая папка\\Project\\OnlineShop\\Shop.Domain\\Shop.Domain.csproj",
         "projectName": "Shop.Domain",
-        "projectPath": "D:\\ProjectShop\\ProjectShop\\Project\\OnlineShop\\Shop.Domain\\Shop.Domain.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\Новая папка\\Project\\OnlineShop\\Shop.Domain\\Shop.Domain.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\ProjectShop\\ProjectShop\\Project\\OnlineShop\\Shop.Domain\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\Новая папка\\Project\\OnlineShop\\Shop.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

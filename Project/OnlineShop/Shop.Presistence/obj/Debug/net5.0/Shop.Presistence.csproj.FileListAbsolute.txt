@@ -1,0 +1,34 @@
+D:\ProjectShop\ProjectShop\Project\OnlineShop\Shop.Presistence\bin\Debug\net5.0\Shop.Presistence.deps.json
+D:\ProjectShop\ProjectShop\Project\OnlineShop\Shop.Presistence\bin\Debug\net5.0\Shop.Presistence.dll
+D:\ProjectShop\ProjectShop\Project\OnlineShop\Shop.Presistence\bin\Debug\net5.0\ref\Shop.Presistence.dll
+D:\ProjectShop\ProjectShop\Project\OnlineShop\Shop.Presistence\bin\Debug\net5.0\Shop.Presistence.pdb
+D:\ProjectShop\ProjectShop\Project\OnlineShop\Shop.Presistence\bin\Debug\net5.0\Shop.Application.dll
+D:\ProjectShop\ProjectShop\Project\OnlineShop\Shop.Presistence\bin\Debug\net5.0\Shop.Domain.dll
+D:\ProjectShop\ProjectShop\Project\OnlineShop\Shop.Presistence\bin\Debug\net5.0\Shop.Application.pdb
+D:\ProjectShop\ProjectShop\Project\OnlineShop\Shop.Presistence\bin\Debug\net5.0\Shop.Domain.pdb
+D:\ProjectShop\ProjectShop\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\Shop.Presistence.csproj.AssemblyReference.cache
+D:\ProjectShop\ProjectShop\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\Shop.Presistence.GeneratedMSBuildEditorConfig.editorconfig
+D:\ProjectShop\ProjectShop\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\Shop.Presistence.AssemblyInfoInputs.cache
+D:\ProjectShop\ProjectShop\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\Shop.Presistence.AssemblyInfo.cs
+D:\ProjectShop\ProjectShop\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\Shop.Presistence.csproj.CoreCompileInputs.cache
+D:\ProjectShop\ProjectShop\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\Shop.Presistence.csproj.CopyComplete
+D:\ProjectShop\ProjectShop\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\Shop.Presistence.dll
+D:\ProjectShop\ProjectShop\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\ref\Shop.Presistence.dll
+D:\ProjectShop\ProjectShop\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\Shop.Presistence.pdb
+C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\Shop.Presistence.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\Shop.Presistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\Shop.Presistence.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\Shop.Presistence.AssemblyInfo.cs
+C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\Shop.Presistence.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\Shop.Presistence.dll
+C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\ref\Shop.Presistence.dll
+C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\Shop.Presistence.pdb
+C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Presistence\bin\Debug\net5.0\Shop.Presistence.deps.json
+C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Presistence\bin\Debug\net5.0\Shop.Presistence.dll
+C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Presistence\bin\Debug\net5.0\ref\Shop.Presistence.dll
+C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Presistence\bin\Debug\net5.0\Shop.Presistence.pdb
+C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Presistence\bin\Debug\net5.0\Shop.Application.dll
+C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Presistence\bin\Debug\net5.0\Shop.Domain.dll
+C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Presistence\bin\Debug\net5.0\Shop.Application.pdb
+C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Presistence\bin\Debug\net5.0\Shop.Domain.pdb
+C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\Shop.Presistence.csproj.CopyComplete

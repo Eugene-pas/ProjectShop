@@ -9,6 +9,6 @@ namespace Shop.Domain.Entities.Base
     public abstract class EntityBase
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long Id { get; set; }
+        public Guid Id { get; set; }
     }
 }

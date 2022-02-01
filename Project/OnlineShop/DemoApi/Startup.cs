@@ -1,18 +1,14 @@
-using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
+using Shop.Application;
+using Shop.Application.Common.Mappings;
+using Shop.Domain.Entities;
+using Shop.Presistence;
+using System.Reflection;
 namespace DemoApi
 {
     public class Startup
@@ -28,7 +24,25 @@ namespace DemoApi
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddAutoMapper(config =>
+            {
+                // отримуєм інформацію про дану виконуючу збірку
+                config.AddProfile(new AssemblyMappingProfile(Assembly.GetExecutingAssembly()));
+                config.AddProfile(new AssemblyMappingProfile(typeof(IDataBaseContext).Assembly));
+            });
+
+            services.AddApplication();
+            services.AddPersistence(Configuration);
             services.AddControllers();
+
+            // формуєм правило що кожен може дати запит на сайт
+            services.AddCors(options =>
+            options.AddPolicy("AllowAll", policy => {
+                policy.AllowAnyHeader();
+                policy.AllowAnyMethod();
+                policy.AllowAnyOrigin();
+            }));
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DemoApi", Version = "v1" });
@@ -48,8 +62,10 @@ namespace DemoApi
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseHttpsRedirection();
+            app.UseCors("AllowAll");
 
-            app.UseAuthorization();
+            //app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

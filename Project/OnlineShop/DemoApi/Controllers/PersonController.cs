@@ -1,6 +1,7 @@
 ﻿
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Shop.Application.Customers.Commands.CreateCustomer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,13 +21,18 @@ namespace DemoApi.Controllers
         {
             _mediator = mediator;
         }
-       
-        // GET api/<PersonController>/6
-        //[HttpGet("delete/{id}")]
-        //public async Task<PersonModel> Delete(int id)
-        //{
-        //    return await _mediator.Send(new GetDeletePersonByIdQuery(id));
-        //} 
+                
+        [HttpPost("create")]
+        public async Task<Guid> Create([FromBody] CustomerModel customer)
+        {
+           return await _mediator.Send(
+               new CreateCustomerCommand
+               {
+                   Name = customer.Name,
+                   Email = customer.Email,
+                   PhoneNumber = customer.PhoneNumber
+               });
+        } 
         
         // POST api/<PersonController>
         //[HttpPost]
