@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "kv9hgv7WVOUDanc7CEHbhf/MKFtEQw/IpFJpIcKyYvBGNqAhxdFnHzphQG1vY8rdb1sDD9omzBgIzvG/sg0viQ==",
+  "dgSpecHash": "Mu3Y3anwpVi+OBuA2O/YvxtKTV+0wH0FcaCHlH3QWGKGfOPbvnXt4xNSZxoQ+67CGrx2QRzzyxlQ3+Rrxh0Ihw==",
   "success": true,
   "projectFilePath": "F:\\OA\\Практика 3 курс\\Project\\Project\\OnlineShop\\Shop.Domain\\Shop.Domain.csproj",
   "expectedPackageFiles": [
@@ -14,6 +14,7 @@
     "C:\\Users\\coolt\\.nuget\\packages\\microsoft.entityframeworkcore.design\\5.0.13\\microsoft.entityframeworkcore.design.5.0.13.nupkg.sha512",
     "C:\\Users\\coolt\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\5.0.13\\microsoft.entityframeworkcore.relational.5.0.13.nupkg.sha512",
     "C:\\Users\\coolt\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\5.0.13\\microsoft.entityframeworkcore.sqlserver.5.0.13.nupkg.sha512",
+    "C:\\Users\\coolt\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\5.0.13\\microsoft.entityframeworkcore.tools.5.0.13.nupkg.sha512",
     "C:\\Users\\coolt\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\coolt\\.nuget\\packages\\microsoft.extensions.caching.memory\\5.0.0\\microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",
     "C:\\Users\\coolt\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
