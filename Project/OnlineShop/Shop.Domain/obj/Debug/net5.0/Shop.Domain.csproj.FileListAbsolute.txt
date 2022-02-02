@@ -43,3 +43,18 @@ D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Domain\obj\Debug\net5.0\Shop.Domai
 D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Domain\obj\Debug\net5.0\ref\Shop.Domain.dll
 D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Domain\obj\Debug\net5.0\Shop.Domain.pdb
 D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Domain\obj\Debug\net5.0\Shop.Domain.genruntimeconfig.cache
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Domain\bin\Debug\net5.0\Shop.Domain.deps.json
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Domain\bin\Debug\net5.0\Shop.Domain.runtimeconfig.json
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Domain\bin\Debug\net5.0\Shop.Domain.runtimeconfig.dev.json
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Domain\bin\Debug\net5.0\Shop.Domain.dll
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Domain\bin\Debug\net5.0\ref\Shop.Domain.dll
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Domain\bin\Debug\net5.0\Shop.Domain.pdb
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Domain\obj\Debug\net5.0\Shop.Domain.csproj.AssemblyReference.cache
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Domain\obj\Debug\net5.0\Shop.Domain.GeneratedMSBuildEditorConfig.editorconfig
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Domain\obj\Debug\net5.0\Shop.Domain.AssemblyInfoInputs.cache
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Domain\obj\Debug\net5.0\Shop.Domain.AssemblyInfo.cs
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Domain\obj\Debug\net5.0\Shop.Domain.csproj.CoreCompileInputs.cache
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Domain\obj\Debug\net5.0\Shop.Domain.dll
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Domain\obj\Debug\net5.0\ref\Shop.Domain.dll
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Domain\obj\Debug\net5.0\Shop.Domain.pdb
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Domain\obj\Debug\net5.0\Shop.Domain.genruntimeconfig.cache

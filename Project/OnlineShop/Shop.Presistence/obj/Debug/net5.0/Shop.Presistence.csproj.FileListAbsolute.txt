@@ -49,3 +49,20 @@ D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\Shop.
 D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\Shop.Presistence.dll
 D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\ref\Shop.Presistence.dll
 D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\Shop.Presistence.pdb
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Presistence\bin\Debug\net5.0\Shop.Presistence.deps.json
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Presistence\bin\Debug\net5.0\Shop.Presistence.dll
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Presistence\bin\Debug\net5.0\ref\Shop.Presistence.dll
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Presistence\bin\Debug\net5.0\Shop.Presistence.pdb
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Presistence\bin\Debug\net5.0\Shop.Application.dll
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Presistence\bin\Debug\net5.0\Shop.Domain.dll
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Presistence\bin\Debug\net5.0\Shop.Application.pdb
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Presistence\bin\Debug\net5.0\Shop.Domain.pdb
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\Shop.Presistence.csproj.AssemblyReference.cache
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\Shop.Presistence.GeneratedMSBuildEditorConfig.editorconfig
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\Shop.Presistence.AssemblyInfoInputs.cache
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\Shop.Presistence.AssemblyInfo.cs
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\Shop.Presistence.csproj.CoreCompileInputs.cache
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\Shop.Presistence.csproj.CopyComplete
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\Shop.Presistence.dll
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\ref\Shop.Presistence.dll
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\Shop.Presistence.pdb

@@ -5856,20 +5856,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\reeditor\\.nuget\\packages\\": {}
+    "C:\\Users\\coolt\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitHub\\ProjectShop\\Project\\OnlineShop\\Shop.Presistence\\Shop.Presistence.csproj",
+      "projectUniqueName": "F:\\OA\\Практика 3 курс\\Project\\Project\\OnlineShop\\Shop.Presistence\\Shop.Presistence.csproj",
       "projectName": "Shop.Presistence",
-      "projectPath": "D:\\GitHub\\ProjectShop\\Project\\OnlineShop\\Shop.Presistence\\Shop.Presistence.csproj",
-      "packagesPath": "C:\\Users\\reeditor\\.nuget\\packages\\",
-      "outputPath": "D:\\GitHub\\ProjectShop\\Project\\OnlineShop\\Shop.Presistence\\obj\\",
+      "projectPath": "F:\\OA\\Практика 3 курс\\Project\\Project\\OnlineShop\\Shop.Presistence\\Shop.Presistence.csproj",
+      "packagesPath": "C:\\Users\\coolt\\.nuget\\packages\\",
+      "outputPath": "F:\\OA\\Практика 3 курс\\Project\\Project\\OnlineShop\\Shop.Presistence\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\reeditor\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\coolt\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -5882,8 +5890,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\GitHub\\ProjectShop\\Project\\OnlineShop\\Shop.Application\\Shop.Application.csproj": {
-              "projectPath": "D:\\GitHub\\ProjectShop\\Project\\OnlineShop\\Shop.Application\\Shop.Application.csproj"
+            "F:\\OA\\Практика 3 курс\\Project\\Project\\OnlineShop\\Shop.Application\\Shop.Application.csproj": {
+              "projectPath": "F:\\OA\\Практика 3 курс\\Project\\Project\\OnlineShop\\Shop.Application\\Shop.Application.csproj"
             }
           }
         }

@@ -43,3 +43,18 @@ D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Application\obj\Debug\net5.0\Shop.
 D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Application\obj\Debug\net5.0\Shop.Application.dll
 D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Application\obj\Debug\net5.0\ref\Shop.Application.dll
 D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Application\obj\Debug\net5.0\Shop.Application.pdb
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Application\bin\Debug\net5.0\Shop.Application.deps.json
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Application\bin\Debug\net5.0\Shop.Application.dll
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Application\bin\Debug\net5.0\ref\Shop.Application.dll
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Application\bin\Debug\net5.0\Shop.Application.pdb
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Application\bin\Debug\net5.0\Shop.Domain.dll
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Application\bin\Debug\net5.0\Shop.Domain.pdb
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Application\obj\Debug\net5.0\Shop.Application.csproj.AssemblyReference.cache
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Application\obj\Debug\net5.0\Shop.Application.GeneratedMSBuildEditorConfig.editorconfig
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Application\obj\Debug\net5.0\Shop.Application.AssemblyInfoInputs.cache
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Application\obj\Debug\net5.0\Shop.Application.AssemblyInfo.cs
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Application\obj\Debug\net5.0\Shop.Application.csproj.CoreCompileInputs.cache
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Application\obj\Debug\net5.0\Shop.Application.csproj.CopyComplete
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Application\obj\Debug\net5.0\Shop.Application.dll
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Application\obj\Debug\net5.0\ref\Shop.Application.dll
+F:\OA\Практика 3 курс\Project\Project\OnlineShop\Shop.Application\obj\Debug\net5.0\Shop.Application.pdb

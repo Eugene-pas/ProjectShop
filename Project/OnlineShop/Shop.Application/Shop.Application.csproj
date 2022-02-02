@@ -15,4 +15,11 @@
     <ProjectReference Include="..\Shop.Domain\Shop.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Delivery\Commands\DeleteDelivery\" />
+    <Folder Include="Delivery\Commands\UpdateDelivery\" />
+    <Folder Include="Delivery\Queries\GetDelivery\" />
+    <Folder Include="Delivery\Queries\GetDeliveriesList\" />
+  </ItemGroup>
+
 </Project>
