@@ -1,2 +1,0 @@
-# ProjectShop
- educational project
