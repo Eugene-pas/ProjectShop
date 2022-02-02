@@ -39,11 +39,10 @@ namespace DemoApi.Controllers
                });
         } 
         
-        [HttpDelete("delete")]
-        public async Task<Unit> Delete([FromBody] IdModel id)
+        [HttpDelete("delete/{id}")]
+        public async Task<Unit> Delete(long id)
         {
-            await _mediator.Send(new DeleteCustomerCommand { Id = id.Id });
-            return Unit.Value;
+            return await _mediator.Send(new DeleteCustomerCommand { Id = id });
         }
         [HttpPost("update")]
         public async Task<Unit> Update([FromBody] UpdateCustomerModel customer)
