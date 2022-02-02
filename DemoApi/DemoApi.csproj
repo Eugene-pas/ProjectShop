@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Shop.Presistence\Shop.Presistence.csproj" />
+    <ProjectReference Include="..\Shop.Presistence\Shop.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

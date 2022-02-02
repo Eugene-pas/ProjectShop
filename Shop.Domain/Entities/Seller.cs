@@ -6,15 +6,15 @@ using Shop.Domain.Entities.Base;
 
 namespace Shop.Domain.Entities
 {
-    public partial class Customer : EntityBase
+    public partial class Seller : EntityBase
     {
-        public Customer()
+        public Seller()
         {
-            this.Order = new HashSet<Order>();
+            this.Product = new HashSet<Product>();
         }       
         public string Name { get; set; }
-        public string Email { get; set; }
-        public string PhoneNumber { get; set; }
-        public virtual ICollection<Order> Order { get; set; }
+        public string Description { get; set; }
+        public string Contact { get; set; }  
+        public virtual ICollection<Product> Product { get; set; }
     }
 }

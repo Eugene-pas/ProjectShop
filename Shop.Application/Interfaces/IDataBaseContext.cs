@@ -15,7 +15,7 @@ namespace Shop.Domain.Entities
         DbSet<OrderProductConnection> OrderProductConnection { get; set; }
         DbSet<Product> Product { get; set; }
         DbSet<ProductImage> ProductImage { get; set; }
-        DbSet<Sellers> Sellers { get; set; }
+        DbSet<Seller> Seller { get; set; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
 }

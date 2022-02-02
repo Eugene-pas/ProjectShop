@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{F285658D-7
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.Application", "Shop.Application\Shop.Application.csproj", "{C1C46A75-38CD-4C8D-88F9-EB9A6E65090B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.Presistence", "Shop.Presistence\Shop.Presistence.csproj", "{64385B10-A5F4-4372-94F3-ECA83E20F590}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.Persistence", "Shop.Presistence\Shop.Persistence.csproj", "{64385B10-A5F4-4372-94F3-ECA83E20F590}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

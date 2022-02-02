@@ -1,19 +1,20 @@
+﻿using MediatR;
+using Shop.Domain.Entities;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using Shop.Domain.Entities.Base;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Shop.Domain.Entities
+namespace Shop.Application.Orders.Commands.CreateOrder
 {
-    public partial class Order : EntityBase
+    public class CreateOrderCommand
+        : IRequest<long>
     {
-        public Order()
-        {
-            this.OrderProductConnection = new HashSet<OrderProductConnection>();
-        }        
+        public long Id { get; set; }
         public DateTime? Date { get; set; }
         public string Adress { get; set; }
+
         public virtual Customer Customer { get; set; }
         public virtual Delivery Delivery { get; set; }
         public virtual ICollection<OrderProductConnection> OrderProductConnection { get; set; }
