@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 namespace Shop.Application.Customers.Commands.CreateCustomer
 {
     public class CreateCustomerCommandHandler
-        : IRequestHandler<CreateCustomerCommand, Guid>
+        : IRequestHandler<CreateCustomerCommand, long>
     {
         private readonly IDataBaseContext _dbContext;
         public CreateCustomerCommandHandler(IDataBaseContext dbContext) =>
             _dbContext = dbContext;
 
-        public async Task<Guid> Handle(CreateCustomerCommand request, CancellationToken cancellationToken)
+        public async Task<long> Handle(CreateCustomerCommand request, CancellationToken cancellationToken)
         {
             var customer = new Customer 
             {                

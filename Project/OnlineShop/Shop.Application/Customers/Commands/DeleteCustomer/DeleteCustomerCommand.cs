@@ -10,6 +10,6 @@ namespace Shop.Application.Customers.Commands.DeleteCustomer
     public class DeleteCustomerCommand
         : IRequest<Unit>
     {
-        public Guid Id { get; set; }
+        public long Id { get; set; }
     }
 }

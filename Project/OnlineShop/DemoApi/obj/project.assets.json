@@ -6190,24 +6190,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\reeditor\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\Новая папка\\Project\\OnlineShop\\DemoApi\\DemoApi.csproj",
+      "projectUniqueName": "D:\\GitHub\\ProjectShop\\Project\\OnlineShop\\DemoApi\\DemoApi.csproj",
       "projectName": "DemoApi",
-      "projectPath": "C:\\Users\\User\\Desktop\\Новая папка\\Project\\OnlineShop\\DemoApi\\DemoApi.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\Новая папка\\Project\\OnlineShop\\DemoApi\\obj\\",
+      "projectPath": "D:\\GitHub\\ProjectShop\\Project\\OnlineShop\\DemoApi\\DemoApi.csproj",
+      "packagesPath": "C:\\Users\\reeditor\\.nuget\\packages\\",
+      "outputPath": "D:\\GitHub\\ProjectShop\\Project\\OnlineShop\\DemoApi\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\reeditor\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6221,8 +6216,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\User\\Desktop\\Новая папка\\Project\\OnlineShop\\Shop.Presistence\\Shop.Presistence.csproj": {
-              "projectPath": "C:\\Users\\User\\Desktop\\Новая папка\\Project\\OnlineShop\\Shop.Presistence\\Shop.Presistence.csproj"
+            "D:\\GitHub\\ProjectShop\\Project\\OnlineShop\\Shop.Presistence\\Shop.Presistence.csproj": {
+              "projectPath": "D:\\GitHub\\ProjectShop\\Project\\OnlineShop\\Shop.Presistence\\Shop.Presistence.csproj"
             }
           }
         }

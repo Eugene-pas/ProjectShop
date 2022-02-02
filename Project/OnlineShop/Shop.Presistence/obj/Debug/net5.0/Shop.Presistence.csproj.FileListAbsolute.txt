@@ -32,3 +32,20 @@ C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Presistence\
 C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Presistence\bin\Debug\net5.0\Shop.Application.pdb
 C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Presistence\bin\Debug\net5.0\Shop.Domain.pdb
 C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\Shop.Presistence.csproj.CopyComplete
+D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Presistence\bin\Debug\net5.0\Shop.Presistence.deps.json
+D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Presistence\bin\Debug\net5.0\Shop.Presistence.dll
+D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Presistence\bin\Debug\net5.0\ref\Shop.Presistence.dll
+D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Presistence\bin\Debug\net5.0\Shop.Presistence.pdb
+D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Presistence\bin\Debug\net5.0\Shop.Application.dll
+D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Presistence\bin\Debug\net5.0\Shop.Domain.dll
+D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Presistence\bin\Debug\net5.0\Shop.Application.pdb
+D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Presistence\bin\Debug\net5.0\Shop.Domain.pdb
+D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\Shop.Presistence.csproj.AssemblyReference.cache
+D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\Shop.Presistence.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\Shop.Presistence.AssemblyInfoInputs.cache
+D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\Shop.Presistence.AssemblyInfo.cs
+D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\Shop.Presistence.csproj.CoreCompileInputs.cache
+D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\Shop.Presistence.csproj.CopyComplete
+D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\Shop.Presistence.dll
+D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\ref\Shop.Presistence.dll
+D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Presistence\obj\Debug\net5.0\Shop.Presistence.pdb

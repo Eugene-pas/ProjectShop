@@ -1,7 +1,12 @@
 ﻿
+using DemoApi.Models;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Shop.Application.Customers.Commands.CreateCustomer;
+using Shop.Application.Customers.Commands.DeleteCustomer;
+using Shop.Application.Customers.Commands.UpdateCustomer;
+using Shop.Application.Customers.Queries.GetCustomer;
+using Shop.Application.Customers.Queries.GetCustomersList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +28,7 @@ namespace DemoApi.Controllers
         }
                 
         [HttpPost("create")]
-        public async Task<Guid> Create([FromBody] CustomerModel customer)
+        public async Task<long> Create([FromBody] CustomerModel customer)
         {
            return await _mediator.Send(
                new CreateCustomerCommand
@@ -34,12 +39,34 @@ namespace DemoApi.Controllers
                });
         } 
         
-        // POST api/<PersonController>
-        //[HttpPost]
-        //public async Task<PersonModel> Post([FromBody] PersonModel value)
-        //{
-        //    var model = new InsertPersonCommand(value.FirstName, value.LastName);
-        //    return await _mediator.Send(model);
-        //}
+        [HttpDelete("delete")]
+        public async Task<Unit> Delete([FromBody] IdModel id)
+        {
+            await _mediator.Send(new DeleteCustomerCommand { Id = id.Id });
+            return Unit.Value;
+        }
+        [HttpPost("update")]
+        public async Task<Unit> Update([FromBody] UpdateCustomerModel customer)
+        {
+            await _mediator.Send(new UpdateCustomerCommand
+            {
+                Id =customer.Id,
+                Name = customer.Name,
+                Email = customer.Email,
+                PhoneNumber = customer.PhoneNumber
+            });
+            return Unit.Value;
+        }
+        [HttpGet("get/{id}")]
+        public async Task<ActionResult<CustomerVm>> Get(long id)
+        {
+            return await _mediator.Send(new GetCustomerQuery { Id = id });
+        }
+        [HttpGet("getlist")]
+        public async Task<ActionResult<CustomersListVm>> GetAll()
+        {
+            return await _mediator.Send(new GetCustomersListQuery { });
+        }
+        
     }
 }

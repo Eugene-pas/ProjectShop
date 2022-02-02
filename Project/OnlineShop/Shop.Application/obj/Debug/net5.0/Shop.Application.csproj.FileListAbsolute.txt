@@ -28,3 +28,18 @@ C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Application\
 C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Application\obj\Debug\net5.0\Shop.Application.dll
 C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Application\obj\Debug\net5.0\ref\Shop.Application.dll
 C:\Users\User\Desktop\Новая папка\Project\OnlineShop\Shop.Application\obj\Debug\net5.0\Shop.Application.pdb
+D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Application\bin\Debug\net5.0\Shop.Application.deps.json
+D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Application\bin\Debug\net5.0\Shop.Application.dll
+D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Application\bin\Debug\net5.0\ref\Shop.Application.dll
+D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Application\bin\Debug\net5.0\Shop.Application.pdb
+D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Application\bin\Debug\net5.0\Shop.Domain.dll
+D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Application\bin\Debug\net5.0\Shop.Domain.pdb
+D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Application\obj\Debug\net5.0\Shop.Application.csproj.AssemblyReference.cache
+D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Application\obj\Debug\net5.0\Shop.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Application\obj\Debug\net5.0\Shop.Application.AssemblyInfoInputs.cache
+D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Application\obj\Debug\net5.0\Shop.Application.AssemblyInfo.cs
+D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Application\obj\Debug\net5.0\Shop.Application.csproj.CoreCompileInputs.cache
+D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Application\obj\Debug\net5.0\Shop.Application.csproj.CopyComplete
+D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Application\obj\Debug\net5.0\Shop.Application.dll
+D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Application\obj\Debug\net5.0\ref\Shop.Application.dll
+D:\GitHub\ProjectShop\Project\OnlineShop\Shop.Application\obj\Debug\net5.0\Shop.Application.pdb
