@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -13,12 +13,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Shop.Domain\Shop.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Delivery\Commands\UpdateDelivery\" />
-    <Folder Include="Delivery\Queries\GetDelivery\" />
-    <Folder Include="Delivery\Queries\GetDeliveriesList\" />
   </ItemGroup>
 
 </Project>

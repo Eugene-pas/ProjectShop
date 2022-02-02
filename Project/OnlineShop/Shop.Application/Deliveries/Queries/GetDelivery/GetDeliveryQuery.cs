@@ -5,10 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shop.Application.Delivery.Commands.DeleteDelivery
+namespace Shop.Application.Deliveries.Queries.GetDelivery
 {
-    public class DeleteDeliveryCommand
-        : IRequest
+    public class GetDeliveryQuery : IRequest<DeliveryVm>
     {
         public long Id { get; set; }
     }

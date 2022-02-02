@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Shop.Application.Deliveries.Commands.CreateDelivery
 {
     public class CreateDeliveryCommandHandler
-        : HandlerBase, IRequestHandler<CreateDeliveryCommand, long>
+        : HandlersBase, IRequestHandler<CreateDeliveryCommand, long>
     {
         public CreateDeliveryCommandHandler(IDataBaseContext dbContext) : base(dbContext) { }
         

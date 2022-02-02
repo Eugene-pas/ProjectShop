@@ -1,5 +1,4 @@
-﻿
-using DemoApi.Models;
+﻿using DemoApi.Models;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Shop.Application.Customers.Commands.CreateCustomer;
@@ -7,9 +6,6 @@ using Shop.Application.Customers.Commands.DeleteCustomer;
 using Shop.Application.Customers.Commands.UpdateCustomer;
 using Shop.Application.Customers.Queries.GetCustomer;
 using Shop.Application.Customers.Queries.GetCustomersList;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860

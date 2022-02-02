@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Shop.Application.Customers.Commands
 {
-    public abstract class HandlerBase
+    public abstract class HandlersBase
     {
-        public readonly IDataBaseContext _dbContext;
-        public HandlerBase(IDataBaseContext dbContext) =>
+        protected readonly IDataBaseContext _dbContext;
+        public HandlersBase(IDataBaseContext dbContext) =>
             _dbContext = dbContext;
     }
 }
