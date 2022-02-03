@@ -17,17 +17,16 @@ namespace Shop.Application.Orders.Commands.CreateOrder
 
         public async Task<long> Handle(CreateOrderCommand request, CancellationToken cancellationToken)
         {
-            await _dbContext.Order.AddAsync(
-                new Order
-                {
-                    Id = request.Id,
-                    Date = DateTime.Now,
-                    Adress = request.Adress,
-                    Customer = null,
-                    Delivery = null
-                },cancellationToken);
+            var order = new Order
+            {
+                Date = DateTime.Now,
+                Adress = request.Adress,
+                Customer = null,
+                Delivery = null
+            };
+            await _dbContext.Order.AddAsync(order, cancellationToken);
             await _dbContext.SaveChangesAsync(cancellationToken);
-            return request.Id;
+            return order.Id;
         }
     }
 }

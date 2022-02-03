@@ -7,7 +7,6 @@ namespace Shop.Presistence
         // клас що підключається до ДБ
         public static void Intialize(DataBaseContext context)
         {
-            context.Database.EnsureDeleted();
             context.Database.EnsureCreated();
         }
     }
