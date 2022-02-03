@@ -7,7 +7,7 @@ using MediatR;
 using Shop.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Shop.Application.Sellers.Queries.GetSellerList
+namespace Shop.Application.Sellers.Queries.GetSellersList
 {
     public class GetSellersListQueryHandler 
         : IRequestHandler<GetSellersListQuery, SellersListVm>

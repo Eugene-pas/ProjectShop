@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Shop.Application.Sellers.Queries.GetSellerList
+namespace Shop.Application.Sellers.Queries.GetSellersList
 {
     public class SellersListVm
     {

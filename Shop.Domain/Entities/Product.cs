@@ -16,9 +16,9 @@ namespace Shop.Domain.Entities
         } 
         
         public string Name { get; set; }
-        public decimal? Price { get; set; }
+        public decimal Price { get; set; }
         public string Description { get; set; }
-        public int? Count { get; set; }
+        public int? OnStorageCount { get; set; }
         public int? Rating { get; set; }
     
         public virtual Category Category { get; set; }

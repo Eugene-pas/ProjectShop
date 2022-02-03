@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Shop.Application.Sellers.Queries.GetSellerDetails
+namespace Shop.Application.Sellers.Queries.GetSeller
 {
     public class GetSeller : IRequest<SellerVm>
     {

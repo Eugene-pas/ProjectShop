@@ -2,7 +2,7 @@
 using Shop.Application.Common.Mappings;
 using Shop.Domain.Entities;
 
-namespace Shop.Application.Sellers.Queries.GetSellerDetails
+namespace Shop.Application.Sellers.Queries.GetSeller
 {
     public class SellerVm : IMapWith<Seller>
     {

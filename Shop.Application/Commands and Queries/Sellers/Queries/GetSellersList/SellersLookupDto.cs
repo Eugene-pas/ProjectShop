@@ -7,7 +7,7 @@ using AutoMapper;
 using Shop.Application.Common.Mappings;
 using Shop.Domain.Entities;
 
-namespace Shop.Application.Sellers.Queries.GetSellerList
+namespace Shop.Application.Sellers.Queries.GetSellersList
 {
     public class SellersLookupDto : IMapWith<Seller>
     {

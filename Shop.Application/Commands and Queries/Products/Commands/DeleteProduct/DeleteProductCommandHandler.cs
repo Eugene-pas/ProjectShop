@@ -8,21 +8,21 @@ using MediatR;
 using Shop.Application.Exceptions;
 using Shop.Domain.Entities;
 
-namespace Shop.Application.Sellers.Commands.DeleteSeller
+namespace Shop.Application.Products.Commands.DeleteProduct
 {
     public class DeleteProductCommandHandler 
-        : IRequestHandler<DeleteSellerCommand>
+        : IRequestHandler<DeleteProductCommand>
     {
         private readonly IDataBaseContext _dbContext;
         public DeleteProductCommandHandler(IDataBaseContext dbContext) =>
             _dbContext = dbContext;
 
-        public async Task<Unit> Handle(DeleteSellerCommand request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(DeleteProductCommand request, CancellationToken cancellationToken)
         {
-            var seller = await _dbContext.Seller
+            var product = await _dbContext.Product
                 .FindAsync(new object[] { request.Id }, cancellationToken);
-            _ = seller ?? throw new NotFoundException(nameof(Seller), seller.Id);
-            _dbContext.Seller.Remove(seller);
+            _ = product ?? throw new NotFoundException(nameof(Product), product.Id);
+            _dbContext.Product.Remove(product);
             await _dbContext.SaveChangesAsync(cancellationToken);
             return Unit.Value;
         }

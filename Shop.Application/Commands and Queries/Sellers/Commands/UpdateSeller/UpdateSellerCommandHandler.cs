@@ -11,11 +11,11 @@ using System.Threading.Tasks;
 
 namespace Shop.Application.Sellers.Commands.UpdateSeller
 {
-    public class UpdateSellerCommandHandler
+    public class UpdateProductCommandHandler
         : IRequestHandler<UpdateSellerCommand>
     {
         private readonly IDataBaseContext _dbContext;
-        public UpdateSellerCommandHandler(IDataBaseContext dbContext) =>
+        public UpdateProductCommandHandler(IDataBaseContext dbContext) =>
             _dbContext = dbContext;
         public async Task<Unit> Handle(UpdateSellerCommand request, CancellationToken cancellationToken)
         {

@@ -10,7 +10,7 @@ using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Shop.Application.Exceptions;
 
-namespace Shop.Application.Sellers.Queries.GetSellerDetails
+namespace Shop.Application.Sellers.Queries.GetSeller
 {
     public class GetSellerQueryHandler : IRequestHandler<GetSeller, SellerVm>
     {

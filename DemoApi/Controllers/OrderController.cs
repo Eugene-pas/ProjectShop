@@ -39,13 +39,13 @@ namespace DemoApi.Controllers
         }
 
         [HttpPut("update")]
-        public async Task<Unit> UpdateOrder([FromBody] UpdateOrderModel productImage)
+        public async Task<Unit> UpdateOrder([FromBody] UpdateOrderModel order)
         {           
             return await _mediator.Send(
                 new UpdateOrderCommand
                 {
-                   Id = productImage.Id,
-                   Adress = productImage.Adress,
+                   Id = order.Id,
+                   Adress = order.Adress,
                    Customer = null,
                    Delivery = null,
                    Date = DateTime.Now
@@ -53,12 +53,12 @@ namespace DemoApi.Controllers
         }
 
         [HttpPost("GetAllIdPerson")]
-        public async Task<OrderVm> GetAllOrder([FromBody] IdModel productImage)
+        public async Task<OrderVm> GetAllOrder([FromBody] IdModel order)
         {
             return await _mediator.Send(
                 new GetAllOrderCommand
                 {
-                    IdCustomer = productImage.Id
+                    IdCustomer = order.Id
                 });
         }
 
