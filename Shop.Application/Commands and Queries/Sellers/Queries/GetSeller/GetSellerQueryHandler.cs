@@ -12,21 +12,21 @@ using Shop.Application.Exceptions;
 
 namespace Shop.Application.Sellers.Queries.GetSellerDetails
 {
-    public class GetSellerDetailsQueryHandler : IRequestHandler<GetSellerDetailsQuery, SellerDetailsVm>
+    public class GetSellerQueryHandler : IRequestHandler<GetSeller, SellerVm>
     {
         private readonly IDataBaseContext _dbContext;
         private readonly IMapper _mapper;
-        public GetSellerDetailsQueryHandler(IDataBaseContext dbContext, IMapper mapper) =>
+        public GetSellerQueryHandler(IDataBaseContext dbContext, IMapper mapper) =>
             (_dbContext, _mapper) = (dbContext, mapper);
 
-        public async Task<SellerDetailsVm> Handle(GetSellerDetailsQuery request, CancellationToken cancellationToken)
+        public async Task<SellerVm> Handle(GetSeller request, CancellationToken cancellationToken)
         {
             var entity = await _dbContext.Seller
                 .FirstOrDefaultAsync(sellor => 
             sellor.Id == request.Id, cancellationToken);
             _ = entity ?? throw new NotFoundException(nameof(Seller), request.Id);
 
-            return _mapper.Map<SellerDetailsVm>(entity);
+            return _mapper.Map<SellerVm>(entity);
         }
     }
 }

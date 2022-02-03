@@ -2,8 +2,8 @@
 
 namespace Shop.Application.Sellers.Queries.GetSellerList
 {
-    public class SellerListVm
+    public class SellersListVm
     {
-        public IList<SellerLookupDto> Sellers { get; set; }
+        public IList<SellersLookupDto> Sellers { get; set; }
     }
 }

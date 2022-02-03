@@ -8,6 +8,10 @@ using System.Threading.Tasks;
 using Shop.Application.Sellers.Queries.GetSellerList;
 using Microsoft.Extensions.DependencyInjection;
 using Shop.Application.Sellers.Queries.GetSellerDetails;
+using DemoApi.Models.SellerModels;
+using Shop.Application.Sellers.Commands.CreateSeller;
+using Shop.Application.Sellers.Commands.DeleteSeller;
+using Shop.Application.Sellers.Commands.UpdateSeller;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -23,17 +27,45 @@ namespace DemoApi.Controllers
         {
             _mediator = mediator;
         }
-
-        [HttpGet]
-        public async Task<ActionResult<SellerDetailsVm>> GetAll()
+        [HttpPost("create")]
+        public async Task<long> Create([FromBody] CreateSellerModel seller)
         {
-            return await _mediator.Send(new GetSellerDetailsQuery { });
+            return await _mediator.Send(new CreateSellerCommand
+            {
+                Name = seller.Name,
+                Description = seller.Description,
+                Contact = seller.Contact
+            });
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<SellerListVm>> Get(long id)
+        [HttpDelete("delete/{id}")]
+        public async Task<Unit> Delete(long id)
         {
-            return await _mediator.Send(new GetSellerListQuery { Id = id });
+            return await _mediator.Send(new DeleteSellerCommand { Id = id });
+        }
+
+        [HttpPost("update")]
+        public async Task<Unit> Update([FromBody] UpdateSellerModel seller)
+        {
+            await _mediator.Send(new UpdateSellerCommand
+            {
+                Id = seller.Id,
+                Name = seller.Name,
+                Description= seller.Description,
+                Contact= seller.Contact
+            });
+            return Unit.Value;
+        }
+        [HttpGet("get/{id}")]
+        public async Task<ActionResult<SellerVm>> Get(long id)
+        {
+            return await _mediator.Send(new GetSeller { Id = id });
+        }
+
+        [HttpGet("getList")]
+        public async Task<ActionResult<SellersListVm>> GetAll()
+        {
+            return await _mediator.Send(new GetSellersListQuery { });
         }
     }
 }

@@ -3,7 +3,7 @@ using MediatR;
 
 namespace Shop.Application.Sellers.Queries.GetSellerList
 {
-    public class GetSellerListQuery : IRequest<SellerListVm>
+    public class GetSellersListQuery : IRequest<SellersListVm>
     {
         public long Id { get; set; }
     }

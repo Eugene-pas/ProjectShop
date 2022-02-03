@@ -9,22 +9,21 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Shop.Application.Sellers.Queries.GetSellerList
 {
-    public class GetSellerListQueryHandler 
-        : IRequestHandler<GetSellerListQuery, SellerListVm>
+    public class GetSellersListQueryHandler 
+        : IRequestHandler<GetSellersListQuery, SellersListVm>
     {
         private readonly IDataBaseContext _dbContext;
         private readonly IMapper _mapper;
-        public GetSellerListQueryHandler(IDataBaseContext dbContext, IMapper mapper) =>
+        public GetSellersListQueryHandler(IDataBaseContext dbContext, IMapper mapper) =>
             (_dbContext, _mapper) = (dbContext, mapper);
 
-        public async Task<SellerListVm> Handle(GetSellerListQuery request, 
+        public async Task<SellersListVm> Handle(GetSellersListQuery request, 
             CancellationToken cancellationToken)
         {
             var sellerQuery = await _dbContext.Seller
-                .Where(seller => seller.Id == request.Id)
-                .ProjectTo<SellerLookupDto>(_mapper.ConfigurationProvider)
+                .ProjectTo<SellersLookupDto>(_mapper.ConfigurationProvider)
                 .ToListAsync(cancellationToken);
-            return new SellerListVm { Sellers = sellerQuery };
+            return new SellersListVm { Sellers = sellerQuery };
         }
     }
 }

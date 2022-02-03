@@ -4,7 +4,7 @@ using Shop.Domain.Entities;
 
 namespace Shop.Application.Sellers.Queries.GetSellerDetails
 {
-    public class SellerDetailsVm : IMapWith<Seller>
+    public class SellerVm : IMapWith<Seller>
     {
         public long Id { get; set; }
         public string Name { get; set; }
@@ -13,7 +13,7 @@ namespace Shop.Application.Sellers.Queries.GetSellerDetails
 
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<Seller, SellerDetailsVm>()
+            profile.CreateMap<Seller, SellerVm>()
                 .ForMember(SellerVm => SellerVm.Id, 
                    opt => opt.MapFrom(Seller => Seller.Id))
                 .ForMember(SellerVm => SellerVm.Name, 

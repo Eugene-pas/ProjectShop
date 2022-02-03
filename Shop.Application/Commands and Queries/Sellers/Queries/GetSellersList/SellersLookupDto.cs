@@ -9,7 +9,7 @@ using Shop.Domain.Entities;
 
 namespace Shop.Application.Sellers.Queries.GetSellerList
 {
-    public class SellerLookupDto : IMapWith<Seller>
+    public class SellersLookupDto : IMapWith<Seller>
     {
         public long Id { get; set; }
         public string Name { get; set; }
@@ -17,7 +17,7 @@ namespace Shop.Application.Sellers.Queries.GetSellerList
         public string Contact { get; set; }
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<Seller, SellerLookupDto>()
+            profile.CreateMap<Seller, SellersLookupDto>()
                 .ForMember(sellerDto => sellerDto.Id,
                 opt => opt.MapFrom(seller => seller.Id))
                 .ForMember(sellerDto => sellerDto.Name,
