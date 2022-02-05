@@ -11,14 +11,9 @@ namespace DemoApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class DeliveryController : ControllerBase
+    public class DeliveryController : BaseController
     {
-        private readonly IMediator _mediator;
-
-        public DeliveryController(IMediator mediator)
-        {
-            _mediator = mediator;
-        }
+        public DeliveryController(IMediator mediator) : base(mediator) { }
 
         [HttpPost("create")]
         public async Task<long> Create(string Name)

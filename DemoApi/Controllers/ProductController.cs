@@ -12,13 +12,10 @@ namespace DemoApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductController : ControllerBase
+    public class ProductController : BaseController
     {
-        private readonly IMediator _mediator;
-        public ProductController(IMediator mediator)
-        {
-            _mediator = mediator;
-        }
+        public ProductController(IMediator mediator) : base(mediator) { }
+
         [HttpPost("create")]
         public async Task<long> Create([FromBody] CreateProductModel product)
         {

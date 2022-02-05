@@ -27,8 +27,8 @@ namespace Shop.Application.Orders.Commands.UpdateOrder
 
             order.Date = DateTime.Now;
             order.Adress = request.Adress;
-            order.Customer = null;
-            order.Delivery = null;
+            order.Customer = _dbContext.Customer.Find(request.CustomerId);
+            order.Delivery = _dbContext.Delivery.Find(request.DeliveryId);
 
             await _dbContext.SaveChangesAsync(cancellationToken);
 

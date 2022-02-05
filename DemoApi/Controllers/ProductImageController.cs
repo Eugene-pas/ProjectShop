@@ -14,32 +14,9 @@ namespace DemoApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductImageController : ControllerBase
+    public class ProductImageController : BaseController
     {
-        private readonly IMediator _mediator;
-
-        public ProductImageController(IMediator mediator)
-        {
-            _mediator = mediator;
-        }
-
-        //[HttpPost("Customer/create")]
-        //public async Task<Guid> CreateCustomer([FromBody] CustomerModel customer)
-        //{
-        //   return await _mediator.Send(
-        //       new CreateCustomerCommand
-        //       {
-        //           Name = customer.Name,
-        //           Email = customer.Email,
-        //           PhoneNumber = customer.PhoneNumber
-        //       });
-        //}
-
-        //[HttpDelete("Customer/delete")]
-        //public async Task<Unit> Delete([FromBody] DeleteCustomerModel id)
-        //{
-        //    return await _mediator.Send(new DeleteCustomerCommand { Id = id.Id });
-        //}
+        public ProductImageController(IMediator mediator) : base(mediator) { }
 
         [HttpPost("create")]
         public async Task<ActionResult<long>> CreateProductImage([FromBody] CreateProductImageModel customer)
@@ -71,7 +48,7 @@ namespace DemoApi.Controllers
                 });
         }
 
-        [HttpPost("GetAllIdPerson")]
+        [HttpPost("GetProductImageList")]
         public async Task<string[]> GetAllIdProductImage([FromBody] GetAllIdProductImageModel productImage)
         {
             return await _mediator.Send(

@@ -6,6 +6,7 @@ using Shop.Application.Orders.Commands.CreateOrder;
 using Shop.Application.Orders.Commands.DeleteOrder;
 using Shop.Application.Orders.Commands.UpdateOrder;
 using Shop.Application.Orders.Queries.GetAllOrder;
+using Shop.Domain.Entities;
 using System;
 using System.Threading.Tasks;
 
@@ -13,14 +14,9 @@ namespace DemoApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class OrderController : ControllerBase
+    public class OrderController : BaseController
     {
-        private readonly IMediator _mediator;
-
-        public OrderController(IMediator mediator)
-        {
-            _mediator = mediator;
-        }
+        public OrderController(IMediator mediator) : base(mediator) { }
 
         [HttpPost("create")]
         public async Task<long> CreateOrder([FromBody] CreatOrderModel order)
@@ -42,19 +38,19 @@ namespace DemoApi.Controllers
 
         [HttpPut("update")]
         public async Task<Unit> UpdateOrder([FromBody] UpdateOrderModel order)
-        {           
+        {               
             return await _mediator.Send(
                 new UpdateOrderCommand
                 {
                    Id = order.Id,
                    Adress = order.Adress,
-                   Customer = null,
-                   Delivery = null,
+                   CustomerId = order.CustomerId,
+                   DeliveryId = order.DeliveryId,
                    Date = DateTime.Now
                 });
         }
 
-        [HttpGet("GetAllIdPerson")]
+        [HttpGet("GetOrdersList")]
         public async Task<ActionResult<OrderVm>> GetAllOrder()
         {
             return await _mediator.Send(new GetOrdersListQuery { });
