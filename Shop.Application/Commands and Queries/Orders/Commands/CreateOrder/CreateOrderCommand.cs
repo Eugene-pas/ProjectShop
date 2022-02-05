@@ -14,9 +14,9 @@ namespace Shop.Application.Orders.Commands.CreateOrder
         public long Id { get; set; }
         public DateTime? Date { get; set; }
         public string Adress { get; set; }
-
-        public virtual Customer Customer { get; set; }
-        public virtual Delivery Delivery { get; set; }
+        public long CustomerId { get; set; }
+        public long DeliveryId { get; set; }
+        
         public virtual ICollection<OrderProductConnection> OrderProductConnection { get; set; }
     }
 }

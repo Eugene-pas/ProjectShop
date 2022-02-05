@@ -28,7 +28,9 @@ namespace DemoApi.Controllers
             return await _mediator.Send(
                 new CreateOrderCommand
                 {
-                    Adress = order.Adress,                 
+                    Adress = order.Adress, 
+                    CustomerId = order.CustomerId,
+                    DeliveryId = order.DeliveryId
                 });
         }
 
@@ -52,14 +54,10 @@ namespace DemoApi.Controllers
                 });
         }
 
-        [HttpPost("GetAllIdPerson")]
-        public async Task<OrderVm> GetAllOrder([FromBody] IdModel order)
+        [HttpGet("GetAllIdPerson")]
+        public async Task<ActionResult<OrderVm>> GetAllOrder()
         {
-            return await _mediator.Send(
-                new GetAllOrderCommand
-                {
-                    IdCustomer = order.Id
-                });
+            return await _mediator.Send(new GetOrdersListQuery { });
         }
 
     }

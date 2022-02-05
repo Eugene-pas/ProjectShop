@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace Shop.Application.Orders.Queries.GetAllOrder
 {
-    public class GetAllOrderCommand
+    public class GetOrdersListQuery 
         : IRequest<OrderVm>
     {
-        public long IdCustomer { get; set; }
-        public long IdDelivery { get; set; }
+       
     }
 }

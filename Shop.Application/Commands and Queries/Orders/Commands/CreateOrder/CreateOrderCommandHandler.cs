@@ -21,12 +21,20 @@ namespace Shop.Application.Orders.Commands.CreateOrder
             {
                 Date = DateTime.Now,
                 Adress = request.Adress,
-                Customer = null,
-                Delivery = null
+                Customer = AddCustomer(request.CustomerId),
+                Delivery = AddDelivery(request.DeliveryId)
             };
             await _dbContext.Order.AddAsync(order, cancellationToken);
             await _dbContext.SaveChangesAsync(cancellationToken);
             return order.Id;
+        }
+        private Customer AddCustomer(long id)
+        {            
+            return _dbContext.Customer.Find(id);
+        }
+        private Delivery AddDelivery(long id)
+        {
+            return _dbContext.Delivery.Find(id);
         }
     }
 }
