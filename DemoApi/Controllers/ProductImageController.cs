@@ -42,20 +42,20 @@ namespace DemoApi.Controllers
         //}
 
         [HttpPost("create")]
-        public async Task<long> CreateProductImage([FromBody] CreateProductImageModel customer)
+        public async Task<ActionResult<long>> CreateProductImage([FromBody] CreateProductImageModel customer)
         {
-            return await _mediator.Send(
+            return Ok(await _mediator.Send(
                 new CreateProductImageCommand
                 {
                     Image = customer.Image,
                     SortOrder = customer.SortOrder
-                });
+                }));
         }
 
         [HttpDelete("delete")]
-        public async Task<Unit> DeleteProductImage([FromBody] DeleteProductImageModel id)
+        public async Task<ActionResult> DeleteProductImage([FromBody] DeleteProductImageModel id)
         {
-            return await _mediator.Send(new DeleteProductImageCommand { Id = id.Id });
+            return Ok(await _mediator.Send(new DeleteProductImageCommand { Id = id.Id }));
         }
 
         [HttpPut("update")]

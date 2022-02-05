@@ -19,8 +19,7 @@ namespace Shop.Application.ProductImages.Commands.DeleteProductImage
         public async Task<Unit> Handle(DeleteProductImageCommand request, CancellationToken cancellationToken)
         {
             var productImage = await _dbContext.ProductImage
-                .FindAsync(new object[] {request.Id}, cancellationToken);
-
+                .FindAsync(new object[] {request.Id}, cancellationToken);            
             _ = productImage ?? throw new NotFoundException(nameof(Customer), productImage.Id);
             _dbContext.ProductImage.Remove(productImage);
             await _dbContext.SaveChangesAsync(cancellationToken);
