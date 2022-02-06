@@ -1,6 +1,5 @@
 ﻿using MediatR;
 using Shop.Domain.Entities;
-using System;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -22,8 +21,10 @@ namespace Shop.Application.Customers.Commands.CreateCustomer
                 PhoneNumber = request.PhoneNumber,
                 Order = null
             };
+
             await _dbContext.Customer.AddAsync(customer,cancellationToken);
             await _dbContext.SaveChangesAsync(cancellationToken);
+
             return customer.Id;
         }
     }

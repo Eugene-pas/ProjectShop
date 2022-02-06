@@ -30,7 +30,6 @@ namespace Shop.Application.Customers.Queries.GetCustomer
 
             _ = customer ?? throw new NotFoundException(nameof(Customer), request.Id);
 
-
             return _mapper.Map<CustomerVm>(customer);
         }
     }

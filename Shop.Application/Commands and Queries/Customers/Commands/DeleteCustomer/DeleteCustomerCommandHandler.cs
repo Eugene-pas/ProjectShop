@@ -22,8 +22,10 @@ namespace Shop.Application.Customers.Commands.DeleteCustomer
                 .FindAsync(new object[] { request.Id }, cancellationToken);
 
             _ = customer ?? throw new NotFoundException(nameof(Customer), customer.Id);
+
             _dbContext.Customer.Remove(customer);
             await _dbContext.SaveChangesAsync(cancellationToken);
+
             return Unit.Value;
         }
     }

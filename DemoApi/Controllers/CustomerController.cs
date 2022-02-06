@@ -6,12 +6,7 @@ using Shop.Application.Customers.Commands.DeleteCustomer;
 using Shop.Application.Customers.Commands.UpdateCustomer;
 using Shop.Application.Customers.Queries.GetCustomer;
 using Shop.Application.Customers.Queries.GetCustomersList;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace DemoApi.Controllers
 {
@@ -22,41 +17,43 @@ namespace DemoApi.Controllers
         public CustomerController(IMediator mediator) : base(mediator) { }
             
         [HttpPost("create")]
-        public async Task<long> Create([FromBody] CustomerModel customer)
+        public async Task<long> Create(string name, string email, string phone)
         {
            return await _mediator.Send(
                new CreateCustomerCommand
                {
-                   Name = customer.Name,
-                   Email = customer.Email,
-                   PhoneNumber = customer.PhoneNumber
+                   Name = name,
+                   Email = email,
+                   PhoneNumber = phone
                });
         } 
         
-        [HttpDelete("delete/{id}")]
+        [HttpDelete("delete")]
         public async Task<Unit> Delete(long id)
         {
             return await _mediator.Send(new DeleteCustomerCommand { Id = id });
         }
+
         [HttpPost("update")]
-        public async Task<Unit> Update([FromBody] UpdateCustomerModel customer)
+        public async Task<Unit> Update(long id, string name, string email, string phone)
         {
-            await _mediator.Send(new UpdateCustomerCommand
+            return await _mediator.Send(new UpdateCustomerCommand
             {
-                Id = customer.Id,
-                Name = customer.Name,
-                Email = customer.Email,
-                PhoneNumber = customer.PhoneNumber
+                Id = id,
+                Name = name,
+                Email = email,
+                PhoneNumber = phone
             });
-            return Unit.Value;
         }
-        [HttpGet("get/{id}")]
+
+        [HttpGet("get")]
         public async Task<ActionResult<CustomerVm>> Get(long id)
         {
             return await _mediator.Send(new GetCustomerQuery { Id = id });
         }
+
         [HttpGet("getlist")]
-        public async Task<ActionResult<CustomersListVm>> GetAll()
+        public async Task<ActionResult<CustomersListVm>> GetList()
         {
             return await _mediator.Send(new GetCustomersListQuery { });
         }
