@@ -34,10 +34,16 @@ namespace DemoApi.Controllers
             });
         }
 
-        [HttpDelete("delete/{id}")]
-        public async Task<Unit> Delete(long id)
+        [HttpGet("get")]
+        public async Task<ActionResult<SellerVm>> Get(long id)
         {
-            return await _mediator.Send(new DeleteSellerCommand { Id = id });
+            return await _mediator.Send(new GetSellerQuery { Id = id });
+        }
+
+        [HttpGet("getlist")]
+        public async Task<ActionResult<SellersListVm>> GetAll()
+        {
+            return await _mediator.Send(new GetSellersListQuery { });
         }
 
         [HttpPost("update")]
@@ -52,16 +58,11 @@ namespace DemoApi.Controllers
             });
             return Unit.Value;
         }
-        [HttpGet("get/{id}")]
-        public async Task<ActionResult<SellerVm>> Get(long id)
-        {
-            return await _mediator.Send(new GetSeller { Id = id });
-        }
 
-        [HttpGet("getList")]
-        public async Task<ActionResult<SellersListVm>> GetAll()
+        [HttpDelete("delete")]
+        public async Task<Unit> Delete(long id)
         {
-            return await _mediator.Send(new GetSellersListQuery { });
+            return await _mediator.Send(new DeleteSellerCommand { Id = id });
         }
     }
 }
