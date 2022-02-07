@@ -26,7 +26,8 @@ namespace Shop.Application.ProductImages.Commands.UpdateProductImage
             _ = productImage ?? throw new NotFoundException(nameof(ProductImage), productImage.Id);
 
             productImage.Image = request.Image;
-            productImage.SortOrder = request.SortOrder;           
+            productImage.SortOrder = request.SortOrder;  
+            productImage.Product = _dbContext.Product.Find(request.ProductId);
 
             await _dbContext.SaveChangesAsync(cancellationToken);
 

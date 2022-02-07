@@ -1,12 +1,10 @@
-﻿using DemoApi.Models;
-using DemoApi.Models.OrderModels;
+﻿using DemoApi.Models.OrderModels;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Shop.Application.Orders.Commands.CreateOrder;
 using Shop.Application.Orders.Commands.DeleteOrder;
 using Shop.Application.Orders.Commands.UpdateOrder;
 using Shop.Application.Orders.Queries.GetAllOrder;
-using Shop.Domain.Entities;
 using System;
 using System.Threading.Tasks;
 

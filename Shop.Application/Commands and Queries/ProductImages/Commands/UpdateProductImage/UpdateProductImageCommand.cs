@@ -12,8 +12,9 @@ namespace Shop.Application.ProductImages.Commands.UpdateProductImage
         : IRequest
     {
         public long Id { get; set; }
+        public long ProductId { get; set; }
         public string Image { get; set; }
-        public int? SortOrder { get; set; }
+        public int? SortOrder { get; set; }       
 
         public virtual Product Product { get; set; }
 
