@@ -13,11 +13,11 @@ namespace Shop.Application.Commands_and_Queries.Customers.Queries.GetCustomer
             existTask = new CustomerExistTask(dbContext);
 
             RuleFor(getCustomerQueryValidator =>
-            getCustomerQueryValidator.Id).NotEmpty()
-            .NotNull().WithMessage("ID is required.")
+            getCustomerQueryValidator.Id)
+            .NotEmpty().WithMessage("ID is required.")
+            .NotNull().WithMessage("ID can not be aqueal null.")
             .NotEqual(0).WithMessage("There is no field with this ID")
-            .MustAsync(existTask.Exist)
-            .WithMessage("The specified customerId doesn't exist");
+            .MustAsync(existTask.Exist).WithMessage("The specified customerId doesn't exist");
         }
     }
 }
