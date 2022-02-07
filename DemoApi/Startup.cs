@@ -45,7 +45,7 @@ namespace DemoApi
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "DemoApi", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Shop", Version = "v1" });
             });            
         }
 
@@ -56,7 +56,7 @@ namespace DemoApi
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "DemoApi v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Shop v1"));
             }
 
             app.UseHttpsRedirection();
