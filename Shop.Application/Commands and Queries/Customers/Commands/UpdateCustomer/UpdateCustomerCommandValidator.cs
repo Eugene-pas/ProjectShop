@@ -1,18 +1,22 @@
 ﻿using FluentValidation;
 using Shop.Application.Customers.Commands.UpdateCustomer;
-using System.Text.RegularExpressions;
+using Shop.Domain.Entities;
 
 namespace Shop.Application.Commands_and_Queries.Customers.Commands.UpdateCustomer
 {
     public class UpdateCustomerCommandValidator
         : AbstractValidator<UpdateCustomerCommand>
     {
-        public UpdateCustomerCommandValidator()
+        private CustomerExistTask existTask;
+        public UpdateCustomerCommandValidator(IDataBaseContext dbContext)
         {
+            existTask = new CustomerExistTask(dbContext);
+
             RuleFor(updateCustomerCammandValidator =>
             updateCustomerCammandValidator.Id).NotEmpty()
             .NotNull().WithMessage("ID is required.")
-            .NotEqual(0).WithMessage("There is no field with this ID");
+            .NotEqual(0).WithMessage("There is no field with this ID")
+            .MustAsync(existTask.Exist).WithMessage("The specified customerId doesn't exist");
 
             RuleFor(updateCustomerCammandValidator =>
             updateCustomerCammandValidator.Name).NotEmpty()
@@ -26,9 +30,9 @@ namespace Shop.Application.Commands_and_Queries.Customers.Commands.UpdateCustome
             RuleFor(updateCustomerCammandValidator =>
             updateCustomerCammandValidator.PhoneNumber).NotEmpty()
             .NotNull().WithMessage("Phone Number is required.")
-            .MinimumLength(13).WithMessage("PhoneNumber must not be less than 13 characters.")
-            .MaximumLength(13).WithMessage("PhoneNumber must not exceed 13 characters.")
-            .Matches(new Regex(@"((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}")).WithMessage("PhoneNumber not valid");
+            .MinimumLength(12).WithMessage("PhoneNumber must not be less than 12 characters.")
+            .MaximumLength(12).WithMessage("PhoneNumber must not exceed 12 characters.");
+            //.Matches(new Regex(@"^\+\d{2}\(\d{3}\)\d{3}-\d{2}-\d{2}$")).WithMessage("PhoneNumber not valid");
         }
     }
 }

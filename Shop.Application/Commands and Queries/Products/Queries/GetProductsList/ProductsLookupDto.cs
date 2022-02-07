@@ -35,14 +35,3 @@ namespace Shop.Application.Products.Queries.GetProductsList
         }
     }
 }
-
-//.ForMember((productDto => (productDto.Name,
-//                   opt => opt.MapFrom(product => product.Name))
-//                .ForMember((productDto => (productDto.Price,
-//                    opt => opt.MapFrom(product => product.Price))
-//                .ForMember((productDto => (productDto.Description,
-//                    opt => opt.MapFrom(product => product.Description))
-//                .ForMember((productDto => (productDto.OnStorageCount,
-//                    opt => opt.MapFrom(product => product.OnStorageCount))
-//                .ForMember((productDto => (productDto.Rating,
-//                    opt => opt.MapFrom(product => product.Rating));

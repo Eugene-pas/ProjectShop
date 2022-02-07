@@ -21,9 +21,9 @@ namespace Shop.Application.Commands_and_Queries.Customers.Commands.CreateCustome
             RuleFor(createCustomerCammandValidator =>
             createCustomerCammandValidator.PhoneNumber).NotEmpty()
             .NotNull().WithMessage("Phone Number is required.")
-            .MinimumLength(13).WithMessage("PhoneNumber must not be less than 13 characters.")
-            .MaximumLength(13).WithMessage("PhoneNumber must not exceed 13 characters.")
-            .Matches(new Regex(@"((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}")).WithMessage("PhoneNumber not valid");
+            .MinimumLength(12).WithMessage("PhoneNumber must not be less than 12 characters.")
+            .MaximumLength(12).WithMessage("PhoneNumber must not exceed 12 characters.");
+            //.Matches(new Regex(@"^\+\d{2}\(\d{3}\)\d{3}-\d{2}-\d{2}$")).WithMessage("PhoneNumber not valid");
         }
     }
 }
