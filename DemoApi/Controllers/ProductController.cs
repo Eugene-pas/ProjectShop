@@ -50,7 +50,7 @@ namespace DemoApi.Controllers
         [HttpGet("get/{id}")]
         public async Task<ActionResult<ProductVm>> Get(long id)
         {
-            return await _mediator.Send(new GetProduct { Id = id });
+            return await _mediator.Send(new GetProductQuery { Id = id });
         }
         [HttpGet("getList")]
         public async Task<ActionResult<ProductsListVm>> GetAll()

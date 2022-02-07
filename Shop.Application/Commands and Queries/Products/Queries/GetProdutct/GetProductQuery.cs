@@ -2,7 +2,7 @@
 
 namespace Shop.Application.Products.Queries.GetProduct
 {
-    public class GetProduct : IRequest<ProductVm>
+    public class GetProductQuery : IRequest<ProductVm>
     {
         public long Id { get; set; }
     }

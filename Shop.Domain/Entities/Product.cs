@@ -19,7 +19,7 @@ namespace Shop.Domain.Entities
         public decimal Price { get; set; }
         public string Description { get; set; }
         public int? OnStorageCount { get; set; }
-        public int? Rating { get; set; }
+        public double? Rating { get; set; }
     
         public virtual Category Category { get; set; }
         public virtual ICollection<DeliveryProductConnection> DeliveryProductConnection { get; set; }
