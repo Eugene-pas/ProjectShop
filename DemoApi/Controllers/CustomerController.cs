@@ -1,5 +1,4 @@
-﻿using DemoApi.Models;
-using MediatR;
+﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Shop.Application.Customers.Commands.CreateCustomer;
 using Shop.Application.Customers.Commands.DeleteCustomer;
