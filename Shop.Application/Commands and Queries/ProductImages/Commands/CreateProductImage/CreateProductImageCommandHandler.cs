@@ -19,7 +19,7 @@ namespace Shop.Application.ProductImages.Commands.CreateProductImage
             {                
                 Image = request.Image,
                 SortOrder = request.SortOrder,
-                Product = null
+                Product = _dbContext.Product.Find(request.ProductId)
             };
             await _dbContext.ProductImage.AddAsync(productImage, cancellationToken);
             await _dbContext.SaveChangesAsync(cancellationToken);

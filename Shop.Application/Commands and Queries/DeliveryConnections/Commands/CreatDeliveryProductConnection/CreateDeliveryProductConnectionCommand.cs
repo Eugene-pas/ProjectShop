@@ -6,16 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shop.Application.ProductImages.Commands.CreateProductImage
+namespace Shop.Application.Commands_and_Queries.DeliveryConnections
 {
-    public class CreateProductImageCommand 
+    public class CreateDeliveryProductConnectionCommand
         : IRequest<long>
     {       
-        public string Image { get; set; }
-        public int? SortOrder { get; set; }
+        public long DeliveryId { get; set; }
         public long ProductId { get; set; }
-
-        public virtual Product Product { get; set; }
-
     }
 }
