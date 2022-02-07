@@ -13,8 +13,7 @@ namespace DemoApi
         {
             var host = CreateHostBuilder(args).Build();
             using (var scope = host.Services.CreateScope())
-            {
-                // інціалізація БД
+            {               
                 var serviceProvider = scope.ServiceProvider;
                 try
                 {

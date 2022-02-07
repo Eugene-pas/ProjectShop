@@ -18,9 +18,9 @@ namespace Shop.Application.Commands_and_Queries.Orders.Commands.DeleteOrder
         public DeleteOredrQueryValidator(IDataBaseContext dbContext)
         {
             _dbContext = dbContext;
-            RuleFor(createOredrQuery =>
-            createOredrQuery.Id).NotEmpty().NotEqual(0)
-                .WithMessage("The schoolId value must not equal to 0")
+            RuleFor(deleteOredrQuery =>
+            deleteOredrQuery.Id).NotEmpty().NotEqual(0)
+                .WithMessage("The Id value must not equal to 0")
                 .MustAsync(Exist)
                 .WithMessage("The specified OredrId doesn't exist.");
 

@@ -24,12 +24,12 @@ namespace Shop.Application.Commands_and_Queries.Orders.Commands.CreateOrder
             createOredrQuery.Adress).NotEmpty().MaximumLength(250);
             RuleFor(createOredrQuery =>
             createOredrQuery.CustomerId).NotEqual(0)
-                .WithMessage("The schoolId value must not equal to 0")
+                .WithMessage("The CustomerId value must not equal to 0")
                 .MustAsync(CustomerExist)
                 .WithMessage("The specified CustomerId doesn't exist.");
             RuleFor(createOredrQuery =>
            createOredrQuery.DeliveryId).NotEqual(0)
-               .WithMessage("The schoolId value must not equal to 0")
+               .WithMessage("The DeliveryId value must not equal to 0")
                .MustAsync(DeliveryExist)
                .WithMessage("The specified DeliveryId doesn't exist.");
 
