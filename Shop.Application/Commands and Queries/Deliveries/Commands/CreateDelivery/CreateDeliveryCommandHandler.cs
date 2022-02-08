@@ -1,18 +1,23 @@
-﻿using MediatR;
+﻿using AutoMapper;
+using MediatR;
+using Shop.Application.Commands_and_Queries.Deliveries;
 using Shop.Application.Customers.Commands;
 using Shop.Domain.Entities;
-using System;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Shop.Application.Deliveries.Commands.CreateDelivery
 {
     public class CreateDeliveryCommandHandler
-        : HandlersBase, IRequestHandler<CreateDeliveryCommand, long>
+        : HandlersBase, IRequestHandler<CreateDeliveryCommand, DeliveryVm>
     {
-        public CreateDeliveryCommandHandler(IDataBaseContext dbContext) : base(dbContext) { }
-        
-        public async Task<long> Handle(CreateDeliveryCommand request, CancellationToken cancellationToken)
+        private readonly IMapper _mapper;
+
+        public CreateDeliveryCommandHandler(IDataBaseContext dbContext, IMapper mapper) : base(dbContext) 
+            => _mapper = mapper;
+
+
+        public async Task<DeliveryVm> Handle(CreateDeliveryCommand request, CancellationToken cancellationToken)
         {
             var delivery = new Delivery
             {
@@ -22,7 +27,7 @@ namespace Shop.Application.Deliveries.Commands.CreateDelivery
             };
             await _dbContext.Delivery.AddAsync(delivery, cancellationToken);
             await _dbContext.SaveChangesAsync(cancellationToken);
-            return delivery.Id;
+            return _mapper.Map<DeliveryVm>(delivery);
         }
     }
 }

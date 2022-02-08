@@ -1,9 +1,5 @@
 ﻿using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Shop.Application.Commands_and_Queries.Deliveries;
 
 namespace Shop.Application.Deliveries.Queries.GetDelivery
 {

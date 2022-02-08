@@ -1,21 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using AutoMapper;
+using MediatR;
+using Shop.Application.Commands_and_Queries.Products;
+using Shop.Domain.Entities;
 using System.Threading;
 using System.Threading.Tasks;
-using MediatR;
-using Shop.Domain.Entities;
 
 namespace Shop.Application.Products.Commands.CreateProduct
 {
     public class CreateProductCommandHandler 
-        : IRequestHandler<CreateProductCommand, long>
+        : IRequestHandler<CreateProductCommand, ProductVm>
     {
+        private readonly IMapper _mapper;
+        public CreateProductCommandHandler(IDataBaseContext dbContext, IMapper mapper) =>
+            (_dbContext, _mapper) = (dbContext, mapper);
+
         private readonly IDataBaseContext _dbContext;
         public CreateProductCommandHandler(IDataBaseContext dbContext) =>
             _dbContext = dbContext;
-        public async Task<long> Handle(CreateProductCommand request,
+        public async Task<ProductVm> Handle(CreateProductCommand request,
             CancellationToken cancellationToken)
         {
             var product = new Product
@@ -29,7 +31,7 @@ namespace Shop.Application.Products.Commands.CreateProduct
 
             await _dbContext.Product.AddAsync(product, cancellationToken);
             await _dbContext.SaveChangesAsync(cancellationToken);
-            return product.Id;
+            return _mapper.Map<ProductVm>(product);
         }
     }
 }

@@ -1,8 +1,9 @@
 ﻿using MediatR;
+using Shop.Application.Commands_and_Queries.Products;
 
 namespace Shop.Application.Products.Commands.CreateProduct
 {
-    public class CreateProductCommand : IRequest<long>
+    public class CreateProductCommand : IRequest<ProductVm>
     {
         public string Name { get; set; }
         public decimal Price { get; set; }

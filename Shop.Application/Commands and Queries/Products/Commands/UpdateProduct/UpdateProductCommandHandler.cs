@@ -1,5 +1,7 @@
-﻿using MediatR;
+﻿using AutoMapper;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Shop.Application.Commands_and_Queries.Products;
 using Shop.Application.Exceptions;
 using Shop.Domain.Entities;
 using System;
@@ -12,12 +14,17 @@ using System.Threading.Tasks;
 namespace Shop.Application.Products.Commands.UpdateProduct
 {
     public class UpdateProductCommandHandler
-        : IRequestHandler<UpdateProductCommand>
+        : IRequestHandler<UpdateProductCommand, ProductVm>
     {
+        private readonly IMapper _mapper;
+        public UpdateProductCommandHandler(IDataBaseContext dbContext, IMapper mapper) =>
+            (_dbContext, _mapper) = (dbContext, mapper);
+
+
         private readonly IDataBaseContext _dbContext;
         public UpdateProductCommandHandler(IDataBaseContext dbContext) =>
             _dbContext = dbContext;
-        public async Task<Unit> Handle(UpdateProductCommand request, CancellationToken cancellationToken)
+        public async Task<ProductVm> Handle(UpdateProductCommand request, CancellationToken cancellationToken)
         {
             var product = await _dbContext.Product
                 .FirstOrDefaultAsync(product =>
@@ -33,7 +40,7 @@ namespace Shop.Application.Products.Commands.UpdateProduct
 
             await _dbContext.SaveChangesAsync(cancellationToken);
 
-            return Unit.Value;
+            return _mapper.Map<ProductVm>(product);
         }
     }
 }

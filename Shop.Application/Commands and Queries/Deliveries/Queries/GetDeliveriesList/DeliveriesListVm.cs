@@ -1,4 +1,5 @@
-﻿using Shop.Application.Deliveries.Queries.GetDelivery;
+﻿using Shop.Application.Commands_and_Queries.Deliveries;
+using Shop.Application.Deliveries.Queries.GetDelivery;
 using System;
 using System.Collections.Generic;
 using System.Linq;

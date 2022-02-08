@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Shop.Application.Commands_and_Queries.Deliveries;
 using Shop.Application.Deliveries.Commands.CreateDelivery;
 using Shop.Application.Deliveries.Commands.DeleteDelivery;
 using Shop.Application.Deliveries.Commands.UpdateDelivery;
@@ -16,7 +17,7 @@ namespace DemoApi.Controllers
         public DeliveryController(IMediator mediator) : base(mediator) { }
 
         [HttpPost("create")]
-        public async Task<long> Create(string Name)
+        public async Task<DeliveryVm> Create(string Name)
         {
             return await _mediator.Send(
                 new CreateDeliveryCommand
@@ -32,14 +33,13 @@ namespace DemoApi.Controllers
         }
 
         [HttpPost("update")]
-        public async Task<Unit> Update(long id, string name)
+        public async Task<DeliveryVm> Update(long id, string name)
         {
-            await _mediator.Send(new UpdateDeliveryCommand
+            return await _mediator.Send(new UpdateDeliveryCommand
             {
                 Id = id,
                 Name = name
             });
-            return Unit.Value;
         }
 
         [HttpGet("get/{id}")]

@@ -1,25 +1,23 @@
-﻿using MediatR;
+﻿using AutoMapper;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Shop.Application.Commands_and_Queries.Deliveries;
 using Shop.Application.Customers.Commands;
 using Shop.Application.Exceptions;
 using Shop.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Shop.Application.Deliveries.Commands.UpdateDelivery
 {
     public class UpdateDeliveryCommandHandler
-        : HandlersBase, IRequestHandler<UpdateDeliveryCommand>
+        : HandlersBase, IRequestHandler<UpdateDeliveryCommand, DeliveryVm>
     {
-        public UpdateDeliveryCommandHandler(IDataBaseContext dbContext) : base(dbContext)
-        {
-        }
+        private readonly IMapper _mapper;
+        public UpdateDeliveryCommandHandler(IDataBaseContext dbContext, IMapper mapper) : base(dbContext)
+         => _mapper = mapper;
 
-        public async Task<Unit> Handle(UpdateDeliveryCommand request, CancellationToken cancellationToken)
+        public async Task<DeliveryVm> Handle(UpdateDeliveryCommand request, CancellationToken cancellationToken)
         {
             var delivery = await _dbContext.Delivery
                 .FirstOrDefaultAsync(delivery =>
@@ -31,7 +29,7 @@ namespace Shop.Application.Deliveries.Commands.UpdateDelivery
 
             await _dbContext.SaveChangesAsync(cancellationToken);
 
-            return Unit.Value;
+            return _mapper.Map<DeliveryVm>(delivery);
         }
     }
 }

@@ -2,7 +2,7 @@
 using Shop.Application.Common.Mappings;
 using Shop.Domain.Entities;
 
-namespace Shop.Application.Products.Queries.GetProduct
+namespace Shop.Application.Commands_and_Queries.Products
 {
     public class ProductVm : IMapWith<Product>
     {

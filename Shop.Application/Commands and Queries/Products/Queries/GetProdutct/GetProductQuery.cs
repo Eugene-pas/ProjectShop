@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Shop.Application.Commands_and_Queries.Products;
 
 namespace Shop.Application.Products.Queries.GetProduct
 {

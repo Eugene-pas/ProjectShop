@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Shop.Domain.Entities;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Shop.Application.Exceptions;
+using Shop.Application.Commands_and_Queries.Products;
 
 namespace Shop.Application.Products.Queries.GetProduct
 {

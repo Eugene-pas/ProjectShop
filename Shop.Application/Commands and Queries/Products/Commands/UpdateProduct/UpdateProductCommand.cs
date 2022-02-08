@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Shop.Application.Commands_and_Queries.Products;
 using Shop.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Shop.Application.Products.Commands.UpdateProduct
 {
-    public class UpdateProductCommand : IRequest
+    public class UpdateProductCommand : IRequest<ProductVm>
     {
         public long Id { get; set; }
         public string Name { get; set; }
