@@ -17,7 +17,7 @@ namespace DemoApi.Controllers
         public OrderController(IMediator mediator) : base(mediator) { }
 
         [HttpPost("create")]
-        public async Task<long> CreateOrder([FromBody] CreatOrderModel order)
+        public async Task<long> CreateOrder([FromBody] CreateOrderModel order)
         {          
             return await _mediator.Send(
                 new CreateOrderCommand

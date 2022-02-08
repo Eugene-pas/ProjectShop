@@ -14,8 +14,9 @@ namespace Shop.Domain.Entities
             this.Product = new HashSet<Product>();
         }
         public string Name { get; set; }
-    
-        public virtual Category ParentCategory { get; set; }
-        public virtual ICollection<Product> Product { get; set; }
+        public long parentId { get; set; }
+
+       // public virtual Category ParentCategory { get; set; }
+        public virtual ICollection<Product>? Product { get; set; }
     }
 }

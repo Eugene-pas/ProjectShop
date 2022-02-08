@@ -11,12 +11,12 @@ using System.Threading.Tasks;
 
 namespace Shop.Application.Commands_and_Queries.Orders.Commands.CreateOrder
 {
-    public class CreateOredrQueryValidator           
+    public class CreateOrderQueryValidator           
         : AbstractValidator<CreateOrderCommand>
     {
         private readonly IDataBaseContext _dbContext;
         
-        public CreateOredrQueryValidator(IDataBaseContext dbContext)
+        public CreateOrderQueryValidator(IDataBaseContext dbContext)
         {
             _dbContext = dbContext;
 
