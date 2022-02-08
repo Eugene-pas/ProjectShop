@@ -7,6 +7,14 @@ using Shop.Application.ProductImages.Commands.DeleteProductImage;
 using Shop.Application.ProductImages.Commands.UpdateProductImage;
 using Shop.Application.ProductImages.Queries.GetProducImagesList;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using System.IO;
+using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
+using DemoApi.FileSrvice;
+using System;
+using System.Linq;
 
 namespace DemoApi.Controllers
 {
@@ -14,7 +22,48 @@ namespace DemoApi.Controllers
     [ApiController]
     public class ProductImageController : BaseController
     {
-        public ProductImageController(IMediator mediator) : base(mediator) { }
+        private readonly IFileService _fileService;
+        public ProductImageController(IMediator mediator, IFileService fileService) : base(mediator) 
+        { 
+            _fileService = fileService;
+        }
+
+        #region Upload  
+        [HttpPost(nameof(Upload))]
+        public IActionResult Upload([Required] List<IFormFile> formFiles)
+        {
+            string subDirectory = @"C:\Users\" + Environment.UserName + "\\Download\\ShopImage";
+            try
+            {
+                _fileService.UploadFile(formFiles, subDirectory);
+
+                return Ok(new { formFiles.Count, Size = _fileService.SizeConverter(formFiles.Sum(f => f.Length)) });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        #endregion
+
+        #region Download File  
+        [HttpGet(nameof(Download))]
+        public IActionResult Download([Required] string subDirectory)
+        {
+
+            try
+            {
+                var (fileType, archiveData, archiveName) = _fileService.DownloadFiles(subDirectory);
+
+                return File(archiveData, fileType, archiveName);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+        }
+        #endregion
 
         [HttpPost("create")]
         public async Task<ActionResult<long>> CreateProductImage([FromBody] ProductImageModel customer)

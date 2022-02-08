@@ -16,9 +16,10 @@ namespace Shop.Application.Commands_and_Queries.OrderProductConnections.Queries.
         public GetOrderProductConnectionsListQueryHandler(IDataBaseContext dbContext, IMapper mapper) =>
             (_dbContext, _mapper) = (dbContext, mapper);
 
-        public async Task<OrderProductConnectionListVm> Handle(GetOrderProductConnectionsListQuery request, CancellationToken cancellationToken)
+        public async Task<OrderProductConnectionListVm> Handle(GetOrderProductConnectionsListQuery request,
+            CancellationToken cancellationToken)
         {
-            var orderProductConnection = await _dbContext.Order
+            var orderProductConnection = await _dbContext.OrderProductConnection
                 .ProjectTo<OrderProductConnectionLookupDto>(_mapper.ConfigurationProvider)
                 .ToListAsync(cancellationToken);
 

@@ -1,3 +1,4 @@
+using DemoApi.FileSrvice;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -43,7 +44,8 @@ namespace DemoApi
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Shop", Version = "v1" });
-            });            
+            });
+            services.AddTransient<IFileService, FileService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

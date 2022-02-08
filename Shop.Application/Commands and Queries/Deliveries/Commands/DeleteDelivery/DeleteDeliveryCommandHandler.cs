@@ -17,7 +17,7 @@ namespace Shop.Application.Deliveries.Commands.DeleteDelivery
             var delivery = await _dbContext.Delivery
                 .FindAsync(new object[] { request.Id }, cancellationToken);
 
-            _ = delivery ?? throw new NotFoundException(nameof(Delivery), delivery.Id);
+            _ = delivery ?? throw new NotFoundException(nameof(DeleteDeliveryCommand), request.Id);
             _dbContext.Delivery.Remove(delivery);
             await _dbContext.SaveChangesAsync(cancellationToken);
             return Unit.Value;
