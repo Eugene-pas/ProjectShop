@@ -26,7 +26,7 @@ namespace Shop.Application.Categories.Commands.UpdateCategories
             _ = category ?? throw new NotFoundException(nameof(Category), category.Id);
 
             category.Name = request.Name;
-            category.parentId = request.parentId;
+            category.ParentCategory = _dbContext.Category.Find(request.ParentId);
 
         await _dbContext.SaveChangesAsync(cancellationToken);
 

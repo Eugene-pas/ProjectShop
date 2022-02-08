@@ -26,7 +26,7 @@ namespace DemoApi.Controllers
             new CreateCategoryCommand
             {
                 Name = name,
-                parentId = parentId
+                ParentId = parentId
             });
         }
 
@@ -48,7 +48,7 @@ namespace DemoApi.Controllers
             return await _mediator.Send(new UpdateCategoryCommand
             {
                 Name = name,
-                parentId = parentId
+                ParentId = parentId
             });
         }
 

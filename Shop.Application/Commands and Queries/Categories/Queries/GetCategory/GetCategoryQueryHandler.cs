@@ -24,7 +24,7 @@ namespace Shop.Application.Categories.Commands.Queries.GetCategory
         public async Task<CategoryVm> Handle(GetCategoryQuery request,
             CancellationToken cancellationToken)
         {
-            var category = await _dbContext.Customer
+            var category = await _dbContext.Category
                 .FirstOrDefaultAsync(category =>
                 category.Id == request.Id, cancellationToken);
 

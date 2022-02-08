@@ -13,6 +13,6 @@ namespace Shop.Application.Categories.Commands.CreateCategories
     {
         public long Id { get; set; }
         public string Name { get; set; }
-        public long parentId { get; set; }
+        public long ParentId { get; set; }
     }
 }

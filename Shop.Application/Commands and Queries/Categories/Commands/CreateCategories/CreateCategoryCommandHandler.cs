@@ -3,7 +3,6 @@ using Shop.Domain.Entities;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Linq;
 using Microsoft.EntityFrameworkCore;
 
 namespace Shop.Application.Categories.Commands.CreateCategories
@@ -21,7 +20,7 @@ namespace Shop.Application.Categories.Commands.CreateCategories
             var category = new Category 
             {                
                 Name = request.Name,
-                parentId = _dbContext.Category.FirstAsync(x => x.Id == request.parentId)
+                ParentCategory = _dbContext.Category.Find(request.ParentId)
             };
             await _dbContext.Category.AddAsync(category, cancellationToken);
             await _dbContext.SaveChangesAsync(cancellationToken);
