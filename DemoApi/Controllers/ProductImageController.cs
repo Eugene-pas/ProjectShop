@@ -34,7 +34,7 @@ namespace DemoApi.Controllers
         [HttpPost(nameof(Upload))]
         public IActionResult Upload([Required] List<IFormFile> formFiles)
         {
-            string subDirectory = new KnownFolder(KnownFolderType.Downloads).Path;
+            string subDirectory = new KnownFolder(KnownFolderType.Downloads).Path + @"\ShopImage";
             try
             {
                 _fileService.UploadFile(formFiles, subDirectory);
@@ -50,9 +50,11 @@ namespace DemoApi.Controllers
 
         #region Download File  
         [HttpGet(nameof(Download))]
-        public IActionResult Download([Required] string subDirectory)
+        public IActionResult Download()
         {
-
+            if(Directory.Exists(new KnownFolder(KnownFolderType.Downloads).Path + @"\ShopImage"))
+            Directory.CreateDirectory(new KnownFolder(KnownFolderType.Downloads).Path + @"\ShopImage");
+            string subDirectory = new KnownFolder(KnownFolderType.Downloads).Path + @"\ShopImage";
             try
             {
                 var (fileType, archiveData, archiveName) = _fileService.DownloadFiles(subDirectory);
