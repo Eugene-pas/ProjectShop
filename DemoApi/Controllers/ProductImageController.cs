@@ -15,6 +15,8 @@ using System.Collections.Generic;
 using DemoApi.FileSrvice;
 using System;
 using System.Linq;
+using Syroot.Windows.IO;
+
 
 namespace DemoApi.Controllers
 {
@@ -32,7 +34,7 @@ namespace DemoApi.Controllers
         [HttpPost(nameof(Upload))]
         public IActionResult Upload([Required] List<IFormFile> formFiles)
         {
-            string subDirectory = @"C:\Users\" + Environment.UserName + "\\Download\\ShopImage";
+            string subDirectory = new KnownFolder(KnownFolderType.Downloads).Path;
             try
             {
                 _fileService.UploadFile(formFiles, subDirectory);

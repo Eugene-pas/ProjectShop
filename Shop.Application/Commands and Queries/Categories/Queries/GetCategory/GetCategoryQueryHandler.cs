@@ -25,6 +25,9 @@ namespace Shop.Application.Categories.Commands.Queries.GetCategory
             CancellationToken cancellationToken)
         {
             var category = await _dbContext.Category
+                .Include(x => x.ParentCategory)
+                .Include(x => x.ParentCategory.ParentCategory)
+                .Include(x => x.ParentCategory.ParentCategory.ParentCategory)
                 .FirstOrDefaultAsync(category =>
                 category.Id == request.Id, cancellationToken);
 
