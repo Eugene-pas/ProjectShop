@@ -1,21 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
+using AutoMapper;
 using MediatR;
+using Shop.Application.Sellers.Queries.GetSeller;
+using Shop.Application.Common;
 using Shop.Domain.Entities;
 
 namespace Shop.Application.Sellers.Commands.CreateSeller
 {
     public class CreateSellerCommandHandler 
-        : IRequestHandler<CreateSellerCommand, long>
+        : HandlersBase, IRequestHandler<CreateSellerCommand, SellerVm>
     {
-        private readonly IDataBaseContext _dbContext;
-        public CreateSellerCommandHandler(IDataBaseContext dbContext) =>
-            _dbContext = dbContext;
-        public async Task<long> Handle(CreateSellerCommand request,
+        public CreateSellerCommandHandler(IDataBaseContext dbContext, IMapper mapper)
+            : base(dbContext, mapper) { }
+
+        public async Task<SellerVm> Handle(CreateSellerCommand request,
             CancellationToken cancellationToken)
         {
             var seller = new Seller
@@ -28,7 +27,7 @@ namespace Shop.Application.Sellers.Commands.CreateSeller
 
             await _dbContext.Seller.AddAsync(seller, cancellationToken);
             await _dbContext.SaveChangesAsync(cancellationToken);
-            return seller.Id;
+            return _mapper.Map<SellerVm>(seller);
         }
     }
 }

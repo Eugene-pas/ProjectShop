@@ -1,9 +1,10 @@
 ﻿using MediatR;
+using Shop.Application.Sellers.Queries.GetSeller;
 using System;
 
 namespace Shop.Application.Sellers.Commands.DeleteSeller
 {
-    public class DeleteSellerCommand : IRequest
+    public class DeleteSellerCommand : IRequest<SellerVm>
     {
         public long Id { get; set; }
         public string Name { get; set; }

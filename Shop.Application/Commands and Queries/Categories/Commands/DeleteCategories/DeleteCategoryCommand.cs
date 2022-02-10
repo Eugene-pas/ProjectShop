@@ -1,14 +1,10 @@
 ﻿using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Shop.Application.Categories.Commands.Queries.GetCategory;
 
 namespace Shop.Application.Categories.Commands.DeleteCategories
 {
     public class DeleteCategoryCommand
-        : IRequest<Unit>
+        : IRequest<CategoryVm>
     {
         public long Id { get; set; }
     }

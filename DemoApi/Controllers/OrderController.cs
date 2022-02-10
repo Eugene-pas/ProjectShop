@@ -17,7 +17,7 @@ namespace DemoApi.Controllers
         public OrderController(IMediator mediator) : base(mediator) { }
 
         [HttpPost("create")]
-        public async Task<ActionResult<long>> CreateOrder([FromBody] CreateOrderModel order)
+        public async Task<ActionResult<OrderVm>> CreateOrder([FromBody] CreateOrderModel order)
         {
             return await _mediator.Send(
             new CreateOrderCommand
@@ -29,13 +29,13 @@ namespace DemoApi.Controllers
         }
 
         [HttpDelete("delete")]
-        public async Task<ActionResult<Unit>> Delete(long id)
+        public async Task<ActionResult<OrderVm>> Delete(long id)
         {
             return await _mediator.Send(new DeleteOrderCommand { Id = id });
         }
 
         [HttpPut("update")]
-        public async Task<ActionResult<Unit>> UpdateOrder([FromBody] UpdateOrderModel order)
+        public async Task<ActionResult<OrderVm>> UpdateOrder([FromBody] UpdateOrderModel order)
         {
             return await _mediator.Send(
             new UpdateOrderCommand

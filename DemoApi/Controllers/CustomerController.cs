@@ -16,7 +16,7 @@ namespace DemoApi.Controllers
         public CustomerController(IMediator mediator) : base(mediator) { }
             
         [HttpPost("create")]
-        public async Task<long> Create(string name, string email, string phone)
+        public async Task<CustomerVm> Create(string name, string email, string phone)
         {
            return await _mediator.Send(
                new CreateCustomerCommand
@@ -28,13 +28,13 @@ namespace DemoApi.Controllers
         } 
         
         [HttpDelete("delete")]
-        public async Task<Unit> Delete(long id)
+        public async Task<CustomerVm> Delete(long id)
         {
             return await _mediator.Send(new DeleteCustomerCommand { Id = id });
         }
 
         [HttpPost("update")]
-        public async Task<Unit> Update(long id, string name, string email, string phone)
+        public async Task<CustomerVm> Update(long id, string name, string email, string phone)
         {
             return await _mediator.Send(new UpdateCustomerCommand
             {

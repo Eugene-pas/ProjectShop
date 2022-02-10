@@ -4,19 +4,15 @@ using Shop.Application.Commands_and_Queries.Products;
 using Shop.Domain.Entities;
 using System.Threading;
 using System.Threading.Tasks;
+using Shop.Application.Common;
 
 namespace Shop.Application.Products.Commands.CreateProduct
 {
     public class CreateProductCommandHandler 
-        : IRequestHandler<CreateProductCommand, ProductVm>
+        : HandlersBase, IRequestHandler<CreateProductCommand, ProductVm>
     {
-        private readonly IMapper _mapper;
-        public CreateProductCommandHandler(IDataBaseContext dbContext, IMapper mapper) =>
-            (_dbContext, _mapper) = (dbContext, mapper);
-
-        private readonly IDataBaseContext _dbContext;
-        public CreateProductCommandHandler(IDataBaseContext dbContext) =>
-            _dbContext = dbContext;
+        public CreateProductCommandHandler(IDataBaseContext dbContext, IMapper mapper)
+            : base(dbContext, mapper) { }
         public async Task<ProductVm> Handle(CreateProductCommand request,
             CancellationToken cancellationToken)
         {

@@ -1,23 +1,23 @@
-﻿using MediatR;
-using Microsoft.EntityFrameworkCore;
-using Shop.Application.Exceptions;
-using Shop.Domain.Entities;
+﻿using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using AutoMapper;
+using MediatR;
+using Shop.Application.Orders.Queries.GetAllOrder;
+using Shop.Application.Exceptions;
+using Shop.Application.Common;
+using Shop.Domain.Entities;
 
 namespace Shop.Application.Orders.Commands.UpdateOrder
 {
     public class UpdateOrderCommandHandler
-        : IRequestHandler<UpdateOrderCommand>
+        : HandlersBase, IRequestHandler<UpdateOrderCommand, OrderVm>
     {
-        private readonly IDataBaseContext _dbContext;
-        public UpdateOrderCommandHandler(IDataBaseContext dbContext) =>
-            _dbContext = dbContext;
-        public async Task<Unit> Handle(UpdateOrderCommand request, CancellationToken cancellationToken)
+        public UpdateOrderCommandHandler(IDataBaseContext dbContext, IMapper mapper)
+            : base(dbContext, mapper) { }
+
+        public async Task<OrderVm> Handle(UpdateOrderCommand request, CancellationToken cancellationToken)
         {
             var order = await _dbContext.Order
                 .FirstOrDefaultAsync(order =>
@@ -32,7 +32,7 @@ namespace Shop.Application.Orders.Commands.UpdateOrder
 
             await _dbContext.SaveChangesAsync(cancellationToken);
 
-            return Unit.Value;
+            return _mapper.Map<OrderVm>(order);
         }
     }
 }

@@ -1,19 +1,22 @@
-﻿using MediatR;
-using Microsoft.EntityFrameworkCore;
-using Shop.Application.Exceptions;
-using Shop.Domain.Entities;
+﻿using Microsoft.EntityFrameworkCore;
 using System.Threading;
 using System.Threading.Tasks;
+using AutoMapper;
+using MediatR;
+using Shop.Application.Customers.Queries.GetCustomer;
+using Shop.Application.Exceptions;
+using Shop.Application.Common;
+using Shop.Domain.Entities;
 
 namespace Shop.Application.Customers.Commands.UpdateCustomer
 {
     public class UpdateCustomerCommandHandler
-        : IRequestHandler<UpdateCustomerCommand>
+        : HandlersBase, IRequestHandler<UpdateCustomerCommand, CustomerVm>
     {
-        private readonly IDataBaseContext _dbContext;
-        public UpdateCustomerCommandHandler(IDataBaseContext dbContext) =>
-            _dbContext = dbContext;
-        public async Task<Unit> Handle(UpdateCustomerCommand request, CancellationToken cancellationToken)
+        public UpdateCustomerCommandHandler(IDataBaseContext dbContext, IMapper mapper)
+            : base(dbContext, mapper) { }
+
+        public async Task<CustomerVm> Handle(UpdateCustomerCommand request, CancellationToken cancellationToken)
         {
             var customer = await _dbContext.Customer
                 .FirstOrDefaultAsync(customer => 
@@ -27,7 +30,7 @@ namespace Shop.Application.Customers.Commands.UpdateCustomer
 
             await _dbContext.SaveChangesAsync(cancellationToken);
 
-            return Unit.Value;
+            return _mapper.Map<CustomerVm>(customer);
         }
     }
 }

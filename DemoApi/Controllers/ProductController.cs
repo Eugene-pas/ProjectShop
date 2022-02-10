@@ -31,7 +31,7 @@ namespace DemoApi.Controllers
             });
         }
         [HttpDelete("delete/{id}")]
-        public async Task<Unit> Delete(long id)
+        public async Task<ProductVm> Delete(long id)
         {
             return await _mediator.Send(new DeleteProductCommand { Id = id });
         }

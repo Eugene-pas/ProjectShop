@@ -1,10 +1,7 @@
 ﻿using MediatR;
-using Shop.Application.Customers.Commands;
+using AutoMapper;
+using Shop.Application.Common;
 using Shop.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -13,7 +10,9 @@ namespace Shop.Application.Commands_and_Queries.DeliveryConnections.Commands.Cre
     public class CreateDeliveryProductConnectionCommandHandler
         : HandlersBase, IRequestHandler<CreateDeliveryProductConnectionCommand, long>
     {
-        public CreateDeliveryProductConnectionCommandHandler(IDataBaseContext dbContext) : base(dbContext) { }
+        public CreateDeliveryProductConnectionCommandHandler(IDataBaseContext dbContext, IMapper mapper)
+             : base(dbContext, mapper) { }
+
         public async Task<long> Handle(CreateDeliveryProductConnectionCommand request, CancellationToken cancellationToken)
         {
             var conection = new DeliveryProductConnection

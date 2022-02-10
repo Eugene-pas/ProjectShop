@@ -2,7 +2,7 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Shop.Application.Commands_and_Queries.Deliveries;
-using Shop.Application.Customers.Commands;
+using Shop.Application.Common;
 using Shop.Application.Exceptions;
 using Shop.Domain.Entities;
 using System.Threading;
@@ -13,9 +13,8 @@ namespace Shop.Application.Deliveries.Commands.UpdateDelivery
     public class UpdateDeliveryCommandHandler
         : HandlersBase, IRequestHandler<UpdateDeliveryCommand, DeliveryVm>
     {
-        private readonly IMapper _mapper;
-        public UpdateDeliveryCommandHandler(IDataBaseContext dbContext, IMapper mapper) : base(dbContext)
-         => _mapper = mapper;
+        public UpdateDeliveryCommandHandler(IDataBaseContext dbContext, IMapper mapper)
+            : base(dbContext, mapper) { }
 
         public async Task<DeliveryVm> Handle(UpdateDeliveryCommand request, CancellationToken cancellationToken)
         {

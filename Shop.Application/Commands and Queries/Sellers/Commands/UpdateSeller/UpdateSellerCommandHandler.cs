@@ -1,27 +1,26 @@
-﻿using MediatR;
-using Microsoft.EntityFrameworkCore;
-using Shop.Application.Exceptions;
-using Shop.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Microsoft.EntityFrameworkCore;
 using System.Threading;
 using System.Threading.Tasks;
+using AutoMapper;
+using MediatR;
+using Shop.Application.Sellers.Queries.GetSeller;
+using Shop.Application.Exceptions;
+using Shop.Application.Common;
+using Shop.Domain.Entities;
 
 namespace Shop.Application.Sellers.Commands.UpdateSeller
 {
-    public class UpdateProductCommandHandler
-        : IRequestHandler<UpdateSellerCommand>
+    public class UpdateSellerCommandHandler
+        : HandlersBase, IRequestHandler<UpdateSellerCommand, SellerVm>
     {
-        private readonly IDataBaseContext _dbContext;
-        public UpdateProductCommandHandler(IDataBaseContext dbContext) =>
-            _dbContext = dbContext;
-        public async Task<Unit> Handle(UpdateSellerCommand request, CancellationToken cancellationToken)
+        public UpdateSellerCommandHandler(IDataBaseContext dbContext, IMapper mapper)
+            : base(dbContext, mapper) { }
+
+        public async Task<SellerVm> Handle(UpdateSellerCommand request, CancellationToken cancellationToken)
         {
             var seller = await _dbContext.Seller
                 .FirstOrDefaultAsync(seller =>
-            seller.Id == request.Id, cancellationToken);
+                seller.Id == request.Id, cancellationToken);
 
             _ = seller ?? throw new NotFoundException(nameof(Seller), seller.Id);
 
@@ -31,7 +30,7 @@ namespace Shop.Application.Sellers.Commands.UpdateSeller
 
             await _dbContext.SaveChangesAsync(cancellationToken);
 
-            return Unit.Value;
+            return _mapper.Map<SellerVm>(seller);
         }
     }
 }
