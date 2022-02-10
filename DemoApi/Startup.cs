@@ -1,4 +1,5 @@
 using DemoApi.FileSrvice;
+using DemoApi.Middleware;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -59,6 +60,7 @@ namespace DemoApi
 
             app.UseHttpsRedirection();
 
+            app.UseCustomExceptionHandler();
             app.UseRouting();
             app.UseHttpsRedirection();
             app.UseCors("AllowAll");
