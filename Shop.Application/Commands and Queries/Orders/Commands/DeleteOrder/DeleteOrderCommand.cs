@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using Shop.Application.Orders.Queries.GetAllOrder;
+using Shop.Application.Orders.Queries.GetOrder;
 
 namespace Shop.Application.Orders.Commands.DeleteOrder
 {

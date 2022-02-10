@@ -5,6 +5,7 @@ using Shop.Application.Commands_and_Queries.DeliveryConnections;
 using Shop.Application.Commands_and_Queries.DeliveryConnections.Commands.DeleteDeliveryProductConnection;
 using Shop.Application.Commands_and_Queries.DeliveryConnections.Commands.UpdateDeliveryProductConnection;
 using Shop.Application.Commands_and_Queries.DeliveryConnections.Queries.GetDeliveryProductConnectionsList;
+using Shop.Application.DeliveryConnections.Queries;
 using System.Threading.Tasks;
 
 namespace DemoApi.Controllers
@@ -17,7 +18,7 @@ namespace DemoApi.Controllers
 
         
         [HttpPost("create")]
-        public async Task<long> Create([FromBody] CreateDeliveryProductConnectionModel connection)
+        public async Task<DeliveryProductConnectionVm> Create([FromBody] CreateDeliveryProductConnectionModel connection)
         {
             return await _mediator.Send(new CreateDeliveryProductConnectionCommand
             {
@@ -28,20 +29,19 @@ namespace DemoApi.Controllers
         }
 
         [HttpDelete("delete/{id}")]
-        public async Task<Unit> Delete(long id)
+        public async Task<DeliveryProductConnectionVm> Delete(long id)
         {
             return await _mediator.Send(new DeleteDeliveryProductConnectionCommand { Id = id });
         }
         [HttpPost("update")]
-        public async Task<Unit> Update([FromBody] DeliveryProductConnectionModel connection)
+        public async Task<DeliveryProductConnectionVm> Update([FromBody] DeliveryProductConnectionModel connection)
         {
-            await _mediator.Send(new UpdateDeliveryProductConnectionCommand
+            return await _mediator.Send(new UpdateDeliveryProductConnectionCommand
             {
                 Id = connection.Id,
                 DeliveryId = connection.DeliveryId,
                 ProductId=connection.ProductId,
             });
-            return Unit.Value;
         }
 
         [HttpGet("getList")]

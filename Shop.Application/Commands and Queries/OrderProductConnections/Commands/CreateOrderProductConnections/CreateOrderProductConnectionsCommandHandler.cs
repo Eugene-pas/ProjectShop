@@ -1,29 +1,32 @@
-﻿using MediatR;
-using Shop.Domain.Entities;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
+using AutoMapper;
+using MediatR;
+using Shop.Application.Common;
+using Shop.Application.OrderProductConnections.Queries;
+using Shop.Domain.Entities;
 
 namespace Shop.Application.Commands_and_Queries.OrderProductConnections.Commands.CreateOrderProductConnections
 {
     public class CreateOrderProductConnectionsCommandHandler
-        : IRequestHandler<CreateOrderProductConnectionsCommand, long>
+        : HandlersBase, IRequestHandler<CreateOrderProductConnectionsCommand, OrderProductConnectionVm>
     {
-        private readonly IDataBaseContext _dbContext;
+        public CreateOrderProductConnectionsCommandHandler(IDataBaseContext dbContext, IMapper mapper)
+            : base(dbContext, mapper) { }
 
-        public CreateOrderProductConnectionsCommandHandler(IDataBaseContext dbContext) =>
-            _dbContext = dbContext;
-
-        public async Task<long> Handle(CreateOrderProductConnectionsCommand request, CancellationToken cancellationToken)
+        public async Task<OrderProductConnectionVm> Handle(CreateOrderProductConnectionsCommand request,
+            CancellationToken cancellationToken)
         {
             var connection = new OrderProductConnection
             {
                 Order = _dbContext.Order.Find(request.OrderId),
                 Product = _dbContext.Product.Find(request.ProductId)
             };
+
             await _dbContext.OrderProductConnection.AddAsync(connection, cancellationToken);
             await _dbContext.SaveChangesAsync(cancellationToken);
 
-            return connection.Id;
+            return _mapper.Map<OrderProductConnectionVm>(connection);
         }
     }
 }

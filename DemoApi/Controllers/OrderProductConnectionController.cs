@@ -4,6 +4,7 @@ using Shop.Application.Commands_and_Queries.OrderProductConnections.Commands.Cre
 using Shop.Application.Commands_and_Queries.OrderProductConnections.Commands.DeleteOrderProductConnections;
 using Shop.Application.Commands_and_Queries.OrderProductConnections.Commands.UpdateOrderProductConnections;
 using Shop.Application.Commands_and_Queries.OrderProductConnections.Queries.GetOrdersListProductConnections;
+using Shop.Application.OrderProductConnections.Queries;
 using System.Threading.Tasks;
 
 namespace DemoApi.Controllers
@@ -15,7 +16,7 @@ namespace DemoApi.Controllers
         public OrderProductConnectionController(IMediator mediator) : base(mediator) { }
 
         [HttpPost("create")]
-        public async Task<long> Create(long orderId, long productId)
+        public async Task<OrderProductConnectionVm> Create(long orderId, long productId)
         {
             return await _mediator.Send(
                 new CreateOrderProductConnectionsCommand
@@ -27,13 +28,13 @@ namespace DemoApi.Controllers
         }
 
         [HttpDelete("delete")]
-        public async Task<Unit> Delete(long id)
+        public async Task<OrderProductConnectionVm> Delete(long id)
         {
             return await _mediator.Send(new DeleteOrderProductConnectionsCommand { Id = id });
         }
 
         [HttpPost("update")]
-        public async Task<Unit> Update(long id, long productId, long orderId)
+        public async Task<OrderProductConnectionVm> Update(long id, long productId, long orderId)
         {
             return await _mediator.Send(new UpdateOrderProductConnectionsCommand
             {

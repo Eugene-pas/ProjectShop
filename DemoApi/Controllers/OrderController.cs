@@ -5,6 +5,7 @@ using Shop.Application.Orders.Commands.CreateOrder;
 using Shop.Application.Orders.Commands.DeleteOrder;
 using Shop.Application.Orders.Commands.UpdateOrder;
 using Shop.Application.Orders.Queries.GetAllOrder;
+using Shop.Application.Orders.Queries.GetOrder;
 using System;
 using System.Threading.Tasks;
 
@@ -17,7 +18,7 @@ namespace DemoApi.Controllers
         public OrderController(IMediator mediator) : base(mediator) { }
 
         [HttpPost("create")]
-        public async Task<ActionResult<OrderVm>> CreateOrder([FromBody] CreateOrderModel order)
+        public async Task<OrderVm> CreateOrder([FromBody] CreateOrderModel order)
         {
             return await _mediator.Send(
             new CreateOrderCommand
@@ -35,7 +36,7 @@ namespace DemoApi.Controllers
         }
 
         [HttpPut("update")]
-        public async Task<ActionResult<OrderVm>> UpdateOrder([FromBody] UpdateOrderModel order)
+        public async Task<OrderVm> UpdateOrder([FromBody] UpdateOrderModel order)
         {
             return await _mediator.Send(
             new UpdateOrderCommand
@@ -48,8 +49,14 @@ namespace DemoApi.Controllers
             });
         }
 
+        [HttpGet("get/{id}")]
+        public async Task<ActionResult<OrderVm>> Get(long id)
+        {
+            return await _mediator.Send(new GetOrderQuery { Id = id });
+        }
+
         [HttpGet("GetOrdersList")]
-        public async Task<ActionResult<OrderVm>> GetAllOrder()
+        public async Task<ActionResult<OrderListVm>> GetAllOrder()
         {
             return await _mediator.Send(new GetOrdersListQuery { });
         }

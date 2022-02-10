@@ -2,7 +2,7 @@
 using Shop.Domain.Entities;
 using System;
 using System.Collections.Generic;
-using Shop.Application.Orders.Queries.GetAllOrder;
+using Shop.Application.Orders.Queries.GetOrder;
 
 namespace Shop.Application.Orders.Commands.CreateOrder
 {

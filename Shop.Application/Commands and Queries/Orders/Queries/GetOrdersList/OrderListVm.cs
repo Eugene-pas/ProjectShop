@@ -2,7 +2,7 @@
 
 namespace Shop.Application.Orders.Queries.GetAllOrder
 {
-    public class OrderVm
+    public class OrderListVm
     {
         public IList<OrderLookupDto> Order { get; set;}
     }
