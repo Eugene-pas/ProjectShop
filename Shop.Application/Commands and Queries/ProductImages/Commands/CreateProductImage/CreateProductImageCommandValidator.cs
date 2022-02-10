@@ -19,12 +19,14 @@ namespace Shop.Application.Commands_and_Queries.ProductImages.Commands.CreatePro
         {
             _dbContext = dbContext;
             RuleFor(creatProductImageCommand =>
-            creatProductImageCommand.Image).NotEmpty().MaximumLength(250);
+            creatProductImageCommand.FormFiles.FileName).NotEmpty()
+            .Must(ExistValidFormat)
+            .WithMessage("Image format is not supported.");
             RuleFor(creatProductImageCommand =>
             creatProductImageCommand.SortOrder).NotEmpty();
             RuleFor(creatProductImageCommand =>
             creatProductImageCommand.ProductId).NotEmpty().NotEqual(0)
-                .WithMessage("The ProductId value must not equal to 0")
+                .WithMessage("The ProductId value must not equal to 0.")
                 .MustAsync(Exist)
                 .WithMessage("The specified ProductId doesn't exist.");
         }
@@ -32,6 +34,12 @@ namespace Shop.Application.Commands_and_Queries.ProductImages.Commands.CreatePro
         {
             return await _dbContext.Product
                 .AnyAsync(c => c.Id == Product);
+        }
+        public bool ExistValidFormat(string imageName)
+        {
+            string format = imageName.Split('.')[1];
+            List<string> formats = new List<string>() { "jpg", "png" };
+            return formats.Any(f => f == format);
         }
     }
 }

@@ -28,6 +28,7 @@ namespace Shop.Application.Categories.Commands.Queries.GetCategory
                 .Include(x => x.ParentCategory)
                 .Include(x => x.ParentCategory.ParentCategory)
                 .Include(x => x.ParentCategory.ParentCategory.ParentCategory)
+                .Include(x => x.ParentCategory.ParentCategory.ParentCategory.ParentCategory)
                 .FirstOrDefaultAsync(category =>
                 category.Id == request.Id, cancellationToken);
 

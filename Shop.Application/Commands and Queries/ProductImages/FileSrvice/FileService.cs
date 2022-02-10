@@ -22,8 +22,9 @@ namespace DemoApi.FileSrvice
         #endregion
 
         #region Upload File  
-        public void UploadFile(List<IFormFile> files, string subDirectory)
+        public void UploadFile(IFormFile file, string subDirectory)
         {
+            List<IFormFile> files = new List<IFormFile>() { file };
             subDirectory = subDirectory ?? string.Empty;
             var target = Path.Combine(_hostingEnvironment.ContentRootPath, subDirectory);
 
@@ -40,35 +41,7 @@ namespace DemoApi.FileSrvice
             });
         }
         #endregion
-
-        #region Download File  
-        public (string fileType, byte[] archiveData, string archiveName) DownloadFiles(string subDirectory)
-        {
-            var zipName = $"archive-{DateTime.Now.ToString("yyyy_MM_dd-HH_mm_ss")}.zip";
-
-            var files = Directory.GetFiles(Path.Combine(_hostingEnvironment.ContentRootPath, subDirectory)).ToList();
-
-            using (var memoryStream = new MemoryStream())
-            {
-                using (var archive = new ZipArchive(memoryStream, ZipArchiveMode.Create, true))
-                {
-                    files.ForEach(file =>
-                    {
-                        var theFile = archive.CreateEntry(file);
-                        using (var streamWriter = new StreamWriter(theFile.Open()))
-                        {
-                            streamWriter.Write(File.ReadAllText(file));
-                        }
-
-                    });
-                }
-
-                return ("application/zip", memoryStream.ToArray(), zipName);
-            }
-
-        }
-        #endregion
-
+       
         #region Size Converter  
         public string SizeConverter(long bytes)
         {

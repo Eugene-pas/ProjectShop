@@ -17,35 +17,35 @@ namespace DemoApi.Controllers
         public OrderController(IMediator mediator) : base(mediator) { }
 
         [HttpPost("create")]
-        public async Task<long> CreateOrder([FromBody] CreateOrderModel order)
-        {          
+        public async Task<ActionResult<long>> CreateOrder([FromBody] CreateOrderModel order)
+        {
             return await _mediator.Send(
-                new CreateOrderCommand
-                {
-                    Adress = order.Adress, 
-                    CustomerId = order.CustomerId,
-                    DeliveryId = order.DeliveryId
-                });
+            new CreateOrderCommand
+            {
+                Adress = order.Adress,
+                CustomerId = order.CustomerId,
+                DeliveryId = order.DeliveryId
+            });
         }
 
         [HttpDelete("delete")]
-        public async Task<Unit> Delete(long id)
+        public async Task<ActionResult<Unit>> Delete(long id)
         {
             return await _mediator.Send(new DeleteOrderCommand { Id = id });
         }
 
         [HttpPut("update")]
-        public async Task<Unit> UpdateOrder([FromBody] UpdateOrderModel order)
-        {               
+        public async Task<ActionResult<Unit>> UpdateOrder([FromBody] UpdateOrderModel order)
+        {
             return await _mediator.Send(
-                new UpdateOrderCommand
-                {
-                   Id = order.Id,
-                   Adress = order.Adress,
-                   CustomerId = order.CustomerId,
-                   DeliveryId = order.DeliveryId,
-                   Date = DateTime.Now
-                });
+            new UpdateOrderCommand
+            {
+                Id = order.Id,
+                Adress = order.Adress,
+                CustomerId = order.CustomerId,
+                DeliveryId = order.DeliveryId,
+                Date = DateTime.Now
+            });
         }
 
         [HttpGet("GetOrdersList")]

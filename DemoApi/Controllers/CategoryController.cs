@@ -1,12 +1,10 @@
-﻿using DemoApi.Models.CategoryModels;
-using MediatR;
+﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Shop.Application.Categories.Commands.CreateCategories;
 using Shop.Application.Categories.Commands.DeleteCategories;
 using Shop.Application.Categories.Commands.Queries.GetCategory;
 using Shop.Application.Categories.Commands.UpdateCategories;
 using Shop.Application.Categories.Queries.GetCatagoryList;
-using Shop.Domain.Entities;
 using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -53,7 +51,7 @@ namespace DemoApi.Controllers
         }
 
         [HttpDelete("delete")]
-        public async Task<Unit> Delete(long id)
+        public async Task<ActionResult<Unit>> Delete(long id)
         {
             return await _mediator.Send(new DeleteCategoryCommand { Id = id });
         }
