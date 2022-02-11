@@ -1,12 +1,7 @@
-﻿using DemoApi.Models;
-using MediatR;
+﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Shop.Application.Sellers.Queries.GetSellersList;
-using Microsoft.Extensions.DependencyInjection;
 using Shop.Application.Sellers.Queries.GetSeller;
 using DemoApi.Models.SellerModels;
 using Shop.Application.Sellers.Commands.CreateSeller;

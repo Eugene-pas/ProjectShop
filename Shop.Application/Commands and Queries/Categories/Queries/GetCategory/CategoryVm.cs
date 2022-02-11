@@ -1,11 +1,7 @@
 ﻿using AutoMapper;
 using Shop.Application.Common.Mappings;
 using Shop.Domain.Entities;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Shop.Application.Categories.Commands.Queries.GetCategory
 {
@@ -16,7 +12,6 @@ namespace Shop.Application.Categories.Commands.Queries.GetCategory
         public string Name { get; set; }
         public Category ParentCategory { get; set; }
         public virtual ICollection<Product> Product { get; set; }
-
 
         public void Mapping(Profile profile)
         {
@@ -29,8 +24,6 @@ namespace Shop.Application.Categories.Commands.Queries.GetCategory
                 opt => opt.MapFrom(category => category.ParentCategory))
                 .ForMember(categoryVm => categoryVm.Product,
                 opt => opt.MapFrom(category => category.Product));
-
-
         }
     }
 }

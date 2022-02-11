@@ -1,4 +1,4 @@
-﻿using DemoApi.FileSrvice;
+﻿using DemoApi.FileServices;
 using MediatR;
 using Shop.Domain.Entities;
 using Syroot.Windows.IO;

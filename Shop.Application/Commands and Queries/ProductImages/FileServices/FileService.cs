@@ -3,19 +3,17 @@ using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.IO.Compression;
-using System.Linq;
 
-namespace DemoApi.FileSrvice
+namespace DemoApi.FileServices
 {
     public class FileService : IFileService
     {
         #region Property  
-        private IHostingEnvironment _hostingEnvironment;
+        private IWebHostEnvironment _hostingEnvironment;
         #endregion
 
         #region Constructor  
-        public FileService(IHostingEnvironment hostingEnvironment)
+        public FileService(IWebHostEnvironment hostingEnvironment)
         {
             _hostingEnvironment = hostingEnvironment;
         }

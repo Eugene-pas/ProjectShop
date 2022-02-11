@@ -2,8 +2,6 @@
 using AutoMapper.QueryableExtensions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Shop.Application.Categories.Queries.GetCatagoryList;
-using Shop.Application.Exceptions;
 using Shop.Domain.Entities;
 using System.Linq;
 using System.Threading;

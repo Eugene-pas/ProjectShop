@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
 using Shop.Application.Customers.Queries.GetCustomer;
-using Shop.Application.Exceptions;
 using Shop.Application.Common;
 using Shop.Domain.Entities;
 

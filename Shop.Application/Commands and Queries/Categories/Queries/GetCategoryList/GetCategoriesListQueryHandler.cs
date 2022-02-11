@@ -2,17 +2,12 @@
 using AutoMapper.QueryableExtensions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Shop.Application.Categories.Commands.Queries.GetCategory;
-using Shop.Application.Categories.Queries.GetCatagoryList;
-using Shop.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Shop.Domain.Entities;
+using Shop.Application.Categories.Commands.Queries.GetCategory;
 
-namespace Shop.Application.Categories.Queries.GetCatagoryList
+namespace Shop.Application.Categories.Queries.GetCategoryList
 {
     public class GetCategoriesListQueryHandler
         : IRequestHandler<GetCategoriesListQuery, CategoriesListVm>

@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
-using System.Collections.Generic;
 
-namespace DemoApi.FileSrvice
+namespace DemoApi.FileServices
 {
     public interface IFileService
     {

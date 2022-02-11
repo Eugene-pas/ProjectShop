@@ -2,8 +2,8 @@
 using AutoMapper.QueryableExtensions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Shop.Application.Commands_and_Queries.Deliveries;
 using Shop.Application.Common;
+using Shop.Application.Deliveries.Queries.GetDelivery;
 using Shop.Domain.Entities;
 using System.Threading;
 using System.Threading.Tasks;

@@ -1,7 +1,4 @@
-﻿using AutoMapper;
-using MediatR;
-using Shop.Application.Common.Mappings;
-using Shop.Domain.Entities;
+﻿using MediatR;
 
 namespace Shop.Application.Commands_and_Queries.DeliveryConnections.Queries.GetDeliveryProductConnectionsList
 {

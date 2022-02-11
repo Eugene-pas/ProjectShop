@@ -1,6 +1,5 @@
 ﻿using MediatR;
 using Shop.Application.Sellers.Queries.GetSeller;
-using System;
 
 namespace Shop.Application.Sellers.Commands.DeleteSeller
 {

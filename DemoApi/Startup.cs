@@ -1,4 +1,4 @@
-using DemoApi.FileSrvice;
+using DemoApi.FileServices;
 using DemoApi.Middleware;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -11,6 +11,7 @@ using Shop.Application.Common.Mappings;
 using Shop.Domain.Entities;
 using Shop.Presistence;
 using System.Reflection;
+
 namespace DemoApi
 {
     public class Startup

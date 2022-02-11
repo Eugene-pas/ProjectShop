@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Shop.Application.Commands_and_Queries.Deliveries;
 using Shop.Application.Common;
 using Shop.Application.Exceptions;
 using Shop.Domain.Entities;

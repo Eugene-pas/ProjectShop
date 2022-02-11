@@ -7,7 +7,6 @@ using Shop.Application.Products.Commands.DeleteProduct;
 using Shop.Application.Products.Commands.UpdateProduct;
 using Shop.Application.Products.Queries.GetProduct;
 using Shop.Application.Products.Queries.GetProductsList;
-using Shop.Domain.Entities;
 using System.Threading.Tasks;
 
 namespace DemoApi.Controllers

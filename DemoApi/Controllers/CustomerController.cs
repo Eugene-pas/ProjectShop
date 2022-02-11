@@ -1,11 +1,11 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 using Shop.Application.Customers.Commands.CreateCustomer;
 using Shop.Application.Customers.Commands.DeleteCustomer;
 using Shop.Application.Customers.Commands.UpdateCustomer;
 using Shop.Application.Customers.Queries.GetCustomer;
 using Shop.Application.Customers.Queries.GetCustomersList;
-using System.Threading.Tasks;
 
 namespace DemoApi.Controllers
 {

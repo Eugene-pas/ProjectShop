@@ -1,10 +1,7 @@
 ﻿using MediatR;
-using Microsoft.EntityFrameworkCore;
 using Shop.Application.Exceptions;
 using Shop.Domain.Entities;
 using Syroot.Windows.IO;
-using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;

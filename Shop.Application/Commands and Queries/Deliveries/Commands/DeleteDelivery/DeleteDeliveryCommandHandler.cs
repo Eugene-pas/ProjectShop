@@ -3,7 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
-using Shop.Application.Commands_and_Queries.Deliveries;
+using Shop.Application.Deliveries.Queries.GetDelivery;
 using Shop.Application.Exceptions;
 using Shop.Application.Common;
 using Shop.Domain.Entities;

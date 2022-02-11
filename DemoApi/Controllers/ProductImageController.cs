@@ -1,5 +1,4 @@
-﻿using DemoApi.FileSrvice;
-using MediatR;
+﻿using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Shop.Application.Commands_and_Queries.ProductImages.Queries;
@@ -7,9 +6,7 @@ using Shop.Application.Commands_and_Queries.ProductImages.Queries.GetProductImag
 using Shop.Application.ProductImages.Commands.CreateProductImage;
 using Shop.Application.ProductImages.Commands.DeleteProductImage;
 using Shop.Application.ProductImages.Queries.GetProducImagesList;
-using Syroot.Windows.IO;
 using System.ComponentModel.DataAnnotations;
-using System.IO;
 using System.Threading.Tasks;
 
 

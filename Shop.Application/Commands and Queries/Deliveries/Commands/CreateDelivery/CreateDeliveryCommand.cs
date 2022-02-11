@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using Shop.Application.Commands_and_Queries.Deliveries;
+using Shop.Application.Deliveries.Queries.GetDelivery;
 using Shop.Domain.Entities;
 using System.Collections.Generic;
 

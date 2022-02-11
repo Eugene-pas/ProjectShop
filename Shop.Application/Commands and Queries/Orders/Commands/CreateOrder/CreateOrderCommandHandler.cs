@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
 using Shop.Application.Orders.Queries.GetOrder;
-using Shop.Application.Exceptions;
 using Shop.Application.Common;
 using Shop.Domain.Entities;
 using System;

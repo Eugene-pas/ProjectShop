@@ -1,11 +1,6 @@
 ﻿using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Shop.Application.Categories.Queries.GetCatagoryList
+namespace Shop.Application.Categories.Queries.GetCategoryList
 {
     public class GetCategoriesListQuery : IRequest<CategoriesListVm>
     {

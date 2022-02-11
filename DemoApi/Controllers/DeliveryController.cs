@@ -1,6 +1,5 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Shop.Application.Commands_and_Queries.Deliveries;
 using Shop.Application.Deliveries.Commands.CreateDelivery;
 using Shop.Application.Deliveries.Commands.DeleteDelivery;
 using Shop.Application.Deliveries.Commands.UpdateDelivery;

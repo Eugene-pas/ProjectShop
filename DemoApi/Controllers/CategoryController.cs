@@ -1,15 +1,11 @@
 ﻿using MediatR;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Shop.Application.Categories.Commands.CreateCategories;
 using Shop.Application.Categories.Commands.DeleteCategories;
 using Shop.Application.Categories.Commands.Queries.GetCategory;
 using Shop.Application.Categories.Commands.UpdateCategories;
-using Shop.Application.Categories.Queries.GetCatagoryList;
-using Shop.Domain.Entities;
-using System.Linq;
-using System.Threading.Tasks;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using Shop.Application.Categories.Queries.GetCategoryList;
 
 namespace DemoApi.Controllers
 {
