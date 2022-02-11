@@ -5,6 +5,8 @@ using Shop.Application.Categories.Commands.DeleteCategories;
 using Shop.Application.Categories.Commands.Queries.GetCategory;
 using Shop.Application.Categories.Commands.UpdateCategories;
 using Shop.Application.Categories.Queries.GetCatagoryList;
+using Shop.Domain.Entities;
+using System.Linq;
 using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -29,14 +31,14 @@ namespace DemoApi.Controllers
         }
 
         [HttpGet("get")]
-        public async Task<ActionResult<CategoryVm>> Get(long id)
+        public async Task<ActionResult<CategoriesListVm>> Get(long id)
         {
             return await _mediator.Send(new GetCategoryQuery { Id = id });
         }
 
         [HttpGet("getlist")]
         public async Task<ActionResult<CategoriesListVm>> GetAll()
-        {
+        {           
             return await _mediator.Send(new GetCategoriesListQuery { });
         }
 

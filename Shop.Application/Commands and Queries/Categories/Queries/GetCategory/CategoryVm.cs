@@ -9,12 +9,13 @@ using System.Threading.Tasks;
 
 namespace Shop.Application.Categories.Commands.Queries.GetCategory
 {
-    public class CategoryVm : IMapWith<Category>
+    public class CategoryVm 
+        : IMapWith<Category>
     {
         public long Id { get; set; }
         public string Name { get; set; }
-        public Category ParentCategory { get; set; }
-     
+        public Category ParentCategory { get; set; }       
+
 
         public void Mapping(Profile profile)
         {
