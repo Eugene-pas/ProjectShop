@@ -31,6 +31,10 @@ namespace DemoApi
                 config.AddProfile(new AssemblyMappingProfile(typeof(IDataBaseContext).Assembly));
             });
 
+            services.AddControllersWithViews()
+                 .AddNewtonsoftJson(options =>
+                  options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
             services.AddApplication();
             services.AddPersistence(Configuration);
             services.AddControllers();

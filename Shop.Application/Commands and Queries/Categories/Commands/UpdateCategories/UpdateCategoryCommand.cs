@@ -1,15 +1,10 @@
 ﻿using MediatR;
-using Shop.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Shop.Application.Categories.Commands.Queries.GetCategory;
 
 namespace Shop.Application.Categories.Commands.UpdateCategories
 {
     public class UpdateCategoryCommand
-        : IRequest
+        : IRequest<CategoryVm>
     {
         public long Id { get; set; }
         public string Name { get; set; }

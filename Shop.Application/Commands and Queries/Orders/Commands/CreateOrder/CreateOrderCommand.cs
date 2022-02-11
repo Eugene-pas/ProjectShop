@@ -2,14 +2,12 @@
 using Shop.Domain.Entities;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Shop.Application.Orders.Queries.GetOrder;
 
 namespace Shop.Application.Orders.Commands.CreateOrder
 {
     public class CreateOrderCommand
-        : IRequest<long>
+        : IRequest<OrderVm>
     {
         public long Id { get; set; }
         public DateTime? Date { get; set; }

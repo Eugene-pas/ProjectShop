@@ -9,15 +9,14 @@ using Shop.Domain.Entities;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Shop.Application.Exceptions;
+using Shop.Application.Common;
 
 namespace Shop.Application.Sellers.Queries.GetSeller
 {
-    public class GetSellerQueryHandler : IRequestHandler<GetSellerQuery, SellerVm>
+    public class GetSellerQueryHandler : HandlersBase, IRequestHandler<GetSellerQuery, SellerVm>
     {
-        private readonly IDataBaseContext _dbContext;
-        private readonly IMapper _mapper;
-        public GetSellerQueryHandler(IDataBaseContext dbContext, IMapper mapper) =>
-            (_dbContext, _mapper) = (dbContext, mapper);
+        public GetSellerQueryHandler(IDataBaseContext dbContext, IMapper mapper)
+            : base(dbContext, mapper) { }
 
         public async Task<SellerVm> Handle(GetSellerQuery request, CancellationToken cancellationToken)
         {

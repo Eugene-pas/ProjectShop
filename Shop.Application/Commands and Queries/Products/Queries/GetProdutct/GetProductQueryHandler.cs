@@ -21,6 +21,7 @@ namespace Shop.Application.Products.Queries.GetProduct
             var product = await _dbContext.Product
                 .FirstOrDefaultAsync(product => 
             product.Id == request.Id, cancellationToken);
+
             _ = product ?? throw new NotFoundException(nameof(Product), request.Id);
 
             return _mapper.Map<ProductVm>(product);

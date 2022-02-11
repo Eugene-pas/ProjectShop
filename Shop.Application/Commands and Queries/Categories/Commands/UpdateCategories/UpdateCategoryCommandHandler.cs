@@ -1,36 +1,35 @@
-﻿using MediatR;
-using Microsoft.EntityFrameworkCore;
-using Shop.Application.Exceptions;
-using Shop.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Microsoft.EntityFrameworkCore;
 using System.Threading;
 using System.Threading.Tasks;
+using AutoMapper;
+using MediatR;
+using Shop.Application.Categories.Commands.Queries.GetCategory;
+using Shop.Application.Exceptions;
+using Shop.Application.Common;
+using Shop.Domain.Entities;
 
 namespace Shop.Application.Categories.Commands.UpdateCategories
 {
     public class UpdateCategoryCommandHandler
-        : IRequestHandler<UpdateCategoryCommand>
+        : HandlersBase, IRequestHandler<UpdateCategoryCommand, CategoryVm>
     {
-        private readonly IDataBaseContext _dbContext;
-        public UpdateCategoryCommandHandler(IDataBaseContext dbContext) =>
-            _dbContext = dbContext;
-        public async Task<Unit> Handle(UpdateCategoryCommand request, CancellationToken cancellationToken)
+        public UpdateCategoryCommandHandler(IDataBaseContext dbContext, IMapper mapper)
+            : base(dbContext, mapper) { }
+
+        public async Task<CategoryVm> Handle(UpdateCategoryCommand request, CancellationToken cancellationToken)
         {
             var category = await _dbContext.Category
                 .FirstOrDefaultAsync(category =>
-            category.Id == request.Id,cancellationToken);
+            category.Id == request.Id, cancellationToken);
 
             _ = category ?? throw new NotFoundException(nameof(Category), category.Id);
 
             category.Name = request.Name;
             category.ParentCategory = _dbContext.Category.Find(request.ParentId);
 
-        await _dbContext.SaveChangesAsync(cancellationToken);
+            await _dbContext.SaveChangesAsync(cancellationToken);
 
-            return Unit.Value;
+            return _mapper.Map<CategoryVm>(category);
         }
     }
 }

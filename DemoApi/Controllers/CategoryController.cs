@@ -20,7 +20,7 @@ namespace DemoApi.Controllers
         public CategoryController(IMediator mediator) : base(mediator) { }
 
         [HttpPost("create")]
-        public async Task<long> Create(string name, long parentId)
+        public async Task<CategoryVm> Create(string name, long parentId)
         {
             return await _mediator.Send(
             new CreateCategoryCommand
@@ -43,7 +43,7 @@ namespace DemoApi.Controllers
         }
 
         [HttpPost("update")]
-        public async Task<Unit> Update(string name, long parentId)
+        public async Task<CategoryVm> Update(string name, long parentId)
         {
             return await _mediator.Send(new UpdateCategoryCommand
             {
@@ -53,7 +53,7 @@ namespace DemoApi.Controllers
         }
 
         [HttpDelete("delete")]
-        public async Task<ActionResult<Unit>> Delete(long id)
+        public async Task<ActionResult<CategoryVm>> Delete(long id)
         {
             return await _mediator.Send(new DeleteCategoryCommand { Id = id });
         }

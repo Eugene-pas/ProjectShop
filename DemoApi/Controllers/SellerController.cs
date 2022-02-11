@@ -13,8 +13,6 @@ using Shop.Application.Sellers.Commands.CreateSeller;
 using Shop.Application.Sellers.Commands.DeleteSeller;
 using Shop.Application.Sellers.Commands.UpdateSeller;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace DemoApi.Controllers
 {
     [Route("api/[controller]")]
@@ -24,7 +22,7 @@ namespace DemoApi.Controllers
         public SellerController(IMediator mediator) : base(mediator) { }
 
         [HttpPost("create")]
-        public async Task<long> Create([FromBody] CreateSellerModel seller)
+        public async Task<SellerVm> Create([FromBody] CreateSellerModel seller)
         {
             return await _mediator.Send(new CreateSellerCommand
             {
@@ -47,20 +45,19 @@ namespace DemoApi.Controllers
         }
 
         [HttpPost("update")]
-        public async Task<Unit> Update([FromBody] UpdateSellerModel seller)
+        public async Task<SellerVm> Update([FromBody] UpdateSellerModel seller)
         {
-            await _mediator.Send(new UpdateSellerCommand
+            return await _mediator.Send(new UpdateSellerCommand
             {
                 Id = seller.Id,
                 Name = seller.Name,
                 Description= seller.Description,
                 Contact= seller.Contact
             });
-            return Unit.Value;
         }
 
         [HttpDelete("delete")]
-        public async Task<Unit> Delete(long id)
+        public async Task<SellerVm> Delete(long id)
         {
             return await _mediator.Send(new DeleteSellerCommand { Id = id });
         }

@@ -1,16 +1,13 @@
 ﻿using Shop.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using AutoMapper;
 
-namespace Shop.Application.Customers.Commands
+namespace Shop.Application.Common
 {
     public abstract class HandlersBase
     {
         protected readonly IDataBaseContext _dbContext;
-        public HandlersBase(IDataBaseContext dbContext) =>
-            _dbContext = dbContext;
+        protected readonly IMapper _mapper;
+        public HandlersBase(IDataBaseContext dbContext, IMapper mapper) =>
+              (_dbContext, _mapper) = (dbContext, mapper);
     }
 }

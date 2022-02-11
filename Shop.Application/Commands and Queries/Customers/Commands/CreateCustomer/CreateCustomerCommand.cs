@@ -1,11 +1,12 @@
 ﻿using MediatR;
+using Shop.Application.Customers.Queries.GetCustomer;
 using Shop.Domain.Entities;
 using System.Collections.Generic;
 
 namespace Shop.Application.Customers.Commands.CreateCustomer
 {
     public class CreateCustomerCommand 
-        : IRequest<long>
+        : IRequest<CustomerVm>
     {
         public string Name { get; set; }
         public string Email { get; set; }

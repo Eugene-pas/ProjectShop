@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MediatR;
+﻿using MediatR;
+using Shop.Application.Sellers.Queries.GetSeller;
 
 namespace Shop.Application.Sellers.Commands.CreateSeller
 {
-    public class CreateSellerCommand : IRequest<long>
+    public class CreateSellerCommand : IRequest<SellerVm>
     {
         public long Id { get; set; }
         public string Name { get; set; }

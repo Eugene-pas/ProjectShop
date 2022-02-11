@@ -1,30 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
+using AutoMapper;
 using MediatR;
+using Shop.Application.Sellers.Queries.GetSeller;
 using Shop.Application.Exceptions;
+using Shop.Application.Common;
 using Shop.Domain.Entities;
 
 namespace Shop.Application.Sellers.Commands.DeleteSeller
 {
-    public class DeleteProductCommandHandler 
-        : IRequestHandler<DeleteSellerCommand>
+    public class DeleteSellerCommandHandler
+        : HandlersBase, IRequestHandler<DeleteSellerCommand, SellerVm>
     {
-        private readonly IDataBaseContext _dbContext;
-        public DeleteProductCommandHandler(IDataBaseContext dbContext) =>
-            _dbContext = dbContext;
+        public DeleteSellerCommandHandler(IDataBaseContext dbContext, IMapper mapper)
+            : base(dbContext, mapper) { }
 
-        public async Task<Unit> Handle(DeleteSellerCommand request, CancellationToken cancellationToken)
+        public async Task<SellerVm> Handle(DeleteSellerCommand request, CancellationToken cancellationToken)
         {
             var seller = await _dbContext.Seller
                 .FindAsync(new object[] { request.Id }, cancellationToken);
+
             _ = seller ?? throw new NotFoundException(nameof(Seller), seller.Id);
+
             _dbContext.Seller.Remove(seller);
             await _dbContext.SaveChangesAsync(cancellationToken);
-            return Unit.Value;
+            return _mapper.Map<SellerVm>(seller);
         }
     }
 }

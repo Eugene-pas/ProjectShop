@@ -9,17 +9,15 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Shop.Application.Common;
 
 namespace Shop.Application.Commands_and_Queries.DeliveryConnections.Queries.GetDeliveryProductConnectionsList
 {
     public class GetDeliveryProductConnectionsListQueryHandler
-        : IRequestHandler<GetDeliveryProductConnectionsListQuery, DeliveryProductConnectionsListVm>
+        : HandlersBase, IRequestHandler<GetDeliveryProductConnectionsListQuery, DeliveryProductConnectionsListVm>
     {
-        private readonly IDataBaseContext _dbContext;
-        private readonly IMapper _mapper;
-
-        public GetDeliveryProductConnectionsListQueryHandler(IDataBaseContext dbContext, IMapper mapper) =>
-           (_dbContext, _mapper) = (dbContext, mapper);
+        public GetDeliveryProductConnectionsListQueryHandler(IDataBaseContext dbContext, IMapper mapper)
+            : base(dbContext, mapper) { }
 
         public async Task<DeliveryProductConnectionsListVm> Handle(GetDeliveryProductConnectionsListQuery request,
             CancellationToken cancellationToken)

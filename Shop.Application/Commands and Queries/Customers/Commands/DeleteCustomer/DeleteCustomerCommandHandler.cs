@@ -1,18 +1,21 @@
-﻿using MediatR;
-using Shop.Application.Exceptions;
-using Shop.Domain.Entities;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
+using AutoMapper;
+using MediatR;
+using Shop.Application.Customers.Queries.GetCustomer;
+using Shop.Application.Exceptions;
+using Shop.Application.Common;
+using Shop.Domain.Entities;
 
 namespace Shop.Application.Customers.Commands.DeleteCustomer
 {
     public class DeleteCustomerCommandHandler
-        : IRequestHandler<DeleteCustomerCommand>
+        : HandlersBase, IRequestHandler<DeleteCustomerCommand, CustomerVm>
     {
-        private readonly IDataBaseContext _dbContext;
-        public DeleteCustomerCommandHandler(IDataBaseContext dbContext) =>
-            _dbContext = dbContext;
-        public async Task<Unit> Handle(DeleteCustomerCommand request, CancellationToken cancellationToken)
+        public DeleteCustomerCommandHandler(IDataBaseContext dbContext, IMapper mapper)
+            : base(dbContext, mapper) { }
+
+        public async Task<CustomerVm> Handle(DeleteCustomerCommand request, CancellationToken cancellationToken)
         {
             var customer = await _dbContext.Customer
                 .FindAsync(new object[] { request.Id }, cancellationToken);
@@ -22,7 +25,7 @@ namespace Shop.Application.Customers.Commands.DeleteCustomer
             _dbContext.Customer.Remove(customer);
             await _dbContext.SaveChangesAsync(cancellationToken);
 
-            return Unit.Value;
+            return _mapper.Map<CustomerVm>(customer);
         }
     }
 }

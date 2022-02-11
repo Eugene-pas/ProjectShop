@@ -1,24 +1,22 @@
-﻿using MediatR;
+﻿using System.Threading;
+using System.Threading.Tasks;
+using AutoMapper;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Shop.Application.Common;
+using Shop.Application.DeliveryConnections.Queries;
 using Shop.Application.Exceptions;
 using Shop.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace Shop.Application.Commands_and_Queries.DeliveryConnections.Commands.UpdateDeliveryProductConnection
 {
     public class UpdateDeliveryProductConnectionCommandHandler
-        : IRequestHandler<UpdateDeliveryProductConnectionCommand>
+        : HandlersBase, IRequestHandler<UpdateDeliveryProductConnectionCommand, DeliveryProductConnectionVm>
     {
-        private readonly IDataBaseContext _dbContext;
-        public UpdateDeliveryProductConnectionCommandHandler(IDataBaseContext dbContext) =>
-            _dbContext = dbContext;
+        public UpdateDeliveryProductConnectionCommandHandler(IDataBaseContext dbContext, IMapper mapper)
+            : base(dbContext, mapper) { }
 
-        public async Task<Unit> Handle(UpdateDeliveryProductConnectionCommand request, CancellationToken cancellationToken)
+        public async Task<DeliveryProductConnectionVm> Handle(UpdateDeliveryProductConnectionCommand request, CancellationToken cancellationToken)
         {
             var connection = await _dbContext.DeliveryProductConnection
                 .FirstOrDefaultAsync(connection =>
@@ -31,7 +29,7 @@ namespace Shop.Application.Commands_and_Queries.DeliveryConnections.Commands.Upd
 
             await _dbContext.SaveChangesAsync(cancellationToken);
 
-            return Unit.Value;
+            return _mapper.Map<DeliveryProductConnectionVm>(connection);
         }
     }
 }

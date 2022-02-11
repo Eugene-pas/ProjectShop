@@ -1,9 +1,9 @@
 ﻿using MediatR;
-using System;
+using Shop.Application.Commands_and_Queries.Products;
 
 namespace Shop.Application.Products.Commands.DeleteProduct
 {
-    public class DeleteProductCommand : IRequest
+    public class DeleteProductCommand : IRequest<ProductVm>
     {
         public long Id { get; set; }
         public string Name { get; set; }

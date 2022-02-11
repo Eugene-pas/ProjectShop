@@ -1,11 +1,12 @@
 ﻿using MediatR;
 using Shop.Domain.Entities;
 using System.Collections.Generic;
+using Shop.Application.Customers.Queries.GetCustomer;
 
 namespace Shop.Application.Customers.Commands.UpdateCustomer
 {
     public class UpdateCustomerCommand
-        : IRequest
+        : IRequest<CustomerVm>
     {
         public long Id { get; set; }
         public string Name { get; set; }

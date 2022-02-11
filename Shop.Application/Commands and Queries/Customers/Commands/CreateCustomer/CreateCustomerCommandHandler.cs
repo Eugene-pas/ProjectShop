@@ -1,18 +1,21 @@
-﻿using MediatR;
-using Shop.Domain.Entities;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
+using AutoMapper;
+using MediatR;
+using Shop.Application.Customers.Queries.GetCustomer;
+using Shop.Application.Exceptions;
+using Shop.Application.Common;
+using Shop.Domain.Entities;
 
 namespace Shop.Application.Customers.Commands.CreateCustomer
 {
     public class CreateCustomerCommandHandler
-        : IRequestHandler<CreateCustomerCommand, long>
+        : HandlersBase, IRequestHandler<CreateCustomerCommand, CustomerVm>
     {
-        private readonly IDataBaseContext _dbContext;
-        public CreateCustomerCommandHandler(IDataBaseContext dbContext) =>
-            _dbContext = dbContext;
+        public CreateCustomerCommandHandler(IDataBaseContext dbContext, IMapper mapper)
+            : base(dbContext, mapper) { }
 
-        public async Task<long> Handle(CreateCustomerCommand request, CancellationToken cancellationToken)
+        public async Task<CustomerVm> Handle(CreateCustomerCommand request, CancellationToken cancellationToken)
         {
             var customer = new Customer 
             {                
@@ -25,7 +28,7 @@ namespace Shop.Application.Customers.Commands.CreateCustomer
             await _dbContext.Customer.AddAsync(customer,cancellationToken);
             await _dbContext.SaveChangesAsync(cancellationToken);
 
-            return customer.Id;
+            return _mapper.Map<CustomerVm>(customer);
         }
     }
 }
