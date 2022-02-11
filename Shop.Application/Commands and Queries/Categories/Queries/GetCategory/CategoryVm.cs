@@ -14,7 +14,8 @@ namespace Shop.Application.Categories.Commands.Queries.GetCategory
     {
         public long Id { get; set; }
         public string Name { get; set; }
-        public Category ParentCategory { get; set; }       
+        public Category ParentCategory { get; set; }
+        public virtual ICollection<Product> Product { get; set; }
 
 
         public void Mapping(Profile profile)
@@ -25,7 +26,9 @@ namespace Shop.Application.Categories.Commands.Queries.GetCategory
                 .ForMember(categoryVm => categoryVm.Name,
                     opt => opt.MapFrom(category => category.Name))
                 .ForMember(categoryVm => categoryVm.ParentCategory,
-                opt => opt.MapFrom(category => category.ParentCategory));
+                opt => opt.MapFrom(category => category.ParentCategory))
+                .ForMember(categoryVm => categoryVm.Product,
+                opt => opt.MapFrom(category => category.Product));
 
 
         }
