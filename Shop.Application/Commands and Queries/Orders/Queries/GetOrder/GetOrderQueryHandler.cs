@@ -6,6 +6,8 @@ using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Shop.Application.Exceptions;
 using Shop.Application.Common;
+using AutoMapper.QueryableExtensions;
+using System.Linq;
 
 namespace Shop.Application.Orders.Queries.GetOrder
 {
@@ -16,13 +18,11 @@ namespace Shop.Application.Orders.Queries.GetOrder
 
         public async Task<OrderVm> Handle(GetOrderQuery request, CancellationToken cancellationToken)
         {
-            var entity = await _dbContext.Order
-                .FirstOrDefaultAsync(order =>
-                order.Id == request.Id, cancellationToken);
+            var orderquery = await _dbContext.Order
+                .ProjectTo<OrderVm>(_mapper.ConfigurationProvider)
+                .ToListAsync(cancellationToken);
 
-            _ = entity ?? throw new NotFoundException(nameof(Order), request.Id);
-
-            return _mapper.Map<OrderVm>(entity);
+            return orderquery.FirstOrDefault(x => x.Id == request.Id);
         }
     }
 }
