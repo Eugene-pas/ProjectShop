@@ -31,7 +31,7 @@ namespace DemoApi.Controllers
         }
 
         [HttpGet("get")]
-        public async Task<ActionResult<CategoriesListVm>> Get(long id)
+        public async Task<ActionResult<CategoryVm>> Get(long id)
         {
             return await _mediator.Send(new GetCategoryQuery { Id = id });
         }
