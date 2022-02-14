@@ -1,13 +1,28 @@
 ﻿using FluentValidation;
+using Microsoft.EntityFrameworkCore;
+using Shop.Domain.Entities;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Shop.Application.Orders.Queries.GetOrder
 {
     public class GetOrderQueryValidator : AbstractValidator<GetOrderQuery>
     {
-        public GetOrderQueryValidator()
+        private readonly IDataBaseContext _dbContext;
+        public GetOrderQueryValidator(IDataBaseContext dataBase)
         {
+            _dbContext = dataBase;
             RuleFor(Order =>
-                Order.Id).NotEmpty();
+                Order.Id)
+                .NotEmpty().WithMessage("ID is required.")
+            .NotNull().WithMessage("ID can not be aqueal null.")
+            .NotEqual(0).WithMessage("There is no field with this ID")
+            .MustAsync(Exist).WithMessage("The specified orderId doesn't exist");
+        }
+        public async Task<bool> Exist(long orderId, CancellationToken cancellationToken)
+        {
+            return await _dbContext.Customer
+                .AnyAsync(x => x.Id == orderId);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using DemoApi.Models.OrderModels;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Shop.Application.Commands_and_Queries.Orders.Queries.GetOrdersListForCustomer;
 using Shop.Application.Orders.Commands.CreateOrder;
 using Shop.Application.Orders.Commands.DeleteOrder;
 using Shop.Application.Orders.Commands.UpdateOrder;
@@ -53,6 +54,12 @@ namespace DemoApi.Controllers
         public async Task<ActionResult<OrderVm>> Get(long id)
         {
             return await _mediator.Send(new GetOrderQuery { Id = id });
+        }
+
+        [HttpGet("getOrdersListForCustomer/{CustomerId}")]
+        public async Task<ActionResult<OrderListVm>> GetOrdersListForCustomer(long CustomerId)
+        {
+            return await _mediator.Send(new GetOrdersListForCustomerQuery { customerId = CustomerId });
         }
 
         [HttpGet("GetOrdersList")]
