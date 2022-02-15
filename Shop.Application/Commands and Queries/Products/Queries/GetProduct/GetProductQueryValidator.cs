@@ -2,7 +2,7 @@
 using Shop.Domain.Entities;
 using Shop.Application.Products.Queries.GetProduct;
 
-namespace Shop.Application.Commands_and_Queries.Products.Queries.GetProdutct
+namespace Shop.Application.Commands_and_Queries.Products.Queries.GetProduct
 {
     internal class GetProductQueryValidator
         : AbstractValidator<GetProductQuery>

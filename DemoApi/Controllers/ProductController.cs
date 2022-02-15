@@ -2,6 +2,8 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Shop.Application.Commands_and_Queries.Products;
+using Shop.Application.Commands_and_Queries.Products.Queries.GetProductsListByPrice;
+using Shop.Application.Commands_and_Queries.Products.Queries.GetProductsListByRating;
 using Shop.Application.Products.Commands.CreateProduct;
 using Shop.Application.Products.Commands.DeleteProduct;
 using Shop.Application.Products.Commands.UpdateProduct;
@@ -56,6 +58,16 @@ namespace DemoApi.Controllers
         public async Task<ActionResult<ProductsListVm>> GetAll()
         {
             return await _mediator.Send(new GetProductsListQuery { });
+        }
+        [HttpGet("getListByPrice")]
+        public async Task<ActionResult<ProductsListVm>> GetAllByPrice()
+        {
+            return await _mediator.Send(new GetProductsListByPriceQuery { });
+        }
+        [HttpGet("getListByRating")]
+        public async Task<ActionResult<ProductsListVm>> GetAllByRating()
+        {
+            return await _mediator.Send(new GetProductsListByRatingQuery { });
         }
     }
 }
