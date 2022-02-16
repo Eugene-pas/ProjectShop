@@ -23,7 +23,8 @@ namespace Shop.Application.Commands_and_Queries.OrderProductConnections.Queries.
             CancellationToken cancellationToken)
         {
             var orderproductlist = await _dbContext.OrderProductConnection
-                .Where(order => order.Id == request.OrderId)
+                .Include(x => x.Order)
+                .Where(order => order.Order.Id == request.OrderId)
                 .ProjectTo<GetProductListOrderLookupDto>(_mapper.ConfigurationProvider)
                 .ToListAsync(cancellationToken);
             var TotalPrice = orderproductlist.Sum(x => x.Product.Price);
