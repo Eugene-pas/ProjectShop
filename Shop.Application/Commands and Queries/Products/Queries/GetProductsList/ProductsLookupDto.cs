@@ -7,11 +7,17 @@ namespace Shop.Application.Products.Queries.GetProductsList
     public class ProductsLookupDto : IMapWith<Product>
     {
         public long Id { get; set; }
+
         public string Name { get; set; }
+
         public decimal Price { get; set; }
+
         public string Description { get; set; }
+
         public int? OnStorageCount { get; set; }
+
         public double? Rating { get; set; }
+
         public void Mapping(Profile profile)
         {
             profile.CreateMap<Product, ProductsLookupDto>()
