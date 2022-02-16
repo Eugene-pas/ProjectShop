@@ -29,6 +29,7 @@ namespace DemoApi.Controllers
                 Name = product.Name,
                 Price = product.Price,
                 Description = product.Description,
+                CategoryId = product.CategoryId,
                 OnStorageCount = product.OnStorageCount,
                 Rating = product.Rating,
             });
@@ -66,18 +67,18 @@ namespace DemoApi.Controllers
             return await _mediator.Send(new GetProductsListQuery { });
         }
 
-        [HttpGet("getListByPrice")]
-        public async Task<ActionResult<ProductsListVm>> GetAllByPrice()
+        [HttpGet("getSortListByPrice")]
+        public async Task<ActionResult<ProductsListVm>> GetAllByPrice(long categoryId)
         {
-            return await _mediator.Send(new GetProductsListByPriceQuery { });
+            return await _mediator.Send(new GetProductsListByPriceQuery { CategoryId = categoryId});
         }
 
-        [HttpGet("getListByRating")]
-        public async Task<ActionResult<ProductsListVm>> GetAllByRating()
+        [HttpGet("getSortListByRating")]
+        public async Task<ActionResult<ProductsListVm>> GetAllByRating(long categoryId)
         {
-            return await _mediator.Send(new GetProductsListByRatingQuery { });
+            return await _mediator.Send(new GetProductsListByRatingQuery {CategoryId = categoryId});
         }
-
+        
         [HttpGet("filterByRating")]
         public async Task<ActionResult<GetFiltrationByRatingVm>> GetFilterByRating(long categoryId, int rating)
         {

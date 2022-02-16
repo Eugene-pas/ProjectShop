@@ -22,7 +22,8 @@ namespace Shop.Application.Products.Commands.CreateProduct
                 Price = request.Price,
                 Description = request.Description,
                 OnStorageCount = request.OnStorageCount,
-                Rating = request.Rating
+                Rating = request.Rating,
+                Category = _dbContext.Category.Find(request.CategoryId)
             };
 
             await _dbContext.Product.AddAsync(product, cancellationToken);

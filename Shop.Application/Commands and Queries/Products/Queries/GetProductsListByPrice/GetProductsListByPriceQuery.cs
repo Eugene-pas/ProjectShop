@@ -5,6 +5,6 @@ namespace Shop.Application.Commands_and_Queries.Products.Queries.GetProductsList
 {
     public class GetProductsListByPriceQuery : IRequest<ProductsListVm>
     {
-        public long Id { get; set; }
+        public long CategoryId { get; set; }
     }
 }

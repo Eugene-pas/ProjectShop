@@ -22,6 +22,8 @@ namespace Shop.Application.Commands_and_Queries.Products.Queries.GetProductsList
         public async Task<ProductsListVm> Handle(GetProductsListByPriceQuery request, CancellationToken cancellationToken)
         {
             var productQuery = await _dbContext.Product
+                .Include(x => x.Category)
+                .Where(x => x.Category.Id == request.CategoryId)
                 .ProjectTo<ProductsLookupDto>(_mapper.ConfigurationProvider)
                 .OrderBy(x => x.Price)
                 .ToListAsync(cancellationToken);
