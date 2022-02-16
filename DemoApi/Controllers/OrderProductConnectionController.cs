@@ -4,6 +4,7 @@ using Shop.Application.Commands_and_Queries.OrderProductConnections.Commands.Cre
 using Shop.Application.Commands_and_Queries.OrderProductConnections.Commands.DeleteOrderProductConnections;
 using Shop.Application.Commands_and_Queries.OrderProductConnections.Commands.UpdateOrderProductConnections;
 using Shop.Application.Commands_and_Queries.OrderProductConnections.Queries.GetOrdersListProductConnections;
+using Shop.Application.Commands_and_Queries.OrderProductConnections.Queries.GetProductsListbyOrder;
 using Shop.Application.OrderProductConnections.Queries;
 using System.Threading.Tasks;
 
@@ -48,6 +49,12 @@ namespace DemoApi.Controllers
         public async Task<ActionResult<OrderProductConnectionListVm>> Get()
         {
             return await _mediator.Send(new GetOrderProductConnectionsListQuery {});
+        }
+
+        [HttpGet("getproduct")]
+        public async Task<ActionResult<GetProductListOrderVm>> GetList(long orderId)
+        {
+            return await _mediator.Send(new GetProductListOrderQuery { OrderId = orderId });
         }
     }
 }
