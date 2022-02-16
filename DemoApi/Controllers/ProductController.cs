@@ -1,17 +1,17 @@
 ﻿using DemoApi.Models.ProductModels;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Shop.Application.Commands_and_Queries.Filters;
-using Shop.Application.Commands_and_Queries.Filters.FiltrationByRating;
-using Shop.Application.Commands_and_Queries.Products;
-using Shop.Application.Commands_and_Queries.Products.Queries.GetProductsListByPrice;
-using Shop.Application.Commands_and_Queries.Products.Queries.GetProductsListByRating;
-using Shop.Application.Products.Commands.CreateProduct;
-using Shop.Application.Products.Commands.DeleteProduct;
-using Shop.Application.Products.Commands.UpdateProduct;
-using Shop.Application.Products.Queries.GetProduct;
 using Shop.Application.Products.Queries.GetProductsList;
 using System.Threading.Tasks;
+using Shop.Application.Commands.Filters;
+using Shop.Application.Commands.Filters.FiltrationByRating;
+using Shop.Application.Commands.Products;
+using Shop.Application.Commands.Products.Commands.CreateProduct;
+using Shop.Application.Commands.Products.Commands.DeleteProduct;
+using Shop.Application.Commands.Products.Commands.UpdateProduct;
+using Shop.Application.Commands.Products.Queries.GetProduct;
+using Shop.Application.Commands.Products.Queries.GetProductsListByPrice;
+using Shop.Application.Commands.Products.Queries.GetProductsListByRating;
 
 namespace DemoApi.Controllers
 {
@@ -80,7 +80,7 @@ namespace DemoApi.Controllers
         }
         
         [HttpGet("filterByRating")]
-        public async Task<ActionResult<GetFiltrationByRatingVm>> GetFilterByRating(long categoryId, int rating)
+        public async Task<ActionResult<FilteredProductsListVm>> GetFilterByRating(long categoryId, int rating)
         {
             return await _mediator.Send(new GetFiltrationByRatingQuery { CategoryId = categoryId, Rating = rating });
         }
