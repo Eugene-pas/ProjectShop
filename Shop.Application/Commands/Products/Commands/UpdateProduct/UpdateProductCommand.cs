@@ -10,6 +10,5 @@ namespace Shop.Application.Commands.Products.Commands.UpdateProduct
         public string Description { get; set; }
         public int? OnStorageCount { get; set; }
         public double Rating { get; set; }
-
     }
 }

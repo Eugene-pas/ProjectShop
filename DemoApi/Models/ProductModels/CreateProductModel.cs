@@ -13,5 +13,7 @@
         public int? OnStorageCount { get; set; }
 
         public double Rating { get; set; }
+
+        public long SellerId { get; set; }
     }
 }

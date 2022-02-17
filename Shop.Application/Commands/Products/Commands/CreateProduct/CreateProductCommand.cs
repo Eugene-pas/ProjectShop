@@ -10,5 +10,6 @@ namespace Shop.Application.Commands.Products.Commands.CreateProduct
         public string Description { get; set; }
         public int? OnStorageCount { get; set; }
         public double Rating { get; set; }
+        public long SellerId { get; set; }
     }
 }
