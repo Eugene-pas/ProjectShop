@@ -18,6 +18,10 @@ namespace Shop.Application.Products.Queries.GetProductsList
 
         public double? Rating { get; set; }
 
+        public long CategoryId { get; set; }
+
+        public long SellerId { get; set; }
+
         public void Mapping(Profile profile)
         {
             profile.CreateMap<Product, ProductsLookupDto>()
@@ -31,8 +35,12 @@ namespace Shop.Application.Products.Queries.GetProductsList
                     opt => opt.MapFrom(product => product.Description))
                  .ForMember(productDto => productDto.OnStorageCount,
                     opt => opt.MapFrom(product => product.OnStorageCount))
-                    .ForMember(productDto => productDto.Rating,
-                    opt => opt.MapFrom(product => product.Rating));
+                 .ForMember(productDto => productDto.Rating,
+                    opt => opt.MapFrom(product => product.Rating))
+                .ForMember(productDto => productDto.CategoryId,
+                    opt => opt.MapFrom(product => product.Category.Id))
+                .ForMember(productDto => productDto.SellerId,
+                    opt => opt.MapFrom(product => product.Seller.Id));
         }
     }
 }
