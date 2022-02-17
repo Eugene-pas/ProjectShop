@@ -16,6 +16,7 @@ namespace Shop.Domain.Entities
         DbSet<Product> Product { get; set; }
         DbSet<ProductImage> ProductImage { get; set; }
         DbSet<Seller> Seller { get; set; }
+        DbSet<Review> Review { get; set; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
 }
