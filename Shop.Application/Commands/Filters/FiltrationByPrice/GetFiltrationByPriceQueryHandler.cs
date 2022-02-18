@@ -16,6 +16,9 @@ namespace Shop.Application.Commands.Filters.FiltrationByPrice
 
         public async Task<FilteredProductsListVm> Handle(GetFiltrationByPriceQuery request, CancellationToken cancellationToken)
         {
+            request.MinPrice ??= 0;
+            request.MaxPrice ??= _context.Product.Max(x => x.Price);
+
             var productList = await _context.Product
                 .Include(x => x.Category)
                 .Where(x => x.Category.Id == request.CategoryId)

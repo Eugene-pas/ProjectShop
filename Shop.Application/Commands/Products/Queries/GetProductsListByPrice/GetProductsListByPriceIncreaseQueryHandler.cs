@@ -10,16 +10,16 @@ using Shop.Domain.Entities;
 
 namespace Shop.Application.Commands.Products.Queries.GetProductsListByPrice
 {
-    public class GetProductsListByPriceQueryHandler
-        : IRequestHandler<GetProductsListByPriceQuery, ProductsListVm>
+    public class GetProductsListByPriceIncreaseQueryHandler
+        : IRequestHandler<GetProductsListByPriceIncreaseQuery, ProductsListVm>
     {
         private readonly IMapper _mapper;
         private readonly IDataBaseContext _dbContext;
 
-        public GetProductsListByPriceQueryHandler(IDataBaseContext dbContext, IMapper mapper) =>
+        public GetProductsListByPriceIncreaseQueryHandler(IDataBaseContext dbContext, IMapper mapper) =>
             (_dbContext, _mapper) = (dbContext, mapper);
 
-        public async Task<ProductsListVm> Handle(GetProductsListByPriceQuery request, CancellationToken cancellationToken)
+        public async Task<ProductsListVm> Handle(GetProductsListByPriceIncreaseQuery request, CancellationToken cancellationToken)
         {
             var productQuery = await _dbContext.Product
                 .Include(x => x.Category)
