@@ -13,7 +13,7 @@ namespace Shop.Application.Commands_and_Queries.Categories.Commands.UpdateCatego
             existTask = new CategoryExistTask(dbContext);
 
             RuleFor(updateCategoryCommandValidator =>
-            updateCategoryCommandValidator.Id)
+            updateCategoryCommandValidator.CategoryId)
                 .NotEmpty().WithMessage("ID is required.")
                 .NotNull().WithMessage("ID can not be equeal null.")
                 .GreaterThan(0).WithMessage("ID must be greater than zero.")

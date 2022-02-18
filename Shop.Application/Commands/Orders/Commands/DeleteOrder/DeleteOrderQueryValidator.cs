@@ -16,7 +16,7 @@ namespace Shop.Application.Commands_and_Queries.Orders.Commands.DeleteOrder
             _dbContext = dbContext;
             RuleFor(deleteOredrQuery =>
             deleteOredrQuery.Id).NotEmpty().NotEqual(0)
-                .WithMessage("The Id value must not equal to 0")
+                .WithMessage("The CategoryId value must not equal to 0")
                 .MustAsync(Exist)
                 .WithMessage("The specified OredrId doesn't exist.");
 

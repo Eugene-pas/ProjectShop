@@ -17,9 +17,9 @@ namespace Shop.Application.Commands_and_Queries.ProductImages.Commands.UpdatePro
 
             RuleFor(creatProductImageCommand =>
             creatProductImageCommand.Id).NotEmpty().NotEqual(0)
-                .WithMessage("The Id value must not equal to 0")
+                .WithMessage("The CategoryId value must not equal to 0")
                 .MustAsync(Exist)
-                .WithMessage("The specified Id doesn't exist.");
+                .WithMessage("The specified CategoryId doesn't exist.");
             RuleFor(creatProductImageCommand =>
             creatProductImageCommand.Image).NotEmpty().MaximumLength(250);
             RuleFor(creatProductImageCommand =>

@@ -26,13 +26,13 @@ namespace Shop.Application.Commands_and_Queries.SearchByCategoriesAndProduct
             List<Category> categories = new();
             List<Product> products = new();
 
-            foreach (var item in _dbContext.Category.Include(X => X.ParentCategory))
-            {
-                if (item.Name.Contains(request.Serach,StringComparison.CurrentCultureIgnoreCase))
-                {
-                    categories.Add(item);
-                }
-            }
+            //foreach (var item in _dbContext.Category.Include(X => X.ParentCategory))
+            //{
+            //    if (item.Name.Contains(request.Serach,StringComparison.CurrentCultureIgnoreCase))
+            //    {
+            //        categories.Add(item);
+            //    }
+            //}
 
             foreach (var item in _dbContext.Product)
             {

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Shop.Domain.Entities
 {
-    public partial class Order : EntityBase
+    public class Order : EntityBase
     {
         public Order()
         {

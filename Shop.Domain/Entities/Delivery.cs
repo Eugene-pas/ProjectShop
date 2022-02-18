@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Shop.Domain.Entities
 {
-    public partial class Delivery : EntityBase
+    public class Delivery : EntityBase
     {
         public Delivery()
         {

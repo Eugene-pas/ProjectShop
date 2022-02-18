@@ -15,7 +15,7 @@ namespace Shop.Application.Commands_and_Queries.OrderProductConnections.Commands
             _dbContext = dbContext;
             RuleFor(deleteConnection =>
             deleteConnection.Id).NotEmpty().NotEqual(0)
-                .WithMessage("The Id value must not equal to 0")
+                .WithMessage("The CategoryId value must not equal to 0")
                 .MustAsync(Exist)
                 .WithMessage("The specified OrderProductConnectionId doesn't exist.");
 

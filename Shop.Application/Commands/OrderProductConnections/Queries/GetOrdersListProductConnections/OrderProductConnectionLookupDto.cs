@@ -21,8 +21,8 @@ namespace Shop.Application.Commands_and_Queries.OrderProductConnections.Queries.
                 opt => opt.MapFrom(x => x.Order));
 
             //profile.CreateMap<Order, OrderProductConnectionLookupDto>()
-            //    .ForMember(orderDto => orderDto.Order.Id,
-            //    opt => opt.MapFrom(order => order.Id))
+            //    .ForMember(orderDto => orderDto.Order.CategoryId,
+            //    opt => opt.MapFrom(order => order.CategoryId))
             //    .ForMember(orderDto => orderDto.Order.Date,
             //    opt => opt.MapFrom(order => order.Date))
             //    .ForMember(orderDto => orderDto.Order.Customer,

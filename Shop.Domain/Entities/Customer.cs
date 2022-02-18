@@ -6,7 +6,7 @@ using Shop.Domain.Entities.Base;
 
 namespace Shop.Domain.Entities
 {
-    public partial class Customer : EntityBase
+    public class Customer : EntityBase
     {
         public Customer()
         {
