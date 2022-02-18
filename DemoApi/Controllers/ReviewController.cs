@@ -6,6 +6,7 @@ using Shop.Application.Commands.Reviews.Queries.GetReviewsList;
 using Shop.Application.Commands.Reviews.Queries;
 using System.Threading.Tasks;
 using Shop.Application.Commands.Reviews.Queries.GetReviewsForProduct;
+using Shop.Application.Commands.Reviews.Commands.DeleteReview;
 
 namespace DemoApi.Controllers
 {
@@ -20,23 +21,29 @@ namespace DemoApi.Controllers
         {
             return await _mediator.Send(new CreateReviewCommand
             {
-                CustomerName = review.CustomerName,
-                Rating = review.Rating,
-                Comments = review.Comments,
                 ProductId = review.ProductId,
+                CustomerId = review.CustomerId,
+                Rating = review.Rating,
+                Comment = review.Comment,
             });
         }
 
-        [HttpGet("getlist")]
+        [HttpGet("GetReviewsList")]
         public async Task<ActionResult<ReviewsListVm>> GetAll()
         {
             return await _mediator.Send(new GetReviewsListQuery { });
         }
 
-        [HttpGet("getlistforproduct")]
+        [HttpGet("GetReviewsListForProduct")]
         public async Task<ActionResult<ReviewsForProductVm>> GetAll(long productId)
         {
             return await _mediator.Send(new GetReviewsForProductQuery { ProductId = productId });
+        }
+
+        [HttpDelete("delete")]
+        public async Task<ActionResult<ReviewsVm>> Delete(long id)
+        {
+            return await _mediator.Send(new DeleteReviewCommand { Id = id });
         }
     }
 }

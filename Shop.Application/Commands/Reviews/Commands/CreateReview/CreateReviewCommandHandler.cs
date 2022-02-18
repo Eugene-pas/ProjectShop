@@ -21,10 +21,10 @@ namespace Shop.Application.Commands.Reviews.Commands.CreateReview
             var review = new Review
             {
                 Product = _dbContext.Product.Find(request.ProductId),
-                CustomerName = request.CustomerName,
+                Customer = _dbContext.Customer.Find(request.CustomerId),
                 Rating = request.Rating,
-                Comments = request.Comments,
-                Created = DateTime.Now,
+                Comment = request.Comment,
+                CreationDate = DateTime.Now,
             };
 
             await _dbContext.Review.AddAsync(review, cancellationToken);

@@ -2,12 +2,12 @@
 {
     public class CreateReviewModel
     {
-        public string CustomerName { get; set; }
+        public long ProductId { get; set; }
+
+        public long CustomerId { get; set; }
 
         public int Rating { get; set; }
 
-        public string Comments { get; set; }
-
-        public long ProductId { get; set; }
+        public string Comment { get; set; }
     }
 }

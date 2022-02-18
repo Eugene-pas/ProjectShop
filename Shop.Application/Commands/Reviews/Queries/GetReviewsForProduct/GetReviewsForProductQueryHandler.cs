@@ -4,6 +4,7 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Shop.Application.Common;
 using Shop.Domain.Entities;
+using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -26,7 +27,9 @@ namespace Shop.Application.Commands.Reviews.Queries.GetReviewsForProduct
 
             var totalreviews = reviewsforproductquery.Count();
 
-            return new ReviewsForProductVm { Reviews = reviewsforproductquery, TotalReviews = totalreviews };
+            double totalrating = Math.Round((double)reviewsforproductquery.Sum(x => x.Rating) / totalreviews, 1);
+
+            return new ReviewsForProductVm { Reviews = reviewsforproductquery, TotalRating = totalrating, TotalReviews = totalreviews };
         }
     }
 }
