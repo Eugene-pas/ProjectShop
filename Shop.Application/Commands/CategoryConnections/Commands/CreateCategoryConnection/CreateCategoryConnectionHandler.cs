@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using AutoMapper;
+using MediatR;
+using Shop.Application.Common;
+using Shop.Domain.Entities;
 using System.Threading;
 using System.Threading.Tasks;
-using AutoMapper;
-using MediatR;
-using Shop.Application.Commands_and_Queries.OrderProductConnections.Commands.CreateOrderProductConnections;
-using Shop.Application.Common;
-using Shop.Application.OrderProductConnections.Queries;
-using Shop.Domain.Entities;
 
 namespace Shop.Application.Commands.CategoryConnections.Commands.CreateCategoryConnection
 {

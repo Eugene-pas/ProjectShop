@@ -5,7 +5,6 @@ using Shop.Application.Exceptions;
 using Shop.Domain.Entities;
 using System.Threading;
 using System.Threading.Tasks;
-using Shop.Application.OrderProductConnections.Queries;
 
 namespace Shop.Application.Commands.CategoryConnections.Commands.DeleteCategoryConnection
 {

@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Shop.Application.Commands_and_Queries.OrderProductConnections.Commands.UpdateOrderProductConnections;
 using Shop.Application.Common;
 using Shop.Application.Exceptions;
-using Shop.Application.OrderProductConnections.Queries;
 using Shop.Domain.Entities;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Shop.Application.Commands.CategoryConnections.Commands.UpdateCategoryConnection
 {

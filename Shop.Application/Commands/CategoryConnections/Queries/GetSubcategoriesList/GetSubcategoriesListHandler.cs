@@ -28,25 +28,6 @@ namespace Shop.Application.Commands.CategoryConnections.Queries.GetSubcategories
             return new SubcategoriesListVm { CategoriesList = listSubcategories };
         }
 
-        private List<Category> SubcategoriesFind(IDataBaseContext dataBase, long parenrId, List<Category> listCategories)
-        {
-            
-            var list = dataBase.CategoryConnection
-                .Include(x => x.Child)
-                .Where(x => x.ParentId == parenrId).ToList();
-            foreach (var item in list)
-            {
-                if(item == null) 
-                {
-
-                    return listCategories;
-                }
-                listCategories.Add(item.Child);
-                SubcategoriesFind(dataBase, item.Child.Id, listCategories);
-                
-            }
-
-            return listCategories;
-        }
+        
     }
 }
