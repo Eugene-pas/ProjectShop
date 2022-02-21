@@ -7,6 +7,7 @@ namespace Shop.Domain.Entities
 {
     public interface IDataBaseContext
     {
+        DbSet<CategoryConnection> CategoryConnection { get; set; }
         DbSet<Category> Category { get; set; }
         DbSet<Customer> Customer { get; set; }
         DbSet<Delivery> Delivery { get; set; }

@@ -26,7 +26,7 @@ namespace Shop.Application.Commands_and_Queries.SearchByCategoriesAndProduct
             List<Category> categories = new();
             List<Product> products = new();
 
-            foreach (var item in _dbContext.Category.Include(X => X.ParentCategory))
+            foreach (var item in _dbContext.Category)
             {
                 if (item.Name.Contains(request.Serach,StringComparison.CurrentCultureIgnoreCase))
                 {

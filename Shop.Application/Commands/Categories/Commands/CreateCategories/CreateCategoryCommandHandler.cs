@@ -18,8 +18,7 @@ namespace Shop.Application.Categories.Commands.CreateCategories
         {
             var category = new Category 
             {                
-                Name = request.Name,
-                ParentCategory = _dbContext.Category.Find(request.ParentId)
+                Name = request.Name
             };
 
             await _dbContext.Category.AddAsync(category, cancellationToken);

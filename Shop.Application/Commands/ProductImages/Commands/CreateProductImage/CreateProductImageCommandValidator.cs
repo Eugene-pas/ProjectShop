@@ -35,7 +35,7 @@ namespace Shop.Application.Commands_and_Queries.ProductImages.Commands.CreatePro
         }
         public bool ExistValidFormat(string imageName)
         {
-            string format = imageName.Split('.')[1];
+            string format = imageName.Split('.')[1].ToLower();
             List<string> formats = new List<string>() { "jpg", "png" };
             return formats.Any(f => f == format);
         }

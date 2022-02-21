@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Shop.Domain.Entities
 {
-    public partial class Category : EntityBase
+    public class Category : EntityBase
     {
         public Category()
         {
@@ -11,7 +11,8 @@ namespace Shop.Domain.Entities
         }
         public string Name { get; set; }
 
-        public virtual Category ParentCategory { get; set; }
+        public ICollection<CategoryConnection> Child { get; set; }
+
         public virtual ICollection<Product> Product { get; set; }
     }
 }
