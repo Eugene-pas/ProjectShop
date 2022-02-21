@@ -2,6 +2,7 @@
 using AutoMapper.QueryableExtensions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Shop.Application.Commands.Reviews.Queries.GetReviewsForProduct;
 using Shop.Application.Common;
 using Shop.Domain.Entities;
 using System;
@@ -9,19 +10,20 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Shop.Application.Commands.Reviews.Queries.GetReviewsForProduct
+namespace Shop.Application.Commands.Reviews.Queries.GetReviewsForProductByLike
 {
-    public class GetReviewsForProductQueryHandler
-        : HandlersBase, IRequestHandler<GetReviewsForProductQuery, ReviewsForProductVm>
+    public class GetReviewsForProductByLikeQueryHandler
+        : HandlersBase, IRequestHandler<GetReviewsForProductByLikeQuery, ReviewsForProductVm>
     {
-        public GetReviewsForProductQueryHandler(IDataBaseContext dbContext, IMapper mapper)
+        public GetReviewsForProductByLikeQueryHandler(IDataBaseContext dbContext, IMapper mapper)
                : base(dbContext, mapper) { }
 
-        public async Task<ReviewsForProductVm> Handle(GetReviewsForProductQuery request,
+        public async Task<ReviewsForProductVm> Handle(GetReviewsForProductByLikeQuery request,
                CancellationToken cancellationToken)
         {
             var reviewsforproductquery = await _dbContext.Review
                 .Where(review => review.Product.Id == request.ProductId)
+                .OrderByDescending(x => x.CreationDate)
                 .ProjectTo<ReviewsForProductLookupDto>(_mapper.ConfigurationProvider)
                 .ToListAsync(cancellationToken);
 

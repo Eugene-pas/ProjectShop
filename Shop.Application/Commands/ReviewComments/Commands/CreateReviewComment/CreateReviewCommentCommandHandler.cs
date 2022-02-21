@@ -7,7 +7,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Shop.Application.Commands.ReviewComments.Commands.CreateComment
+namespace Shop.Application.Commands.ReviewComments.Commands.CreateReviewComment
 {
     public class CreateReviewCommentCommandHandler
         : HandlersBase, IRequestHandler<CreateReviewCommentCommand, ReviewCommentVm>
@@ -22,7 +22,7 @@ namespace Shop.Application.Commands.ReviewComments.Commands.CreateComment
             {
                 ReviewId = request.ReviewId,
                 Customer = _dbContext.Customer.Find(request.CustomerId),
-                Comments = request.Comments,
+                Comment = request.Comment,
                 CreationDate = DateTime.Now,
             };
 

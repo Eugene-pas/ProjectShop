@@ -7,6 +7,8 @@ using Shop.Application.Commands.Reviews.Queries;
 using System.Threading.Tasks;
 using Shop.Application.Commands.Reviews.Queries.GetReviewsForProduct;
 using Shop.Application.Commands.Reviews.Commands.DeleteReview;
+using Shop.Application.Commands.Reviews.Queries.GetReviewsForProductByDate;
+using Shop.Application.Commands.Reviews.Queries.GetReviewsForProductByLike;
 
 namespace DemoApi.Controllers
 {
@@ -38,6 +40,18 @@ namespace DemoApi.Controllers
         public async Task<ActionResult<ReviewsForProductVm>> GetAll(long productId)
         {
             return await _mediator.Send(new GetReviewsForProductQuery { ProductId = productId });
+        }
+
+        [HttpGet("GetReviewsListForProductByDate")]
+        public async Task<ActionResult<ReviewsForProductVm>> GetAllByDate(long productId)
+        {
+            return await _mediator.Send(new GetReviewsForProductByDateQuery { ProductId = productId });
+        }
+
+        [HttpGet("GetReviewsListForProductByLike")]
+        public async Task<ActionResult<ReviewsForProductVm>> GetAllByLike(long productId)
+        {
+            return await _mediator.Send(new GetReviewsForProductByLikeQuery { ProductId = productId });
         }
 
         [HttpDelete("delete")]

@@ -3,8 +3,10 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using Shop.Application.Commands.ReviewComments.Queries;
-using Shop.Application.Commands.ReviewComments.Commands.CreateComment;
+using Shop.Application.Commands.ReviewComments.Commands.CreateReviewComment;
 using Shop.Application.Commands.ReviewComments.Commands.DeleteReviewComment;
+using Shop.Application.Commands.ReviewComments.Queries.GetReviewCommentList;
+using Shop.Application.Commands.ReviewComments.Queries.GetReviewComment;
 
 namespace DemoApi.Controllers
 {
@@ -21,8 +23,20 @@ namespace DemoApi.Controllers
             {
                 ReviewId = comment.ReviewId,
                 CustomerId = comment.CustomerId,
-                Comments = comment.Comments,
+                Comment = comment.Comment,
             });
+        }
+
+        [HttpGet("Get")]
+        public async Task<ActionResult<ReviewCommentVm>> Get(long id)
+        {
+            return await _mediator.Send(new GetReviewCommentQuery { Id = id });
+        }
+
+        [HttpGet("GetReviewCommentsList")]
+        public async Task<ActionResult<ReviewCommentsVm>> GetAll()
+        {
+            return await _mediator.Send(new GetReviewCommentListQuery { });
         }
 
         [HttpDelete("delete")]

@@ -3,7 +3,7 @@ using MediatR;
 using Shop.Application.Commands.ReviewComments.Queries;
 using Shop.Domain.Entities;
 
-namespace Shop.Application.Commands.ReviewComments.Commands.CreateComment
+namespace Shop.Application.Commands.ReviewComments.Commands.CreateReviewComment
 {
     public class CreateReviewCommentCommand : IRequest<ReviewCommentVm>
     {
@@ -11,6 +11,6 @@ namespace Shop.Application.Commands.ReviewComments.Commands.CreateComment
 
         public long CustomerId { get; set; }
 
-        public string Comments { get; set; }
+        public string Comment { get; set; }
     }
 }

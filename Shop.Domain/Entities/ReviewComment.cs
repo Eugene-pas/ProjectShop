@@ -10,7 +10,7 @@ namespace Shop.Domain.Entities
     {
         public long ReviewId { get; set; }
 
-        public string Comments { get; set; }
+        public string Comment { get; set; }
 
         public DateTime CreationDate { get; set; }
 

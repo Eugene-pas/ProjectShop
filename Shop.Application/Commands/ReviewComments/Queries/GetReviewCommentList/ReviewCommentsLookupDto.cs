@@ -3,9 +3,9 @@ using AutoMapper;
 using Shop.Application.Common.Mappings;
 using Shop.Domain.Entities;
 
-namespace Shop.Application.Commands.ReviewComments.Queries
+namespace Shop.Application.Commands.ReviewComments.Queries.GetReviewCommentList
 {
-    public class ReviewCommentVm : IMapWith<ReviewComment>
+    public class ReviewCommentsLookupDto : IMapWith<ReviewComment>
     {
         public long Id { get; set; }
 
@@ -21,7 +21,7 @@ namespace Shop.Application.Commands.ReviewComments.Queries
 
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<ReviewComment, ReviewCommentVm>()
+            profile.CreateMap<ReviewComment, ReviewCommentsLookupDto>()
                 .ForMember(x => x.Id,
                    opt => opt.MapFrom(x => x.Id))
                  .ForMember(x => x.ReviewId,
