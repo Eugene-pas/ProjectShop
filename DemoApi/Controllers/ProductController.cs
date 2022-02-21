@@ -41,7 +41,7 @@ namespace DemoApi.Controllers
             });
         }
 
-        [HttpDelete("delete/{id}")]
+        [HttpDelete("delete/{id:long}")]
         public async Task<ProductVm> Delete(long id)
         {
             return await _mediator.Send(new DeleteProductCommand { Id = id });
@@ -57,7 +57,10 @@ namespace DemoApi.Controllers
                 Price = product.Price,
                 Description = product.Description,
                 OnStorageCount = product.OnStorageCount,
-                Rating = product.Rating
+                Rating = product.Rating,
+                CategoryId=product.CategoryId,
+                SellerId=product.SellerId
+                
             });
         }
 
@@ -73,6 +76,7 @@ namespace DemoApi.Controllers
             return await _mediator.Send(new GetProductsListQuery());
         }
 
+
         [HttpGet("getListByCategory")]
         public async Task<ActionResult<List<Product>>> GetListByCategory(long categoryId)
         {
@@ -83,6 +87,18 @@ namespace DemoApi.Controllers
         public async Task<ActionResult<ProductsListVm>> GetAllByPrice(long categoryId)
         {
             return await _mediator.Send(new GetProductsListByPriceQuery { CategoryId = categoryId});
+        }
+
+        [HttpGet("getSortListByPriceIncrease")]
+        public async Task<ActionResult<ProductsListVm>> GetAllByPriceIncrease(long categoryId)
+        {
+            return await _mediator.Send(new GetProductsListByPriceIncreaseQuery { CategoryId = categoryId});
+        }
+
+        [HttpGet("getSortListByPriceFalling")]
+        public async Task<ActionResult<ProductsListVm>> GetAllByPriceFalling(long categoryId)
+        {
+            return await _mediator.Send(new GetProductsListByPriceFallingQuery { CategoryId = categoryId });
         }
 
         [HttpGet("getSortListByRating")]

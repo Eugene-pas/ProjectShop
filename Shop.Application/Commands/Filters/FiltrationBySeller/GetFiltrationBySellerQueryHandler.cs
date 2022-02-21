@@ -16,6 +16,7 @@ namespace Shop.Application.Commands.Filters.FiltrationBySeller
         {
             var productList = await _dbContext.Product
                 .Include(x => x.Category)
+                .Include(x => x.Seller)
                 .Where(x => x.Category.Id == request.CategoryId)
                 .Where(x => x.Seller.Id == request.SellerId)
                 .ToListAsync(cancellationToken);

@@ -32,6 +32,8 @@ namespace Shop.Application.Commands.Products.Commands.UpdateProduct
             product.Description = request.Description;
             product.OnStorageCount = request.OnStorageCount;
             product.Rating = request.Rating;
+            product.Category = await _dbContext.Category.FindAsync(request.CategoryId);
+            product.Seller = await _dbContext.Seller.FindAsync(request.SellerId);
 
             await _dbContext.SaveChangesAsync(cancellationToken);
 
