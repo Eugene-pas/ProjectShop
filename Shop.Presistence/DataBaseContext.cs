@@ -9,6 +9,7 @@
         {
 
         }
+        public virtual DbSet<CategoryConnection> CategoryConnection { get; set; }
         public virtual DbSet<Category> Category { get; set; }
         public virtual DbSet<Customer> Customer { get; set; }
         public virtual DbSet<Delivery> Delivery { get; set; }

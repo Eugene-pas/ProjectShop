@@ -15,9 +15,9 @@ namespace Shop.Application.Commands_and_Queries.OrderProductConnections.Commands
             _dbContext = dbContext;
             RuleFor(connection =>
             connection.Id).NotEmpty().NotEqual(0)
-                .WithMessage("The Id value must not equal to 0")
+                .WithMessage("The CategoryId value must not equal to 0")
                 .MustAsync(Exist)
-                .WithMessage("The specified Id doesn't exist.");
+                .WithMessage("The specified CategoryId doesn't exist.");
             RuleFor(connectionProduct =>
            connectionProduct.ProductId).NotEqual(0)
                .WithMessage("The ProductId value must not equal to 0")

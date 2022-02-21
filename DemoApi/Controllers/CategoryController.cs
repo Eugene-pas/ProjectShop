@@ -16,13 +16,12 @@ namespace DemoApi.Controllers
         public CategoryController(IMediator mediator) : base(mediator) { }
 
         [HttpPost("create")]
-        public async Task<CategoryVm> Create(string name, long parentId)
+        public async Task<CategoryVm> Create(string name)
         {
             return await _mediator.Send(
             new CreateCategoryCommand
             {
-                Name = name,
-                ParentId = parentId
+                Name = name
             });
         }
 
@@ -39,12 +38,12 @@ namespace DemoApi.Controllers
         }
 
         [HttpPost("update")]
-        public async Task<CategoryVm> Update(string name, long parentId)
+        public async Task<CategoryVm> Update(long categoryId,string name)
         {
             return await _mediator.Send(new UpdateCategoryCommand
             {
-                Name = name,
-                ParentId = parentId
+                CategoryId = categoryId,
+                Name = name
             });
         }
 

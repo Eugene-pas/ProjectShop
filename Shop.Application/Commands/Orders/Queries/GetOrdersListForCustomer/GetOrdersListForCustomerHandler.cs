@@ -30,7 +30,7 @@ namespace Shop.Application.Commands_and_Queries.Orders.Queries.GetOrdersListForC
 
             if(orders.Count == 0) orders = null;
 
-            _ = orders ?? throw new NotFoundException(nameof(Order), $"Id :{request.customerId}");
+            _ = orders ?? throw new NotFoundException(nameof(Order), $"CategoryId :{request.customerId}");
 
              return new OrderListVm { Order = orders };
         }

@@ -20,12 +20,11 @@ namespace Shop.Application.Categories.Commands.UpdateCategories
         {
             var category = await _dbContext.Category
                 .FirstOrDefaultAsync(category =>
-            category.Id == request.Id, cancellationToken);
+            category.Id == request.CategoryId, cancellationToken);
 
             _ = category ?? throw new NotFoundException(nameof(Category), category.Id);
 
             category.Name = request.Name;
-            category.ParentCategory = _dbContext.Category.Find(request.ParentId);
 
             await _dbContext.SaveChangesAsync(cancellationToken);
 
