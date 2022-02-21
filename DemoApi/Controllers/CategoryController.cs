@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Shop.Application.Commands.Categories.Commands.CreateCategories;
 using Shop.Application.Commands.Categories.Commands.DeleteCategories;
@@ -16,13 +15,25 @@ namespace DemoApi.Controllers
         public CategoryController(IMediator mediator) : base(mediator) { }
 
         [HttpPost("create")]
-        public async Task<CategoryVm> Create(string name)
+        public async Task<CategoryVm> Create(string name, long parentId)
         {
-            return await _mediator.Send(
-            new CreateCategoryCommand
+            var category = await _mediator.Send(
+                new CreateCategoryCommand
+                {
+                    Name = name
+                }
+            );
+            if (parentId != 0)
             {
-                Name = name
-            });
+                await _mediator.Send(new CreateCategoryConnectionCommand
+                {
+                    ParentId = parentId,
+                    ChildId = category.Id
+                });
+
+            }
+            return category;
+
         }
 
         [HttpGet("get")]
@@ -33,12 +44,12 @@ namespace DemoApi.Controllers
 
         [HttpGet("getlist")]
         public async Task<ActionResult<CategoriesListVm>> GetAll()
-        {           
+        {
             return await _mediator.Send(new GetCategoriesListQuery { });
         }
 
         [HttpPost("update")]
-        public async Task<CategoryVm> Update(long categoryId,string name)
+        public async Task<CategoryVm> Update(long categoryId, string name)
         {
             return await _mediator.Send(new UpdateCategoryCommand
             {

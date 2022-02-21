@@ -11,7 +11,7 @@ namespace Shop.Domain.Entities
         }
         public string Name { get; set; }
 
-        public ICollection<CategoryConnection> Child { get; set; }
+        public ICollection<CategoryConnection> Connections { get; set; }
 
         public virtual ICollection<Product> Product { get; set; }
     }

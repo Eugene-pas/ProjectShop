@@ -11,7 +11,7 @@ namespace Shop.Application.Common
     {
         protected readonly IDataBaseContext _dbContext;
         protected readonly IMapper _mapper;
-        public HandlersBase(IDataBaseContext dbContext, IMapper mapper) =>
+        protected HandlersBase(IDataBaseContext dbContext, IMapper mapper) =>
               (_dbContext, _mapper) = (dbContext, mapper);
 
         protected List<Category> SubcategoriesFind(IDataBaseContext dataBase, long parenrId, List<Category> listCategories)

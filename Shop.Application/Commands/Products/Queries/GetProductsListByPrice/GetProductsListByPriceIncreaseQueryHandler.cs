@@ -25,7 +25,7 @@ namespace Shop.Application.Commands.Products.Queries.GetProductsListByPrice
             var productQuery = await _dbContext.Product
                 .Include(x => x.Category)
                 .Where(x => x.Category.Id == request.CategoryId)
-                .ProjectTo<ProductsLookupDto>(_mapper.ConfigurationProvider)
+                //.ProjectTo<ProductsLookupDto>(_mapper.ConfigurationProvider)
                 .OrderBy(x => x.Price)
                 .ToListAsync(cancellationToken);
 
