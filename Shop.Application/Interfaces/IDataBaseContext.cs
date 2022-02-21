@@ -1,14 +1,16 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Shop.Domain.Entities;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Shop.Application.Interfaces
 {
     public interface IDataBaseContext
     {
-        DbSet<CategoryConnection> CategoryConnection { get; set; }
+        DbSet<Basket> Basket { get; set; }
+        DbSet<BasketItem> BasketItem { get; set; }
         DbSet<Category> Category { get; set; }
+        DbSet<CategoryConnection> CategoryConnection { get; set; }
         DbSet<Customer> Customer { get; set; }
         DbSet<Delivery> Delivery { get; set; }
         DbSet<DeliveryProductConnection> DeliveryProductConnection { get; set; }
