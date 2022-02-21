@@ -1,9 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Shop.Domain;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Shop.Domain.Entities;
 
-namespace Shop.Domain.Entities
+namespace Shop.Application.Interfaces
 {
     public interface IDataBaseContext
     {

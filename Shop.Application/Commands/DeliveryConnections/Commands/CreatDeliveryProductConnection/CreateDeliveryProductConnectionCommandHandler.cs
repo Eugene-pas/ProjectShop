@@ -1,12 +1,13 @@
-﻿using MediatR;
-using AutoMapper;
-using Shop.Application.Common;
-using Shop.Domain.Entities;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
-using Shop.Application.DeliveryConnections.Queries;
+using AutoMapper;
+using MediatR;
+using Shop.Application.Commands.DeliveryConnections.Queries;
+using Shop.Application.Common;
+using Shop.Application.Interfaces;
+using Shop.Domain.Entities;
 
-namespace Shop.Application.Commands_and_Queries.DeliveryConnections.Commands.CreatDeliveryConnection
+namespace Shop.Application.Commands.DeliveryConnections.Commands.CreatDeliveryProductConnection
 {
     public class CreateDeliveryProductConnectionCommandHandler
         : HandlersBase, IRequestHandler<CreateDeliveryProductConnectionCommand, DeliveryProductConnectionVm>

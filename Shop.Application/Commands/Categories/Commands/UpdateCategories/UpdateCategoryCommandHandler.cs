@@ -1,14 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
-using Shop.Application.Categories.Commands.Queries.GetCategory;
-using Shop.Application.Exceptions;
+using Microsoft.EntityFrameworkCore;
+using Shop.Application.Commands.Categories.Queries.GetCategory;
 using Shop.Application.Common;
+using Shop.Application.Exceptions;
+using Shop.Application.Interfaces;
 using Shop.Domain.Entities;
 
-namespace Shop.Application.Categories.Commands.UpdateCategories
+namespace Shop.Application.Commands.Categories.Commands.UpdateCategories
 {
     public class UpdateCategoryCommandHandler
         : HandlersBase, IRequestHandler<UpdateCategoryCommand, CategoryVm>

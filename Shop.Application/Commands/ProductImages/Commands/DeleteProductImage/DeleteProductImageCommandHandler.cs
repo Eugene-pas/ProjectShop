@@ -1,14 +1,14 @@
-﻿using MediatR;
-using Shop.Application.Exceptions;
-using Shop.Domain.Entities;
-using Syroot.Windows.IO;
-using System.IO;
+﻿using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using MediatR;
+using Shop.Application.Exceptions;
+using Shop.Application.Interfaces;
+using Shop.Domain.Entities;
+using Syroot.Windows.IO;
 
-namespace Shop.Application.ProductImages.Commands.DeleteProductImage
+namespace Shop.Application.Commands.ProductImages.Commands.DeleteProductImage
 {
     public class DeleteProductImageCommandHandler
         : IRequestHandler<DeleteProductImageCommand>

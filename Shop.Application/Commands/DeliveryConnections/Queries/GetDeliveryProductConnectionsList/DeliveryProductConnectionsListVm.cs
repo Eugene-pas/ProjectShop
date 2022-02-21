@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Shop.Application.Commands_and_Queries.DeliveryConnections.Queries.GetDeliveryProductConnectionsList
+namespace Shop.Application.Commands.DeliveryConnections.Queries.GetDeliveryProductConnectionsList
 {
     public class DeliveryProductConnectionsListVm
     {

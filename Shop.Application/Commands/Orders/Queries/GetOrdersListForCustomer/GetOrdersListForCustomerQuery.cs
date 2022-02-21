@@ -1,7 +1,7 @@
 ﻿using MediatR;
-using Shop.Application.Orders.Queries.GetAllOrder;
+using Shop.Application.Commands.Orders.Queries.GetOrdersList;
 
-namespace Shop.Application.Commands_and_Queries.Orders.Queries.GetOrdersListForCustomer
+namespace Shop.Application.Commands.Orders.Queries.GetOrdersListForCustomer
 {
     public class GetOrdersListForCustomerQuery
         : IRequest<OrderListVm>

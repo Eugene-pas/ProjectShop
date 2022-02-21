@@ -1,8 +1,7 @@
 ﻿using FluentValidation;
-using Shop.Application.Categories.Commands.CreateCategories;
-using Shop.Domain.Entities;
+using Shop.Application.Interfaces;
 
-namespace Shop.Application.Commands_and_Queries.Categories.Commands.CreateCategories
+namespace Shop.Application.Commands.Categories.Commands.CreateCategories
 {
     public class CreateCategoryCommandValidator
         : AbstractValidator<CreateCategoryCommand>

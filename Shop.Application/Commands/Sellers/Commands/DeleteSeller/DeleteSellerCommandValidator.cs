@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace Shop.Application.Sellers.Commands.DeleteSeller
+namespace Shop.Application.Commands.Sellers.Commands.DeleteSeller
 {
     public class DeleteSellerCommandValidator : AbstractValidator<DeleteSellerCommand>
     {

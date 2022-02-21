@@ -1,13 +1,12 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Shop.Application.Commands_and_Queries.ProductImages.Queries;
-using Shop.Application.Commands_and_Queries.ProductImages.Queries.GetProductImageListForProduct;
-using Shop.Application.ProductImages.Commands.CreateProductImage;
-using Shop.Application.ProductImages.Commands.DeleteProductImage;
-using Shop.Application.ProductImages.Queries.GetProducImagesList;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
+using Shop.Application.Commands.ProductImages.Commands.CreateProductImage;
+using Shop.Application.Commands.ProductImages.Commands.DeleteProductImage;
+using Shop.Application.Commands.ProductImages.Queries.GetProductImageListForProduct;
+using Shop.Application.Commands.ProductImages.Queries.GetProductImagesList;
 
 
 namespace DemoApi.Controllers

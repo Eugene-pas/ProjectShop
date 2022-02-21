@@ -1,12 +1,12 @@
 ﻿using DemoApi.Models.DeliveryProductConnectionModels;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Shop.Application.Commands_and_Queries.DeliveryConnections;
-using Shop.Application.Commands_and_Queries.DeliveryConnections.Commands.DeleteDeliveryProductConnection;
-using Shop.Application.Commands_and_Queries.DeliveryConnections.Commands.UpdateDeliveryProductConnection;
-using Shop.Application.Commands_and_Queries.DeliveryConnections.Queries.GetDeliveryProductConnectionsList;
-using Shop.Application.DeliveryConnections.Queries;
 using System.Threading.Tasks;
+using Shop.Application.Commands.DeliveryConnections.Commands.CreatDeliveryProductConnection;
+using Shop.Application.Commands.DeliveryConnections.Commands.DeleteDeliveryProductConnection;
+using Shop.Application.Commands.DeliveryConnections.Commands.UpdateDeliveryProductConnection;
+using Shop.Application.Commands.DeliveryConnections.Queries;
+using Shop.Application.Commands.DeliveryConnections.Queries.GetDeliveryProductConnectionsList;
 
 namespace DemoApi.Controllers
 {

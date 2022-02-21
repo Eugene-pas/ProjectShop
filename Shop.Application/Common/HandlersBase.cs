@@ -3,6 +3,7 @@ using System.Linq;
 using Shop.Domain.Entities;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using Shop.Application.Interfaces;
 
 namespace Shop.Application.Common
 {

@@ -1,7 +1,7 @@
-﻿using Shop.Domain.Entities;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Shop.Domain.Entities;
 
-namespace Shop.Application.Commands_and_Queries.SearchByCategoriesAndProduct
+namespace Shop.Application.Commands.SearchByCategoriesAndProduct
 {
     public class SearchVm
     {

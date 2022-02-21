@@ -1,8 +1,7 @@
 ﻿using FluentValidation;
-using Shop.Application.Categories.Commands.UpdateCategories;
-using Shop.Domain.Entities;
+using Shop.Application.Interfaces;
 
-namespace Shop.Application.Commands_and_Queries.Categories.Commands.UpdateCategories
+namespace Shop.Application.Commands.Categories.Commands.UpdateCategories
 {
     public class UpdateCategoryCommandValidator
         : AbstractValidator<UpdateCategoryCommand>

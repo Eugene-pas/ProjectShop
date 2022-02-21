@@ -5,7 +5,8 @@ using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Shop.Application.Products.Queries.GetProductsList;
+using Shop.Application.Commands.Products.Queries.GetProductsList;
+using Shop.Application.Interfaces;
 using Shop.Domain.Entities;
 
 namespace Shop.Application.Commands.Products.Queries.GetProductsListByRating

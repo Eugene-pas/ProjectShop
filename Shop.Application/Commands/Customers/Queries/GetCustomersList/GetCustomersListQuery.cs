@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Shop.Application.Customers.Queries.GetCustomersList
+namespace Shop.Application.Commands.Customers.Queries.GetCustomersList
 {
     public class GetCustomersListQuery : IRequest<CustomersListVm>
     {

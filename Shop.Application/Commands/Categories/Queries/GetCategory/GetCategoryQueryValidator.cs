@@ -1,8 +1,7 @@
 ﻿using FluentValidation;
-using Shop.Application.Categories.Commands.Queries.GetCategory;
-using Shop.Domain.Entities;
+using Shop.Application.Interfaces;
 
-namespace Shop.Application.Commands_and_Queries.Categories.Queries.GetCategory
+namespace Shop.Application.Commands.Categories.Queries.GetCategory
 {
     public class GetCategoryQueryValidator
         : AbstractValidator<GetCategoryQuery>

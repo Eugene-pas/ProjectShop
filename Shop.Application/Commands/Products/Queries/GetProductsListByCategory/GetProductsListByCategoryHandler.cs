@@ -1,13 +1,13 @@
 ﻿using AutoMapper;
 using MediatR;
 using Shop.Application.Common;
-using Shop.Application.Products.Queries.GetProductsList;
 using Shop.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Shop.Application.Interfaces;
 
 namespace Shop.Application.Commands.Products.Queries.GetProductsListByCategory
 {

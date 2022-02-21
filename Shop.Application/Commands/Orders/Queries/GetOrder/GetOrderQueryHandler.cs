@@ -1,15 +1,14 @@
-﻿using System.Threading;
+﻿using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
-using MediatR;
-using Shop.Domain.Entities;
 using AutoMapper;
-using Microsoft.EntityFrameworkCore;
-using Shop.Application.Exceptions;
-using Shop.Application.Common;
 using AutoMapper.QueryableExtensions;
-using System.Linq;
+using MediatR;
+using Microsoft.EntityFrameworkCore;
+using Shop.Application.Common;
+using Shop.Application.Interfaces;
 
-namespace Shop.Application.Orders.Queries.GetOrder
+namespace Shop.Application.Commands.Orders.Queries.GetOrder
 {
     public class GetOrderQueryHandler : HandlersBase, IRequestHandler<GetOrderQuery, OrderVm>
     {

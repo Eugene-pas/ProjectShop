@@ -1,13 +1,13 @@
-﻿using AutoMapper;
+﻿using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Shop.Domain.Entities;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
+using Shop.Application.Interfaces;
 
-namespace Shop.Application.Categories.Commands.Queries.GetCategory
+namespace Shop.Application.Commands.Categories.Queries.GetCategory
 {
     public class GetCategoryQueryHandler
         : IRequestHandler<GetCategoryQuery, CategoryVm>

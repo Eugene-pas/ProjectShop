@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Shop.Application.Commands.CategoryConnections.Commands.DeleteCategoryConnection;
+using Shop.Application.Interfaces;
 using Shop.Domain.Entities;
 
 namespace Shop.Application.Commands.CategoryConnections.Queries.GetSubcategoriesList

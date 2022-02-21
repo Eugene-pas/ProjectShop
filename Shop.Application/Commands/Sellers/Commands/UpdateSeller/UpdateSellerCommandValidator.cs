@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace Shop.Application.Sellers.Commands.UpdateSeller
+namespace Shop.Application.Commands.Sellers.Commands.UpdateSeller
 {
     public class UpdateSellerCommandValidator : AbstractValidator<UpdateSellerCommand>
     {

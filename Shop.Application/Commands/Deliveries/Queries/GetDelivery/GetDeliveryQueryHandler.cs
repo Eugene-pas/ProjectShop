@@ -1,13 +1,14 @@
-﻿using AutoMapper;
+﻿using System.Threading;
+using System.Threading.Tasks;
+using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Shop.Application.Common;
 using Shop.Application.Exceptions;
+using Shop.Application.Interfaces;
 using Shop.Domain.Entities;
-using System.Threading;
-using System.Threading.Tasks;
 
-namespace Shop.Application.Deliveries.Queries.GetDelivery
+namespace Shop.Application.Commands.Deliveries.Queries.GetDelivery
 {
     public class GetDeliveryQueryHandler
         : HandlersBase, IRequestHandler<GetDeliveryQuery, DeliveryVm>

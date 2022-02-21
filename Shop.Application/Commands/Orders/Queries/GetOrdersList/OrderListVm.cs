@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Shop.Application.Orders.Queries.GetAllOrder
+namespace Shop.Application.Commands.Orders.Queries.GetOrdersList
 {
     public class OrderListVm
     {

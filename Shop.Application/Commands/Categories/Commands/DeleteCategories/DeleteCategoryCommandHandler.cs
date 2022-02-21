@@ -2,12 +2,13 @@
 using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
-using Shop.Application.Categories.Commands.Queries.GetCategory;
-using Shop.Application.Exceptions;
+using Shop.Application.Commands.Categories.Queries.GetCategory;
 using Shop.Application.Common;
+using Shop.Application.Exceptions;
+using Shop.Application.Interfaces;
 using Shop.Domain.Entities;
 
-namespace Shop.Application.Categories.Commands.DeleteCategories
+namespace Shop.Application.Commands.Categories.Commands.DeleteCategories
 {
     public class DeleteCategoryCommandHandler
         : HandlersBase, IRequestHandler<DeleteCategoryCommand, CategoryVm>

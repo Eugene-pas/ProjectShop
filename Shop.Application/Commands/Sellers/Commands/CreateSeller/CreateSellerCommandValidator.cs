@@ -1,7 +1,6 @@
-﻿using System;
-using FluentValidation;
+﻿using FluentValidation;
 
-namespace Shop.Application.Sellers.Commands.CreateSeller
+namespace Shop.Application.Commands.Sellers.Commands.CreateSeller
 {
     public class CreateSellerCommandValidator : AbstractValidator<CreateSellerCommand>
     {

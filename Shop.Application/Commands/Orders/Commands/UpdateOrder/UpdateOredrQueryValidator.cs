@@ -1,11 +1,10 @@
-﻿using FluentValidation;
-using Microsoft.EntityFrameworkCore;
-using Shop.Application.Orders.Commands.UpdateOrder;
-using Shop.Domain.Entities;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
+using FluentValidation;
+using Microsoft.EntityFrameworkCore;
+using Shop.Application.Interfaces;
 
-namespace Shop.Application.Commands_and_Queries.Orders.Commands.UpdateOrder
+namespace Shop.Application.Commands.Orders.Commands.UpdateOrder
 {
     public class UpdateOredrQueryValidator
    : AbstractValidator<UpdateOrderCommand>

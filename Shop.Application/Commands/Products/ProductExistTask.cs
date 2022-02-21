@@ -1,9 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Shop.Domain.Entities;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Shop.Application.Interfaces;
 
-namespace Shop.Application.Commands_and_Queries.Products
+namespace Shop.Application.Commands.Products
 {
     internal class ProductExistTask
     {

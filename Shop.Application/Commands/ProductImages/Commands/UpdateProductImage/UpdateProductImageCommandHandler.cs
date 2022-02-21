@@ -1,11 +1,12 @@
-﻿using MediatR;
+﻿using System.Threading;
+using System.Threading.Tasks;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Shop.Application.Exceptions;
+using Shop.Application.Interfaces;
 using Shop.Domain.Entities;
-using System.Threading;
-using System.Threading.Tasks;
 
-namespace Shop.Application.ProductImages.Commands.UpdateProductImage
+namespace Shop.Application.Commands.ProductImages.Commands.UpdateProductImage
 {
     public class UpdateProductImageCommandHandler
         : IRequestHandler<UpdateProductImageCommand>

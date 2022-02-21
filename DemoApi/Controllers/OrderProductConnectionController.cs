@@ -1,12 +1,12 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Shop.Application.Commands_and_Queries.OrderProductConnections.Commands.CreateOrderProductConnections;
-using Shop.Application.Commands_and_Queries.OrderProductConnections.Commands.DeleteOrderProductConnections;
-using Shop.Application.Commands_and_Queries.OrderProductConnections.Commands.UpdateOrderProductConnections;
-using Shop.Application.Commands_and_Queries.OrderProductConnections.Queries.GetOrdersListProductConnections;
-using Shop.Application.Commands_and_Queries.OrderProductConnections.Queries.GetProductsListbyOrder;
-using Shop.Application.OrderProductConnections.Queries;
 using System.Threading.Tasks;
+using Shop.Application.Commands.OrderProductConnections.Commands.CreateOrderProductConnections;
+using Shop.Application.Commands.OrderProductConnections.Commands.DeleteOrderProductConnections;
+using Shop.Application.Commands.OrderProductConnections.Commands.UpdateOrderProductConnections;
+using Shop.Application.Commands.OrderProductConnections.Queries;
+using Shop.Application.Commands.OrderProductConnections.Queries.GetOrdersListProductConnections;
+using Shop.Application.Commands.OrderProductConnections.Queries.GetProductsListbyOrder;
 
 namespace DemoApi.Controllers
 {

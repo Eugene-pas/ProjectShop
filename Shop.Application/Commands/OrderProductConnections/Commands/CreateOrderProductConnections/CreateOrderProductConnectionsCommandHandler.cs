@@ -2,11 +2,12 @@
 using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
+using Shop.Application.Commands.OrderProductConnections.Queries;
 using Shop.Application.Common;
-using Shop.Application.OrderProductConnections.Queries;
+using Shop.Application.Interfaces;
 using Shop.Domain.Entities;
 
-namespace Shop.Application.Commands_and_Queries.OrderProductConnections.Commands.CreateOrderProductConnections
+namespace Shop.Application.Commands.OrderProductConnections.Commands.CreateOrderProductConnections
 {
     public class CreateOrderProductConnectionsCommandHandler
         : HandlersBase, IRequestHandler<CreateOrderProductConnectionsCommand, OrderProductConnectionVm>

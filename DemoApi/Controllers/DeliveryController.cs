@@ -1,11 +1,11 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Shop.Application.Deliveries.Commands.CreateDelivery;
-using Shop.Application.Deliveries.Commands.DeleteDelivery;
-using Shop.Application.Deliveries.Commands.UpdateDelivery;
-using Shop.Application.Deliveries.Queries.GetDeliveriesList;
-using Shop.Application.Deliveries.Queries.GetDelivery;
 using System.Threading.Tasks;
+using Shop.Application.Commands.Deliveries.Commands.CreateDelivery;
+using Shop.Application.Commands.Deliveries.Commands.DeleteDelivery;
+using Shop.Application.Commands.Deliveries.Commands.UpdateDelivery;
+using Shop.Application.Commands.Deliveries.Queries.GetDeliveriesList;
+using Shop.Application.Commands.Deliveries.Queries.GetDelivery;
 
 namespace DemoApi.Controllers
 {

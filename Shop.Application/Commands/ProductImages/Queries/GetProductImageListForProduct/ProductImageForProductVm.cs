@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Shop.Application.Commands_and_Queries.ProductImages.Queries.GetProductImageListForProduct
+namespace Shop.Application.Commands.ProductImages.Queries.GetProductImageListForProduct
 {
     public class ProductImageForProductVm
     {

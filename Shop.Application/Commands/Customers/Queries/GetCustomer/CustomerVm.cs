@@ -2,7 +2,7 @@
 using Shop.Application.Common.Mappings;
 using Shop.Domain.Entities;
 
-namespace Shop.Application.Customers.Queries.GetCustomer
+namespace Shop.Application.Commands.Customers.Queries.GetCustomer
 {
     public class CustomerVm : IMapWith<Customer>
     {

@@ -1,9 +1,9 @@
-﻿using MediatR;
+﻿using System.Collections.Generic;
+using MediatR;
+using Shop.Application.Commands.Customers.Queries.GetCustomer;
 using Shop.Domain.Entities;
-using System.Collections.Generic;
-using Shop.Application.Customers.Queries.GetCustomer;
 
-namespace Shop.Application.Customers.Commands.UpdateCustomer
+namespace Shop.Application.Commands.Customers.Commands.UpdateCustomer
 {
     public class UpdateCustomerCommand
         : IRequest<CustomerVm>

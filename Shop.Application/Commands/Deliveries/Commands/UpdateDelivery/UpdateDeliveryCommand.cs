@@ -1,7 +1,7 @@
 ﻿using MediatR;
-using Shop.Application.Deliveries.Queries.GetDelivery;
+using Shop.Application.Commands.Deliveries.Queries.GetDelivery;
 
-namespace Shop.Application.Deliveries.Commands.UpdateDelivery
+namespace Shop.Application.Commands.Deliveries.Commands.UpdateDelivery
 {
     public class UpdateDeliveryCommand
         : IRequest<DeliveryVm>

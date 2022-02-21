@@ -1,4 +1,6 @@
-﻿namespace Shop.Domain.Entities
+﻿using Shop.Application.Interfaces;
+
+namespace Shop.Domain.Entities
 {
     using Microsoft.EntityFrameworkCore;
 

@@ -1,10 +1,10 @@
-﻿using MediatR;
-using Shop.Domain.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using Shop.Application.Orders.Queries.GetOrder;
+using MediatR;
+using Shop.Application.Commands.Orders.Queries.GetOrder;
+using Shop.Domain.Entities;
 
-namespace Shop.Application.Orders.Commands.CreateOrder
+namespace Shop.Application.Commands.Orders.Commands.CreateOrder
 {
     public class CreateOrderCommand
         : IRequest<OrderVm>

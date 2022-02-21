@@ -2,7 +2,7 @@
 using Shop.Application.Common.Mappings;
 using Shop.Domain.Entities;
 
-namespace Shop.Application.OrderProductConnections.Queries
+namespace Shop.Application.Commands.OrderProductConnections.Queries
 {
     public class OrderProductConnectionVm
         :IMapWith<OrderProductConnection>

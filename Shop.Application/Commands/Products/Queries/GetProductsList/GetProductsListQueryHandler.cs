@@ -1,12 +1,12 @@
-﻿using AutoMapper;
-using AutoMapper.QueryableExtensions;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
+using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using MediatR;
-using Shop.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using Shop.Application.Interfaces;
 
-namespace Shop.Application.Products.Queries.GetProductsList
+namespace Shop.Application.Commands.Products.Queries.GetProductsList
 {
     public class GetProductsListQueryHandler 
         : IRequestHandler<GetProductsListQuery, ProductsListVm>

@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace Shop.Application.Commands_and_Queries.OrderProductConnections.Queries.GetProductsListbyOrder
+namespace Shop.Application.Commands.OrderProductConnections.Queries.GetProductsListbyOrder
 {
     public class GetProductListOrderVm
     {

@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
-using Shop.Application.ProductImages.Commands.DeleteProductImage;
+using Shop.Application.Commands.ProductImages.Commands.DeleteProductImage;
 
-namespace Shop.Application.Commands_and_Queries.ProductImages.Queries
+namespace Shop.Application.Commands.ProductImages.Queries.GetProductImagesList
 {
     public class GetProductImagesListQueryValidator
     : AbstractValidator<DeleteProductImageCommand>

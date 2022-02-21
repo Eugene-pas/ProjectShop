@@ -2,7 +2,7 @@
 using Shop.Application.Common.Mappings;
 using Shop.Domain.Entities;
 
-namespace Shop.Application.Commands_and_Queries.OrderProductConnections.Queries.GetOrdersListProductConnections
+namespace Shop.Application.Commands.OrderProductConnections.Queries.GetOrdersListProductConnections
 {
     public class OrderProductConnectionLookupDto
         :IMapWith<OrderProductConnection>

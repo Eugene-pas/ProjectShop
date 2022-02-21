@@ -1,8 +1,7 @@
 ﻿using FluentValidation;
-using Shop.Application.Customers.Queries.GetCustomer;
-using Shop.Domain.Entities;
+using Shop.Application.Interfaces;
 
-namespace Shop.Application.Commands_and_Queries.Customers.Queries.GetCustomer
+namespace Shop.Application.Commands.Customers.Queries.GetCustomer
 {
     public class GetCustomerQueryValidator
         : AbstractValidator<GetCustomerQuery>

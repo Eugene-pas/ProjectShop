@@ -2,7 +2,7 @@
 using Shop.Application.Common.Mappings;
 using Shop.Domain.Entities;
 
-namespace Shop.Application.Commands_and_Queries.DeliveryConnections.Queries.GetDeliveryProductConnectionsList
+namespace Shop.Application.Commands.DeliveryConnections.Queries.GetDeliveryProductConnectionsList
 {
     public class DeliveryProductConnectionsDto : IMapWith<DeliveryProductConnection>
     {

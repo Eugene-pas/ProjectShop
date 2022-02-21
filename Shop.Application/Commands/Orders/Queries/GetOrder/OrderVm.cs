@@ -1,9 +1,9 @@
-﻿using AutoMapper;
+﻿using System;
+using AutoMapper;
 using Shop.Application.Common.Mappings;
 using Shop.Domain.Entities;
-using System;
 
-namespace Shop.Application.Orders.Queries.GetOrder
+namespace Shop.Application.Commands.Orders.Queries.GetOrder
 {
     public class OrderVm : IMapWith<Order>
     {

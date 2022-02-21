@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Shop.Domain.Entities;
 
-namespace Shop.Application.ProductImages.Commands.UpdateProductImage
+namespace Shop.Application.Commands.ProductImages.Commands.UpdateProductImage
 {
     public class UpdateProductImageCommand
         : IRequest

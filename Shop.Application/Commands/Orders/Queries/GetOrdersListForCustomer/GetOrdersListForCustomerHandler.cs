@@ -1,15 +1,16 @@
-﻿using AutoMapper;
+﻿using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Shop.Application.Commands.Orders.Queries.GetOrdersList;
 using Shop.Application.Exceptions;
-using Shop.Application.Orders.Queries.GetAllOrder;
+using Shop.Application.Interfaces;
 using Shop.Domain.Entities;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 
-namespace Shop.Application.Commands_and_Queries.Orders.Queries.GetOrdersListForCustomer
+namespace Shop.Application.Commands.Orders.Queries.GetOrdersListForCustomer
 {
     public class GetOrdersListForCustomerHandler
         : IRequestHandler<GetOrdersListForCustomerQuery, OrderListVm>

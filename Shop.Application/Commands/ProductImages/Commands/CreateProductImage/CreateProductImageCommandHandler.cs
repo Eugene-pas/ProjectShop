@@ -1,11 +1,12 @@
-﻿using DemoApi.FileServices;
+﻿using System.Threading;
+using System.Threading.Tasks;
 using MediatR;
+using Shop.Application.Commands.ProductImages.FileServices;
+using Shop.Application.Interfaces;
 using Shop.Domain.Entities;
 using Syroot.Windows.IO;
-using System.Threading;
-using System.Threading.Tasks;
 
-namespace Shop.Application.ProductImages.Commands.CreateProductImage
+namespace Shop.Application.Commands.ProductImages.Commands.CreateProductImage
 {
     public class CreateProductImageCommandHandler
         : IRequestHandler<CreateProductImageCommand, long>

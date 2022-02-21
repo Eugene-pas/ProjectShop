@@ -1,7 +1,7 @@
-﻿using Shop.Application.Deliveries.Queries.GetDelivery;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Shop.Application.Commands.Deliveries.Queries.GetDelivery;
 
-namespace Shop.Application.Deliveries.Queries.GetDeliveriesList
+namespace Shop.Application.Commands.Deliveries.Queries.GetDeliveriesList
 {
     public class DeliveriesListVm
     {
