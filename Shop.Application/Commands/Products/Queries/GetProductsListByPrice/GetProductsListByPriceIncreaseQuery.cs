@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using Shop.Application.Products.Queries.GetProductsList;
+using Shop.Application.Commands.Products.Queries.GetProductsList;
 
 namespace Shop.Application.Commands.Products.Queries.GetProductsListByPrice
 {

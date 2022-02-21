@@ -18,6 +18,8 @@ namespace Shop.Application.Commands.Products.Queries.GetProduct
         public async Task<ProductVm> Handle(GetProductQuery request, CancellationToken cancellationToken)
         {
             var product = await _dbContext.Product
+                .Include(x => x.Category)
+                .Include(x => x.Seller)
                 .FirstOrDefaultAsync(product => 
             product.Id == request.Id, cancellationToken);
 

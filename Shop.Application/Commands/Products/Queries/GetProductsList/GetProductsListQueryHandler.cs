@@ -1,12 +1,12 @@
-﻿using AutoMapper;
-using AutoMapper.QueryableExtensions;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
+using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using MediatR;
-using Shop.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using Shop.Domain.Entities;
 
-namespace Shop.Application.Products.Queries.GetProductsList
+namespace Shop.Application.Commands.Products.Queries.GetProductsList
 {
     public class GetProductsListQueryHandler 
         : IRequestHandler<GetProductsListQuery, ProductsListVm>
@@ -20,7 +20,8 @@ namespace Shop.Application.Products.Queries.GetProductsList
             CancellationToken cancellationToken)
         {
             var productQuery = await _dbContext.Product
-                .ProjectTo<ProductsLookupDto>(_mapper.ConfigurationProvider)
+                .Include(x => x.Category)
+                .Include(x => x.Seller)
                 .ToListAsync(cancellationToken);
             return new ProductsListVm { Products = productQuery };
         }

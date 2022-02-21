@@ -12,9 +12,9 @@ using Shop.Application.Commands.Products.Commands.UpdateProduct;
 using Shop.Application.Commands.Products.Queries.GetProduct;
 using Shop.Application.Commands.Products.Queries.GetProductsListByPrice;
 using Shop.Application.Commands.Products.Queries.GetProductsListByRating;
-using Shop.Application.Products.Queries.GetProductsList;
 using System.Threading.Tasks;
 using Shop.Application.Commands.Filters.FiltrationByPrice;
+using Shop.Application.Commands.Products.Queries.GetProductsList;
 using Shop.Application.Commands.Products.Queries.GetProductsListByCategory;
 using Shop.Domain.Entities;
 
@@ -77,7 +77,7 @@ namespace DemoApi.Controllers
         }
 
         [HttpGet("getListByCategory")]
-        public async Task<ActionResult<List<Product>>> GetListByCategory(long categoryId)
+        public async Task<ActionResult<ProductsListVm>> GetListByCategory(long categoryId)
         {
             return await _mediator.Send(new GetProductsListByCategoryQuery{CategoryId = categoryId});
         }

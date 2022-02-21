@@ -5,7 +5,7 @@ using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Shop.Application.Products.Queries.GetProductsList;
+using Shop.Application.Commands.Products.Queries.GetProductsList;
 using Shop.Domain.Entities;
 
 namespace Shop.Application.Commands.Products.Queries.GetProductsListByRating
@@ -23,8 +23,8 @@ namespace Shop.Application.Commands.Products.Queries.GetProductsListByRating
         {
             var productQuery = await _dbContext.Product
                 .Include(x => x.Category)
+                .Include(x => x.Seller)
                 .Where(x => x.Category.Id == request.CategoryId)
-                .ProjectTo<ProductsLookupDto>(_mapper.ConfigurationProvider)
                 .OrderBy(x => x.Rating)
                 .ToListAsync(cancellationToken);
 

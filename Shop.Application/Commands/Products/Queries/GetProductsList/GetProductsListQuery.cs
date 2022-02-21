@@ -1,9 +1,9 @@
 ﻿using MediatR;
 
-namespace Shop.Application.Products.Queries.GetProductsList
+namespace Shop.Application.Commands.Products.Queries.GetProductsList
 {
     public class GetProductsListQuery : IRequest<ProductsListVm>
     {
-        public long Id { get; set; }
+       // public long Id { get; set; }
     }
 }
