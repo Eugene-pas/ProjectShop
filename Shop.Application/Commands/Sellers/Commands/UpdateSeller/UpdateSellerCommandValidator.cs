@@ -2,18 +2,19 @@
 
 namespace Shop.Application.Commands.Sellers.Commands.UpdateSeller
 {
-    public class UpdateSellerCommandValidator : AbstractValidator<UpdateSellerCommand>
+    public class UpdateSellerCommandValidator
+        : AbstractValidator<UpdateSellerCommand>
     {
         public UpdateSellerCommandValidator()
         {
-            RuleFor(Seller =>
-                Seller.Id).NotEmpty();
-            RuleFor(Seller =>
-                Seller.Name).NotEmpty().MaximumLength(250);
-            RuleFor(Seller =>
-                Seller.Description).NotEmpty().MaximumLength(5000);
-            RuleFor(Seller =>
-                Seller.Contact).NotEmpty().MaximumLength(13);
+            RuleFor(seller =>
+                seller.Id).NotEmpty();
+            RuleFor(seller =>
+                seller.Name).NotEmpty().MaximumLength(250);
+            RuleFor(seller =>
+                seller.Description).NotEmpty().MaximumLength(5000);
+            RuleFor(seller =>
+                seller.Contact).NotEmpty().MaximumLength(13);
         }
     }
 }

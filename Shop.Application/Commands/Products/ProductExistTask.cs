@@ -14,7 +14,7 @@ namespace Shop.Application.Commands.Products
         public async Task<bool> Exist(long productId, CancellationToken cancellationToken)
         {
             return await _dbContext.Product
-                .AnyAsync(x => x.Id == productId);
+                .AnyAsync(x => x.Id == productId, cancellationToken);
         }
     }
 }

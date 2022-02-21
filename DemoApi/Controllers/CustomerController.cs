@@ -57,7 +57,7 @@ namespace DemoApi.Controllers
         [HttpGet("getlist")]
         public async Task<ActionResult<CustomersListVm>> GetList()
         {
-            return await _mediator.Send(new GetCustomersListQuery { });
+            return await _mediator.Send(new GetCustomersListQuery());
         }
         
     }

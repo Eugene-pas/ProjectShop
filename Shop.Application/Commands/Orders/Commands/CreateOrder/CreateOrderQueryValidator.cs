@@ -15,29 +15,29 @@ namespace Shop.Application.Commands.Orders.Commands.CreateOrder
         {
             _dbContext = dbContext;
 
-            RuleFor(createOredrQuery =>
-            createOredrQuery.Adress).NotEmpty().MaximumLength(250);
-            RuleFor(createOredrQuery =>
-            createOredrQuery.CustomerId).NotEqual(0)
+            RuleFor(createOrderQuery =>
+            createOrderQuery.Adress).NotEmpty().MaximumLength(250);
+            RuleFor(createOrderQuery =>
+            createOrderQuery.CustomerId).NotEqual(0)
                 .WithMessage("The CustomerId value must not equal to 0")
                 .MustAsync(CustomerExist)
                 .WithMessage("The specified CustomerId doesn't exist.");
-            RuleFor(createOredrQuery =>
-           createOredrQuery.DeliveryId).NotEqual(0)
+            RuleFor(createOrderQuery =>
+           createOrderQuery.DeliveryId).NotEqual(0)
                .WithMessage("The DeliveryId value must not equal to 0")
                .MustAsync(DeliveryExist)
                .WithMessage("The specified DeliveryId doesn't exist.");
 
         }
-        public async Task<bool> CustomerExist(long CustomerId, CancellationToken cancellationToken)
+        public async Task<bool> CustomerExist(long customerId, CancellationToken cancellationToken)
         {
             return await _dbContext.Customer
-                .AnyAsync(c => c.Id == CustomerId);
+                .AnyAsync(c => c.Id == customerId, cancellationToken);
         }
-        public async Task<bool> DeliveryExist(long DeliveryId, CancellationToken cancellationToken)
+        public async Task<bool> DeliveryExist(long deliveryId, CancellationToken cancellationToken)
         {
             return await _dbContext.Delivery
-                .AnyAsync(p => p.Id == DeliveryId);
+                .AnyAsync(p => p.Id == deliveryId, cancellationToken);
         }
     }
 }

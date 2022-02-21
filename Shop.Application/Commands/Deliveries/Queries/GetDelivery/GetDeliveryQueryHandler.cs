@@ -19,7 +19,9 @@ namespace Shop.Application.Commands.Deliveries.Queries.GetDelivery
         public async Task<DeliveryVm> Handle(GetDeliveryQuery request, CancellationToken cancellationToken)
         {
             var entity = await _dbContext.Delivery
-                .FirstOrDefaultAsync(delivery => delivery.Id == request.Id, cancellationToken);
+                .FirstOrDefaultAsync(delivery =>
+                    delivery.Id == request.Id,
+                    cancellationToken);
 
             _ = entity ?? throw new NotFoundException(nameof(Delivery), request.Id);
 

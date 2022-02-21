@@ -1,6 +1,5 @@
 ﻿using FluentValidation;
 using Shop.Application.Interfaces;
-using Shop.Domain.Entities;
 
 namespace Shop.Application.Commands.Products.Queries.GetProduct
 {

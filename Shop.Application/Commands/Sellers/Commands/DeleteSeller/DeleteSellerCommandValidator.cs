@@ -6,8 +6,8 @@ namespace Shop.Application.Commands.Sellers.Commands.DeleteSeller
     {
         public DeleteSellerCommandValidator()
         {
-            RuleFor(Seller =>
-                Seller.Id).NotEmpty();
+            RuleFor(seller =>
+                seller.Id).NotEmpty();
         }
     }
 }
