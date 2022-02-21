@@ -87,19 +87,6 @@ namespace DemoApi.Controllers
         {
             return await _mediator.Send(new GetProductsListByPriceIncreaseQuery { CategoryId = categoryId});
         }
-        [HttpGet("getListByCategory")]
-        public async Task<ActionResult<List<Product>>> GetListByCategory(long categoryId)
-        {
-            return await _mediator.Send(new GetProductsListByCategoryQuery{CategoryId = categoryId});
-        }
-
-        
-
-        [HttpGet("getSortListByPriceIncrease")]
-        public async Task<ActionResult<ProductsListVm>> GetAllByPriceIncrease(long categoryId)
-        {
-            return await _mediator.Send(new GetProductsListByPriceIncreaseQuery { CategoryId = categoryId});
-        }
 
         [HttpGet("getSortListByPriceFalling")]
         public async Task<ActionResult<ProductsListVm>> GetAllByPriceFalling(long categoryId)
