@@ -1,17 +1,14 @@
-﻿using AutoMapper;
+﻿using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Shop.Application.Common;
-using Shop.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
+using Shop.Application.Interfaces;
 
-namespace Shop.Application.Commands_and_Queries.OrderProductConnections.Queries.GetProductsListbyOrder
+namespace Shop.Application.Commands.OrderProductConnections.Queries.GetProductsListbyOrder
 {
     public class GetProductListOrderHandler
     : HandlersBase, IRequestHandler<GetProductListOrderQuery, GetProductListOrderVm>

@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Shop.Application.Orders.Queries.GetOrder
+namespace Shop.Application.Commands.Orders.Queries.GetOrder
 {
     public class GetOrderQuery : IRequest<OrderVm>
     {

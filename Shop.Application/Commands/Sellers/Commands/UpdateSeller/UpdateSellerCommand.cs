@@ -1,7 +1,7 @@
 ﻿using MediatR;
-using Shop.Application.Sellers.Queries.GetSeller;
+using Shop.Application.Commands.Sellers.Queries.GetSeller;
 
-namespace Shop.Application.Sellers.Commands.UpdateSeller
+namespace Shop.Application.Commands.Sellers.Commands.UpdateSeller
 {
     public class UpdateSellerCommand : IRequest<SellerVm>
     {

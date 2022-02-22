@@ -1,7 +1,7 @@
 ﻿using MediatR;
-using Shop.Application.Customers.Queries.GetCustomer;
+using Shop.Application.Commands.Customers.Queries.GetCustomer;
 
-namespace Shop.Application.Customers.Commands.DeleteCustomer
+namespace Shop.Application.Commands.Customers.Commands.DeleteCustomer
 {
     public class DeleteCustomerCommand
         : IRequest<CustomerVm>

@@ -1,15 +1,13 @@
-﻿using AutoMapper;
-using MediatR;
-using Microsoft.EntityFrameworkCore;
-using Shop.Domain.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using AutoMapper;
+using MediatR;
+using Shop.Application.Interfaces;
+using Shop.Domain.Entities;
 
-namespace Shop.Application.Commands_and_Queries.SearchByCategoriesAndProduct
+namespace Shop.Application.Commands.SearchByCategoriesAndProduct
 {
     internal class GetSearchQueryHandler
         : IRequestHandler<GetSearchQuery, SearchVm>

@@ -1,8 +1,7 @@
 ﻿using FluentValidation;
-using Shop.Application.Customers.Commands.DeleteCustomer;
-using Shop.Domain.Entities;
+using Shop.Application.Interfaces;
 
-namespace Shop.Application.Commands_and_Queries.Customers.Commands.DeleteCustomer
+namespace Shop.Application.Commands.Customers.Commands.DeleteCustomer
 {
     public class DeleteCustomerCommandValidator
         : AbstractValidator<DeleteCustomerCommand>

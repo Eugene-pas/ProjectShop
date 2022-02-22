@@ -1,7 +1,7 @@
-﻿using Shop.Application.Categories.Commands.Queries.GetCategory;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Shop.Application.Commands.Categories.Queries.GetCategory;
 
-namespace Shop.Application.Categories.Queries.GetCategoryList
+namespace Shop.Application.Commands.Categories.Queries.GetCategoryList
 {
     public class CategoriesListVm
     {

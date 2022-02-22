@@ -1,7 +1,7 @@
 ﻿using MediatR;
-using Shop.Application.OrderProductConnections.Queries;
+using Shop.Application.Commands.OrderProductConnections.Queries;
 
-namespace Shop.Application.Commands_and_Queries.OrderProductConnections.Commands.DeleteOrderProductConnections
+namespace Shop.Application.Commands.OrderProductConnections.Commands.DeleteOrderProductConnections
 {
     public class DeleteOrderProductConnectionsCommand
         : IRequest<OrderProductConnectionVm>

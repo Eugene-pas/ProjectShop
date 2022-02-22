@@ -1,13 +1,12 @@
-﻿using FluentValidation;
-using Microsoft.EntityFrameworkCore;
-using Shop.Application.ProductImages.Commands.CreateProductImage;
-using Shop.Domain.Entities;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using FluentValidation;
+using Microsoft.EntityFrameworkCore;
+using Shop.Application.Interfaces;
 
-namespace Shop.Application.Commands_and_Queries.ProductImages.Commands.CreateProductImage
+namespace Shop.Application.Commands.ProductImages.Commands.CreateProductImage
 {
     public class CreateProductImageCommandValidator
     : AbstractValidator<CreateProductImageCommand>

@@ -1,9 +1,9 @@
-﻿using MediatR;
+﻿using System.ComponentModel.DataAnnotations;
+using MediatR;
 using Microsoft.AspNetCore.Http;
 using Shop.Domain.Entities;
-using System.ComponentModel.DataAnnotations;
 
-namespace Shop.Application.ProductImages.Commands.CreateProductImage
+namespace Shop.Application.Commands.ProductImages.Commands.CreateProductImage
 {
     public class CreateProductImageCommand 
         : IRequest<long>

@@ -2,7 +2,7 @@
 using Shop.Application.Common.Mappings;
 using Shop.Domain.Entities;
 
-namespace Shop.Application.Sellers.Queries.GetSellersList
+namespace Shop.Application.Commands.Sellers.Queries.GetSellersList
 {
     public class SellersLookupDto : IMapWith<Seller>
     {

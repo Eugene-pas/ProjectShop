@@ -1,14 +1,15 @@
 ﻿using AutoMapper;
 using MediatR;
-using Shop.Application.Categories.Commands.Queries.GetCategory;
+using Shop.Application.Commands.Categories.Queries.GetCategory;
 using Shop.Application.Common;
+using Shop.Application.Interfaces;
 using Shop.Domain.Entities;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
-namespace Shop.Application.Categories.Commands.CreateCategories
+namespace Shop.Application.Commands.Categories.Commands.CreateCategories
 {
     public class CreateCategoryCommandHandler
         : HandlersBase, IRequestHandler<CreateCategoryCommand, CategoryVm>

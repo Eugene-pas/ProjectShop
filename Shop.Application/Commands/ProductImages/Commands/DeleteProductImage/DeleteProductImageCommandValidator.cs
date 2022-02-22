@@ -1,11 +1,10 @@
-﻿using FluentValidation;
-using Microsoft.EntityFrameworkCore;
-using Shop.Application.ProductImages.Commands.DeleteProductImage;
-using Shop.Domain.Entities;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
+using FluentValidation;
+using Microsoft.EntityFrameworkCore;
+using Shop.Application.Interfaces;
 
-namespace Shop.Application.Commands_and_Queries.ProductImages.Commands.DeleteProductImage
+namespace Shop.Application.Commands.ProductImages.Commands.DeleteProductImage
 {
     public class DeleteProductImageCommandValidator
    : AbstractValidator<DeleteProductImageCommand>

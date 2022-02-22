@@ -4,6 +4,7 @@ using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Shop.Application.Exceptions;
+using Shop.Application.Interfaces;
 using Shop.Domain.Entities;
 
 namespace Shop.Application.Commands.Products.Commands.UpdateProduct

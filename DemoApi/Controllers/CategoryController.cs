@@ -1,12 +1,12 @@
-﻿using MediatR;
+﻿using System.Threading.Tasks;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Shop.Application.Categories.Commands.CreateCategories;
-using Shop.Application.Categories.Commands.DeleteCategories;
-using Shop.Application.Categories.Commands.Queries.GetCategory;
-using Shop.Application.Categories.Commands.UpdateCategories;
-using Shop.Application.Categories.Queries.GetCategoryList;
+using Shop.Application.Commands.Categories.Commands.CreateCategories;
+using Shop.Application.Commands.Categories.Commands.DeleteCategories;
+using Shop.Application.Commands.Categories.Commands.UpdateCategories;
+using Shop.Application.Commands.Categories.Queries.GetCategory;
+using Shop.Application.Commands.Categories.Queries.GetCategoryList;
 using Shop.Application.Commands.CategoryConnections.Commands.CreateCategoryConnection;
-using System.Threading.Tasks;
 
 namespace DemoApi.Controllers
 {

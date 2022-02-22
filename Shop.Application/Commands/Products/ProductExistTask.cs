@@ -1,9 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Shop.Domain.Entities;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Shop.Application.Interfaces;
 
-namespace Shop.Application.Commands_and_Queries.Products
+namespace Shop.Application.Commands.Products
 {
     internal class ProductExistTask
     {
@@ -14,7 +14,7 @@ namespace Shop.Application.Commands_and_Queries.Products
         public async Task<bool> Exist(long productId, CancellationToken cancellationToken)
         {
             return await _dbContext.Product
-                .AnyAsync(x => x.Id == productId);
+                .AnyAsync(x => x.Id == productId, cancellationToken);
         }
     }
 }

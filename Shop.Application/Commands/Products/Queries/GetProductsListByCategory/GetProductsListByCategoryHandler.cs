@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Shop.Application.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Shop.Application.Commands.Products.Queries.GetProductsList;
 

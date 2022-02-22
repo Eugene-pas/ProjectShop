@@ -1,8 +1,7 @@
 ﻿using FluentValidation;
-using Shop.Application.Categories.Commands.DeleteCategories;
-using Shop.Domain.Entities;
+using Shop.Application.Interfaces;
 
-namespace Shop.Application.Commands_and_Queries.Categories.Commands.DeleteCategories
+namespace Shop.Application.Commands.Categories.Commands.DeleteCategories
 {
     public class DeleteCategoryCommandValidator
         : AbstractValidator<DeleteCategoryCommand>

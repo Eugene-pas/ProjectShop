@@ -1,14 +1,14 @@
 ﻿using DemoApi.Models.OrderModels;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Shop.Application.Commands_and_Queries.Orders.Queries.GetOrdersListForCustomer;
-using Shop.Application.Orders.Commands.CreateOrder;
-using Shop.Application.Orders.Commands.DeleteOrder;
-using Shop.Application.Orders.Commands.UpdateOrder;
-using Shop.Application.Orders.Queries.GetAllOrder;
-using Shop.Application.Orders.Queries.GetOrder;
 using System;
 using System.Threading.Tasks;
+using Shop.Application.Commands.Orders.Commands.CreateOrder;
+using Shop.Application.Commands.Orders.Commands.DeleteOrder;
+using Shop.Application.Commands.Orders.Commands.UpdateOrder;
+using Shop.Application.Commands.Orders.Queries.GetOrder;
+using Shop.Application.Commands.Orders.Queries.GetOrdersList;
+using Shop.Application.Commands.Orders.Queries.GetOrdersListForCustomer;
 
 namespace DemoApi.Controllers
 {

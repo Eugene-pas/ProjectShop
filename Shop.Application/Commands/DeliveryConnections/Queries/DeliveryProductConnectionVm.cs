@@ -1,9 +1,8 @@
 ﻿using AutoMapper;
 using Shop.Application.Common.Mappings;
 using Shop.Domain.Entities;
-using System;
 
-namespace Shop.Application.DeliveryConnections.Queries
+namespace Shop.Application.Commands.DeliveryConnections.Queries
 {
     public class DeliveryProductConnectionVm : IMapWith<DeliveryProductConnection>
     {

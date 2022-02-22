@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Shop.Application.Deliveries.Queries.GetDeliveriesList
+namespace Shop.Application.Commands.Deliveries.Queries.GetDeliveriesList
 {
     public class GetDeliveriesListQuery : IRequest<DeliveriesListVm>
     {

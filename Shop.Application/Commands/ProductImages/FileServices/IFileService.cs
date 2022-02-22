@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 
-namespace DemoApi.FileServices
+namespace Shop.Application.Commands.ProductImages.FileServices
 {
     public interface IFileService
     {

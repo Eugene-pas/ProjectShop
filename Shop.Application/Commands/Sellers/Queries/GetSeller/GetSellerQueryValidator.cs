@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace Shop.Application.Sellers.Queries.GetSeller
+namespace Shop.Application.Commands.Sellers.Queries.GetSeller
 {
     public class GetSellerQueryValidator : AbstractValidator<GetSellerQuery>
     {

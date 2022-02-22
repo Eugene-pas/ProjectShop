@@ -1,7 +1,7 @@
 ﻿using MediatR;
-using Shop.Application.Categories.Commands.Queries.GetCategory;
+using Shop.Application.Commands.Categories.Queries.GetCategory;
 
-namespace Shop.Application.Categories.Commands.DeleteCategories
+namespace Shop.Application.Commands.Categories.Commands.DeleteCategories
 {
     public class DeleteCategoryCommand
         : IRequest<CategoryVm>

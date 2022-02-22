@@ -1,9 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Shop.Domain.Entities;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Shop.Application.Interfaces;
 
-namespace Shop.Application.Commands_and_Queries.Customers
+namespace Shop.Application.Commands.Customers
 {
     public class CustomerExistTask
     {

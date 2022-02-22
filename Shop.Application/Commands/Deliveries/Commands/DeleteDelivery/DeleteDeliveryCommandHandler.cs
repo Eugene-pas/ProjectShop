@@ -1,14 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
-using Shop.Application.Deliveries.Queries.GetDelivery;
-using Shop.Application.Exceptions;
+using Shop.Application.Commands.Deliveries.Queries.GetDelivery;
 using Shop.Application.Common;
-using Shop.Domain.Entities;
+using Shop.Application.Exceptions;
+using Shop.Application.Interfaces;
 
-namespace Shop.Application.Deliveries.Commands.DeleteDelivery
+namespace Shop.Application.Commands.Deliveries.Commands.DeleteDelivery
 {
     public class DeleteDeliveryCommandHandler
         : HandlersBase, IRequestHandler<DeleteDeliveryCommand, DeliveryVm>

@@ -1,13 +1,14 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
-using Shop.Application.Orders.Queries.GetOrder;
+using Shop.Application.Commands.Orders.Queries.GetOrder;
 using Shop.Application.Common;
+using Shop.Application.Interfaces;
 using Shop.Domain.Entities;
-using System;
 
-namespace Shop.Application.Orders.Commands.CreateOrder
+namespace Shop.Application.Commands.Orders.Commands.CreateOrder
 {
     public class CreateOrderCommandHandler : HandlersBase, IRequestHandler<CreateOrderCommand, OrderVm>
     {

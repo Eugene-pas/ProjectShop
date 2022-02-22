@@ -1,13 +1,14 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
-using MediatR;
-using Shop.Domain.Entities;
 using AutoMapper;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Shop.Application.Exceptions;
 using Shop.Application.Common;
+using Shop.Application.Exceptions;
+using Shop.Application.Interfaces;
+using Shop.Domain.Entities;
 
-namespace Shop.Application.Sellers.Queries.GetSeller
+namespace Shop.Application.Commands.Sellers.Queries.GetSeller
 {
     public class GetSellerQueryHandler : HandlersBase, IRequestHandler<GetSellerQuery, SellerVm>
     {

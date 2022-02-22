@@ -1,9 +1,9 @@
-﻿using AutoMapper;
+﻿using System;
+using AutoMapper;
 using Shop.Application.Common.Mappings;
 using Shop.Domain.Entities;
-using System;
 
-namespace Shop.Application.Orders.Queries.GetOrder
+namespace Shop.Application.Commands.Orders.Queries.GetOrder
 {
     public class OrderVm : IMapWith<Order>
     {
@@ -16,16 +16,16 @@ namespace Shop.Application.Orders.Queries.GetOrder
         public void Mapping(Profile profile)
         {
             profile.CreateMap<Order, OrderVm>()
-                .ForMember(OrderVm => OrderVm.Id, 
-                   opt => opt.MapFrom(Order => Order.Id))
-                .ForMember(OrderVm => OrderVm.Date, 
-                   opt => opt.MapFrom(Order => Order.Date))
-                .ForMember(OrderVm => OrderVm.Adress, 
-                   opt => opt.MapFrom(Order => Order.Adress))
-                .ForMember(OrderVm => OrderVm.Customer, 
-                   opt => opt.MapFrom(Order => Order.Customer))
-                .ForMember(OrderVm => OrderVm.Delivery,
-                   opt => opt.MapFrom(Order => Order.Delivery));
+                .ForMember(orderVm => orderVm.Id, 
+                   opt => opt.MapFrom(order => order.Id))
+                .ForMember(orderVm => orderVm.Date, 
+                   opt => opt.MapFrom(order => order.Date))
+                .ForMember(orderVm => orderVm.Adress, 
+                   opt => opt.MapFrom(order => order.Adress))
+                .ForMember(orderVm => orderVm.Customer, 
+                   opt => opt.MapFrom(order => order.Customer))
+                .ForMember(orderVm => orderVm.Delivery,
+                   opt => opt.MapFrom(order => order.Delivery));
                 
         }
     }

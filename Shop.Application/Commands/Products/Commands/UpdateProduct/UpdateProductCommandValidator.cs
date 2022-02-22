@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using Shop.Application.Commands_and_Queries.Products;
+using Shop.Application.Interfaces;
 using Shop.Domain.Entities;
 
 namespace Shop.Application.Commands.Products.Commands.UpdateProduct

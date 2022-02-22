@@ -1,8 +1,7 @@
 ﻿using FluentValidation;
-using Shop.Application.Customers.Commands.UpdateCustomer;
-using Shop.Domain.Entities;
+using Shop.Application.Interfaces;
 
-namespace Shop.Application.Commands_and_Queries.Customers.Commands.UpdateCustomer
+namespace Shop.Application.Commands.Customers.Commands.UpdateCustomer
 {
     public class UpdateCustomerCommandValidator
         : AbstractValidator<UpdateCustomerCommand>

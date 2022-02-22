@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic;
 using Shop.Application.Commands.CategoryConnections.Queries.GetCategoryConnectionsList;
 using Shop.Application.Common;
+using Shop.Application.Interfaces;
 using Shop.Domain.Entities;
 
 namespace Shop.Application.Commands.CategoryConnections.Queries.GetSubcategoriesList

@@ -1,4 +1,3 @@
-using DemoApi.FileServices;
 using DemoApi.Middleware;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -11,6 +10,8 @@ using Shop.Application.Common.Mappings;
 using Shop.Domain.Entities;
 using Shop.Presistence;
 using System.Reflection;
+using Shop.Application.Commands.ProductImages.FileServices;
+using Shop.Application.Interfaces;
 
 namespace DemoApi
 {

@@ -2,12 +2,13 @@
 using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
-using Shop.Application.Sellers.Queries.GetSeller;
-using Shop.Application.Exceptions;
+using Shop.Application.Commands.Sellers.Queries.GetSeller;
 using Shop.Application.Common;
+using Shop.Application.Exceptions;
+using Shop.Application.Interfaces;
 using Shop.Domain.Entities;
 
-namespace Shop.Application.Sellers.Commands.DeleteSeller
+namespace Shop.Application.Commands.Sellers.Commands.DeleteSeller
 {
     public class DeleteSellerCommandHandler
         : HandlersBase, IRequestHandler<DeleteSellerCommand, SellerVm>

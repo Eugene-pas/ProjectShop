@@ -1,14 +1,15 @@
-﻿using AutoMapper;
+﻿using System.Threading;
+using System.Threading.Tasks;
+using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Shop.Application.Deliveries.Queries.GetDelivery;
+using Shop.Application.Commands.Deliveries.Queries.GetDelivery;
 using Shop.Application.Common;
 using Shop.Application.Exceptions;
+using Shop.Application.Interfaces;
 using Shop.Domain.Entities;
-using System.Threading;
-using System.Threading.Tasks;
 
-namespace Shop.Application.Deliveries.Commands.UpdateDelivery
+namespace Shop.Application.Commands.Deliveries.Commands.UpdateDelivery
 {
     public class UpdateDeliveryCommandHandler
         : HandlersBase, IRequestHandler<UpdateDeliveryCommand, DeliveryVm>

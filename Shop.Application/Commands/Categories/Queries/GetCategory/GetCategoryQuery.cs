@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Shop.Application.Categories.Commands.Queries.GetCategory
+namespace Shop.Application.Commands.Categories.Queries.GetCategory
 {
     public class GetCategoryQuery : IRequest<CategoryVm>
     {

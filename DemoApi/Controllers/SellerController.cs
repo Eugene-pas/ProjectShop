@@ -1,12 +1,12 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using Shop.Application.Sellers.Queries.GetSellersList;
-using Shop.Application.Sellers.Queries.GetSeller;
 using DemoApi.Models.SellerModels;
-using Shop.Application.Sellers.Commands.CreateSeller;
-using Shop.Application.Sellers.Commands.DeleteSeller;
-using Shop.Application.Sellers.Commands.UpdateSeller;
+using Shop.Application.Commands.Sellers.Commands.CreateSeller;
+using Shop.Application.Commands.Sellers.Commands.DeleteSeller;
+using Shop.Application.Commands.Sellers.Commands.UpdateSeller;
+using Shop.Application.Commands.Sellers.Queries.GetSeller;
+using Shop.Application.Commands.Sellers.Queries.GetSellersList;
 
 namespace DemoApi.Controllers
 {

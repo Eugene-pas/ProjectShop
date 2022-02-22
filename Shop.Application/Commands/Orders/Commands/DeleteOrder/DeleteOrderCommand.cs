@@ -1,7 +1,7 @@
 ﻿using MediatR;
-using Shop.Application.Orders.Queries.GetOrder;
+using Shop.Application.Commands.Orders.Queries.GetOrder;
 
-namespace Shop.Application.Orders.Commands.DeleteOrder
+namespace Shop.Application.Commands.Orders.Commands.DeleteOrder
 {
     public class DeleteOrderCommand
         : IRequest<OrderVm>

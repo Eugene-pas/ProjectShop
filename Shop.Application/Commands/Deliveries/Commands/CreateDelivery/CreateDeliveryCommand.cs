@@ -1,9 +1,9 @@
-﻿using MediatR;
-using Shop.Application.Deliveries.Queries.GetDelivery;
+﻿using System.Collections.Generic;
+using MediatR;
+using Shop.Application.Commands.Deliveries.Queries.GetDelivery;
 using Shop.Domain.Entities;
-using System.Collections.Generic;
 
-namespace Shop.Application.Deliveries.Commands.CreateDelivery
+namespace Shop.Application.Commands.Deliveries.Commands.CreateDelivery
 {
     public class CreateDeliveryCommand : IRequest<DeliveryVm>
     {

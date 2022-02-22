@@ -1,10 +1,10 @@
-﻿using FluentValidation;
-using Microsoft.EntityFrameworkCore;
-using Shop.Domain.Entities;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
+using FluentValidation;
+using Microsoft.EntityFrameworkCore;
+using Shop.Application.Interfaces;
 
-namespace Shop.Application.Commands_and_Queries.Orders.Queries.GetOrdersListForCustomer
+namespace Shop.Application.Commands.Orders.Queries.GetOrdersListForCustomer
 {
     internal class GetOrdersListForCustomerValidator
         : AbstractValidator<GetOrdersListForCustomerQuery>

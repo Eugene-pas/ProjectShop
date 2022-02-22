@@ -1,8 +1,8 @@
-﻿using MediatR;
-using System;
-using Shop.Application.Orders.Queries.GetOrder;
+﻿using System;
+using MediatR;
+using Shop.Application.Commands.Orders.Queries.GetOrder;
 
-namespace Shop.Application.Orders.Commands.UpdateOrder
+namespace Shop.Application.Commands.Orders.Commands.UpdateOrder
 {
     public class UpdateOrderCommand
         : IRequest<OrderVm>

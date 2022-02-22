@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Shop.Application.Commands_and_Queries.SearchByCategoriesAndProduct;
 using System.Threading.Tasks;
+using Shop.Application.Commands.SearchByCategoriesAndProduct;
 
 namespace DemoApi.Controllers
 {

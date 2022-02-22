@@ -1,4 +1,6 @@
-﻿namespace Shop.Domain.Entities
+﻿using Shop.Application.Interfaces;
+
+namespace Shop.Domain.Entities
 {
     using Microsoft.EntityFrameworkCore;
 
@@ -9,8 +11,10 @@
         {
 
         }
-        public virtual DbSet<CategoryConnection> CategoryConnection { get; set; }
+        public virtual DbSet<Basket> Basket { get; set; }
+        public virtual DbSet<BasketItem> BasketItem { get; set; }
         public virtual DbSet<Category> Category { get; set; }
+        public virtual DbSet<CategoryConnection> CategoryConnection { get; set; }
         public virtual DbSet<Customer> Customer { get; set; }
         public virtual DbSet<Delivery> Delivery { get; set; }
         public virtual DbSet<DeliveryProductConnection> DeliveryProductConnection { get; set; }

@@ -1,11 +1,12 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using Shop.Application.Customers.Commands.CreateCustomer;
-using Shop.Application.Customers.Commands.DeleteCustomer;
-using Shop.Application.Customers.Commands.UpdateCustomer;
-using Shop.Application.Customers.Queries.GetCustomer;
-using Shop.Application.Customers.Queries.GetCustomersList;
+using Shop.Application.Commands.Customers.Commands.CreateCustomer;
+using Shop.Application.Commands.Customers.Commands.DeleteCustomer;
+using Shop.Application.Commands.Customers.Commands.UpdateCustomer;
+using Shop.Application.Commands.Customers.Queries.GetCustomer;
+using Shop.Application.Commands.Customers.Queries.GetCustomersList;
+
 
 namespace DemoApi.Controllers
 {
@@ -25,8 +26,10 @@ namespace DemoApi.Controllers
                    Email = email,
                    PhoneNumber = phone
                });
-        } 
+        }
+
         
+
         [HttpDelete("delete")]
         public async Task<CustomerVm> Delete(long id)
         {
@@ -54,7 +57,7 @@ namespace DemoApi.Controllers
         [HttpGet("getlist")]
         public async Task<ActionResult<CustomersListVm>> GetList()
         {
-            return await _mediator.Send(new GetCustomersListQuery { });
+            return await _mediator.Send(new GetCustomersListQuery());
         }
         
     }

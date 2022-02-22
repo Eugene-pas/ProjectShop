@@ -2,11 +2,12 @@
 using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
-using Shop.Application.Customers.Queries.GetCustomer;
+using Shop.Application.Commands.Customers.Queries.GetCustomer;
 using Shop.Application.Common;
+using Shop.Application.Interfaces;
 using Shop.Domain.Entities;
 
-namespace Shop.Application.Customers.Commands.CreateCustomer
+namespace Shop.Application.Commands.Customers.Commands.CreateCustomer
 {
     public class CreateCustomerCommandHandler
         : HandlersBase, IRequestHandler<CreateCustomerCommand, CustomerVm>

@@ -1,14 +1,14 @@
-﻿using AutoMapper;
+﻿using System.Threading;
+using System.Threading.Tasks;
+using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Shop.Application.Commands.Deliveries.Queries.GetDelivery;
 using Shop.Application.Common;
-using Shop.Application.Deliveries.Queries.GetDelivery;
-using Shop.Domain.Entities;
-using System.Threading;
-using System.Threading.Tasks;
+using Shop.Application.Interfaces;
 
-namespace Shop.Application.Deliveries.Queries.GetDeliveriesList
+namespace Shop.Application.Commands.Deliveries.Queries.GetDeliveriesList
 {
     public class GetDeliveriesListQueryHandler
         : HandlersBase, IRequestHandler<GetDeliveriesListQuery, DeliveriesListVm>

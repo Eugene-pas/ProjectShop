@@ -1,9 +1,9 @@
-﻿using MediatR;
-using Shop.Application.Customers.Queries.GetCustomer;
+﻿using System.Collections.Generic;
+using MediatR;
+using Shop.Application.Commands.Customers.Queries.GetCustomer;
 using Shop.Domain.Entities;
-using System.Collections.Generic;
 
-namespace Shop.Application.Customers.Commands.CreateCustomer
+namespace Shop.Application.Commands.Customers.Commands.CreateCustomer
 {
     public class CreateCustomerCommand 
         : IRequest<CustomerVm>

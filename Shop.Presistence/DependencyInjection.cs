@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Shop.Application.Interfaces;
 using Shop.Domain.Entities;
 
 namespace Shop.Presistence

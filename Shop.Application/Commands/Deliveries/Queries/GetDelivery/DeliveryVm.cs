@@ -1,9 +1,9 @@
-﻿using AutoMapper;
+﻿using System.Collections.Generic;
+using AutoMapper;
 using Shop.Application.Common.Mappings;
 using Shop.Domain.Entities;
-using System.Collections.Generic;
 
-namespace Shop.Application.Deliveries.Queries.GetDelivery
+namespace Shop.Application.Commands.Deliveries.Queries.GetDelivery
 {
     public class DeliveryVm : IMapWith<Delivery>
     {

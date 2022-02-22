@@ -3,12 +3,13 @@ using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Shop.Application.Commands.DeliveryConnections.Queries;
 using Shop.Application.Common;
-using Shop.Application.DeliveryConnections.Queries;
 using Shop.Application.Exceptions;
+using Shop.Application.Interfaces;
 using Shop.Domain.Entities;
 
-namespace Shop.Application.Commands_and_Queries.DeliveryConnections.Commands.UpdateDeliveryProductConnection
+namespace Shop.Application.Commands.DeliveryConnections.Commands.UpdateDeliveryProductConnection
 {
     public class UpdateDeliveryProductConnectionCommandHandler
         : HandlersBase, IRequestHandler<UpdateDeliveryProductConnectionCommand, DeliveryProductConnectionVm>

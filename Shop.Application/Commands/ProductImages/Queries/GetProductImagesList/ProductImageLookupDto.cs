@@ -2,7 +2,7 @@
 using Shop.Application.Common.Mappings;
 using Shop.Domain.Entities;
 
-namespace Shop.Application.Commands_and_Queries.ProductImages.Queries
+namespace Shop.Application.Commands.ProductImages.Queries.GetProductImagesList
 {
     public class ProductImageLookupDto
         : IMapWith<ProductImage>
