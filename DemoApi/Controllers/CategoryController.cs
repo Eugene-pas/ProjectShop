@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Shop.Application.Commands.Categories.Commands.CreateCategories;
@@ -6,6 +7,7 @@ using Shop.Application.Commands.Categories.Commands.DeleteCategories;
 using Shop.Application.Commands.Categories.Commands.UpdateCategories;
 using Shop.Application.Commands.Categories.Queries.GetCategory;
 using Shop.Application.Commands.Categories.Queries.GetCategoryList;
+using Shop.Application.Commands.Categories.Queries.GetCategoryPaginatedList;
 using Shop.Application.Commands.CategoryConnections.Commands.CreateCategoryConnection;
 
 namespace DemoApi.Controllers
@@ -29,7 +31,7 @@ namespace DemoApi.Controllers
             return category;
 
         }
-
+        
         [HttpGet("get")]
         public async Task<ActionResult<CategoryVm>> Get(long id)
         {
@@ -40,6 +42,12 @@ namespace DemoApi.Controllers
         public async Task<ActionResult<CategoriesListVm>> GetAll()
         {
             return await _mediator.Send(new GetCategoriesListQuery { });
+        }
+
+        [HttpGet("getPaginatedlist")]
+        public async Task<ActionResult<GetCategoryPaginatedListVm>> GetPaginatedlist(int page = 1,int pageSize = 4)
+        {
+            return await _mediator.Send(new GetCategoryPaginatedListQuery {Page = page, PageSize = pageSize});
         }
 
         [HttpPost("update")]
