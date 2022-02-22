@@ -29,7 +29,7 @@ namespace Shop.Application.Commands.CategoryConnections
         //        .ForMember(categoryConnectionVm => categoryConnectionVm.ChildCategory,
         //            opt =>
         //                opt.MapFrom(categoryConnection =>
-        //                    categoryConnection.Child))
+        //                    categoryConnection.Category))
         //        .ForMember(categoryConnectionVm => categoryConnectionVm.ParentCategoryId,
         //        opt =>
         //            opt.MapFrom(categoryConnection =>

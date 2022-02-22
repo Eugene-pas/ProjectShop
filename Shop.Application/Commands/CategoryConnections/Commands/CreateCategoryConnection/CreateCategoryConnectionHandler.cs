@@ -20,7 +20,7 @@ namespace Shop.Application.Commands.CategoryConnections.Commands.CreateCategoryC
             var connection = new CategoryConnection
             {
                 ParentId = request.ParentId,
-                Child = _dbContext.Category.Find(request.ChildId)
+                Category = _dbContext.Category.Find(request.ChildId)
             };
 
             await _dbContext.CategoryConnection.AddAsync(connection, cancellationToken);
@@ -35,7 +35,7 @@ namespace Shop.Application.Commands.CategoryConnections.Commands.CreateCategoryC
             {
                 Id = connection.Id,
                 ParentCategory =  _dbContext.Category.Find(request.ParentId),
-                ChildCategory = connection.Child
+                ChildCategory = connection.Category
             };
         } 
     }

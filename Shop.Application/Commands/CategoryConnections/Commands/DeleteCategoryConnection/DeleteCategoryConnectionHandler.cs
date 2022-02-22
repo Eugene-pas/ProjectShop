@@ -28,7 +28,7 @@ namespace Shop.Application.Commands.CategoryConnections.Commands.DeleteCategoryC
             {
                 Id = connection.Id,
                 ParentCategory = _dbContext.Category.Find(connection.ParentId),
-                ChildCategory = connection.Child
+                ChildCategory = connection.Category
             };
             //return _mapper.Map<CategoryConnectionVm>(connection);
         }

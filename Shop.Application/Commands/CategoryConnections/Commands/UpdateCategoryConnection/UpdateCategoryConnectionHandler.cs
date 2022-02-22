@@ -27,14 +27,14 @@ namespace Shop.Application.Commands.CategoryConnections.Commands.UpdateCategoryC
             _ = connection ?? throw new NotFoundException(nameof(CategoryConnection), connection.Id);
 
             connection.ParentId = request.ParentId;
-            connection.Child = _dbContext.Category.Find(request.ChildId);
+            connection.Category = _dbContext.Category.Find(request.ChildId);
 
             await _dbContext.SaveChangesAsync(cancellationToken);
             return new CategoryConnectionVm
             {
                 Id = connection.Id,
                 ParentCategory = _dbContext.Category.Find(connection.ParentId),
-                ChildCategory = connection.Child
+                ChildCategory = connection.Category
             };
             //return _mapper.Map<CategoryConnectionVm>(connection);
         }

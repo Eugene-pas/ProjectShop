@@ -12,6 +12,6 @@ namespace Shop.Domain.Entities
     {
         public long ParentId { get; set; }
 
-        public virtual Category Child { get; set; }
+        public virtual Category Category { get; set; }
     }
 }

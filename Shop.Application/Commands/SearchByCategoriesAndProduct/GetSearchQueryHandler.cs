@@ -26,6 +26,12 @@ namespace Shop.Application.Commands_and_Queries.SearchByCategoriesAndProduct
             List<Category> categories = new();
             List<Product> products = new();
 
+            var items = _dbContext.Category.Where(x => x.Name == request.Serach)
+                .Select(x => new Category
+                {
+                    Id = x.Id
+                }).ToList();
+
             foreach (var item in _dbContext.Category)
             {
                 if (item.Name.Contains(request.Serach,StringComparison.CurrentCultureIgnoreCase))

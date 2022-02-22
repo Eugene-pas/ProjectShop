@@ -28,7 +28,7 @@ namespace Shop.Application.Commands.CategoryConnections.Queries.GetCategoryConne
                 .ForMember(categoryConnectionVm => categoryConnectionVm.ChildCategory,
                     opt =>
                         opt.MapFrom(categoryConnection =>
-                            categoryConnection.Child))
+                            categoryConnection.Category))
                 .ForMember(categoryConnectionVm => categoryConnectionVm.ParentCategoryId,
                     opt =>
                         opt.MapFrom(categoryConnection =>

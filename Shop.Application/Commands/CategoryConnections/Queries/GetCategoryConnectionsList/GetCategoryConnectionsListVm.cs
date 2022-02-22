@@ -9,6 +9,6 @@ namespace Shop.Application.Commands.CategoryConnections.Queries.GetCategoryConne
 {
     public class GetCategoryConnectionsListVm
     {
-        public IList<GetCategoryConnectionsListLokupDto> CategoryConnections { get; set; }
+        public IList<ConnectionVm> CategoryConnections { get; set; }
     }
 }

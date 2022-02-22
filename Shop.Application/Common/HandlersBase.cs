@@ -17,7 +17,7 @@ namespace Shop.Application.Common
         {
 
             var list = dataBase.CategoryConnection
-                .Include(x => x.Child.Product)
+                .Include(x => x.Category.Product)
                 .Where(x => x.ParentId == parenrId).ToList();
             foreach (var item in list)
             {
@@ -26,8 +26,8 @@ namespace Shop.Application.Common
 
                     return listCategories;
                 }
-                listCategories.Add(item.Child);
-                SubcategoriesFind(dataBase, item.Child.Id, listCategories);
+                listCategories.Add(item.Category);
+                SubcategoriesFind(dataBase, item.Category.Id, listCategories);
 
             }
 

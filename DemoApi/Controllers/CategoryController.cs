@@ -22,18 +22,19 @@ namespace DemoApi.Controllers
             var category = await _mediator.Send(
                 new CreateCategoryCommand
                 {
-                    Name = name
+                    Name = name,
+                    ParentId = parentId
                 }
             );
-            if (parentId != 0)
-            {
-                await _mediator.Send(new CreateCategoryConnectionCommand
-                {
-                    ParentId = parentId,
-                    ChildId = category.Id
-                });
+            //if (parentId != 0)
+            //{
+            //    await _mediator.Send(new CreateCategoryConnectionCommand
+            //    {
+            //        ParentId = parentId,
+            //        ChildId = category.Id
+            //    });
 
-            }
+            //}
             return category;
 
         }

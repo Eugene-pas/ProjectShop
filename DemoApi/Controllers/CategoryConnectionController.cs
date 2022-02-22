@@ -17,7 +17,7 @@ namespace DemoApi.Controllers
         public CategoryConnectionController(IMediator mediator) : base(mediator) { }
 
         [HttpPost("create")]
-        public async Task<CategoryConnectionVm> Create(long parentId,long childId)
+        public async Task<Shop.Application.Commands.CategoryConnections.CategoryConnectionVm> Create(long parentId,long childId)
         {
             return await _mediator.Send(
                 new CreateCategoryConnectionCommand
@@ -40,7 +40,7 @@ namespace DemoApi.Controllers
         }
 
         [HttpPost("update")]
-        public async Task<CategoryConnectionVm> Update(long id, long parentId, long childId)
+        public async Task<Shop.Application.Commands.CategoryConnections.CategoryConnectionVm> Update(long id, long parentId, long childId)
         {
             return await _mediator.Send(new UpdateCategoryConnectionCommand
             {
@@ -51,7 +51,7 @@ namespace DemoApi.Controllers
         }
 
         [HttpDelete("delete")]
-        public async Task<ActionResult<CategoryConnectionVm>> Delete(long id)
+        public async Task<ActionResult<Shop.Application.Commands.CategoryConnections.CategoryConnectionVm>> Delete(long id)
         {
             return await _mediator.Send(new DeleteCategoryConnectionCommand { Id = id });
         }
