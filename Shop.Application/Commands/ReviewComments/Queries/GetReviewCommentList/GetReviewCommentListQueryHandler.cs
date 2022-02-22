@@ -20,8 +20,6 @@ namespace Shop.Application.Commands.ReviewComments.Queries.GetReviewCommentList
             CancellationToken cancellationToken)
         {
             var reviewcommentquery = await _dbContext.ReviewComment
-                .Include(x => x.Review)
-                .Include(x => x.Customer)
                 .ProjectTo<ReviewCommentsLookupDto>(_mapper.ConfigurationProvider)
                 .ToListAsync(cancellationToken);
 

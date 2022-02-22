@@ -2,10 +2,10 @@
 
 namespace Shop.Application.Commands.Products.Commands.CreateProduct
 {
-    public class CreateReviewLikeCommandValidator
+    public class CreateProductCommandValidator
         : AbstractValidator<CreateProductCommand>
     {
-        public CreateReviewLikeCommandValidator()
+        public CreateProductCommandValidator()
         {
             RuleFor(createProductCommandValidator =>
             createProductCommandValidator.Name)

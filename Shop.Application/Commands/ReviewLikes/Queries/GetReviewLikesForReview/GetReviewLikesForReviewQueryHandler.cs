@@ -21,8 +21,6 @@ namespace Shop.Application.Commands.ReviewLikes.Queries.GetReviewLikesForReview
                CancellationToken cancellationToken)
         {
             var like = await _dbContext.ReviewLike
-                .Include(x => x.Review)
-                .Include(x => x.Customer)
                 .Where(x => x.Review.Id == request.ReviewId)
                 .ProjectTo<ReviewLikesLookupDto>(_mapper.ConfigurationProvider)
                 .ToListAsync(cancellationToken);
