@@ -27,10 +27,7 @@ namespace Shop.Application.Commands.Categories.Commands.CreateCategories
             if (!_dbContext.Category.Any(x => x.Name == request.Name))
             {
                 await _dbContext.Category.AddAsync(category, cancellationToken);
-                await _dbContext.SaveChangesAsync(cancellationToken);
-                
             }
-            var categoryVm = _mapper.Map<CategoryVm>(category);
             if (request.ParentId != 0)
             {
 
@@ -38,16 +35,11 @@ namespace Shop.Application.Commands.Categories.Commands.CreateCategories
                 {
                     ParentId = request.ParentId,
                     Category = category,
-                    
                 };
                 await _dbContext.CategoryConnection.AddAsync(categoryConnection, cancellationToken);
-                await _dbContext.SaveChangesAsync(cancellationToken);
             }
 
-
-
-
-
+            await _dbContext.SaveChangesAsync(cancellationToken);
             return _mapper.Map<CategoryVm>(category);
         }
     }

@@ -4,6 +4,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using Shop.Application.Interfaces;
 using Shop.Domain.Entities;
 
@@ -21,33 +23,22 @@ namespace Shop.Application.Commands.SearchByCategoriesAndProduct
 
         public async Task<SearchVm> Handle(GetSearchQuery request, CancellationToken cancellationToken)
         {
-            List<Category> categories = new();
-            List<Product> products = new();
 
-            var items = _dbContext.Category.Where(x => x.Name == request.Serach)
-                .Select(x => new Category
-                {
-                    Id = x.Id
-                }).ToList();
-
-            foreach (var item in _dbContext.Category)
+            var categories = from c in _dbContext.Category select c;
+            if (!String.IsNullOrEmpty(request.Serach))
             {
-                if (item.Name.Contains(request.Serach,StringComparison.CurrentCultureIgnoreCase))
-                {
-                    categories.Add(item);
-                }
+                categories = categories.Where(x =>
+                    x.Name!.Contains(request.Serach));
             }
 
-            foreach (var item in _dbContext.Product)
+            var products = from p in _dbContext.Product select p;
+            if (!String.IsNullOrEmpty(request.Serach))
             {
-                if (item.Name.Contains(request.Serach, StringComparison.CurrentCultureIgnoreCase))
-                {
-                    products.Add(item);
-                }
+                products = products.Where(x =>
+                    x.Name!.Contains(request.Serach));
             }
 
-
-            return new SearchVm { Categories = categories, Products = products };
+            return  new SearchVm { Categories = await categories.ToListAsync(), Products = await products.ToListAsync() };
         }
         
     }

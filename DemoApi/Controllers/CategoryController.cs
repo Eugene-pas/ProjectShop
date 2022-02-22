@@ -26,15 +26,6 @@ namespace DemoApi.Controllers
                     ParentId = parentId
                 }
             );
-            //if (parentId != 0)
-            //{
-            //    await _mediator.Send(new CreateCategoryConnectionCommand
-            //    {
-            //        ParentId = parentId,
-            //        ChildId = category.Id
-            //    });
-
-            //}
             return category;
 
         }
