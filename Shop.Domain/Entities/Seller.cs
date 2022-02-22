@@ -1,8 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using Shop.Domain.Entities.Base;
+using System.Collections.Generic;
 
 namespace Shop.Domain.Entities
 {
