@@ -24,9 +24,13 @@ namespace Shop.Application.Commands.Reviews.Commands.DeleteReview
 
             _ = reviews ?? throw new NotFoundException(nameof(Review), reviews.Id);
 
-            var reviewscomment = _dbContext.ReviewComment.Where(x => x.ReviewId == request.Id);
+            var reviewcomments = _dbContext.ReviewComment
+                .Where(x => x.Review.Id == request.Id);
+            var reviewlikes = _dbContext.ReviewLike
+                .Where(x => x.Review.Id == request.Id);
 
-            _dbContext.ReviewComment.RemoveRange(reviewscomment);
+            _dbContext.ReviewComment.RemoveRange(reviewcomments);
+            _dbContext.ReviewLike.RemoveRange(reviewlikes);
             _dbContext.Review.Remove(reviews);
             await _dbContext.SaveChangesAsync(cancellationToken);
 

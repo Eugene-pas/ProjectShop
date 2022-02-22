@@ -18,6 +18,7 @@ namespace Shop.Domain.Entities
         DbSet<Seller> Seller { get; set; }
         DbSet<Review> Review { get; set; }
         DbSet<ReviewComment> ReviewComment { get; set; }
+        DbSet<ReviewLike> ReviewLike { get; set; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
 }

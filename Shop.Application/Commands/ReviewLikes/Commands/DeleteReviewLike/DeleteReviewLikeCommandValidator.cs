@@ -4,10 +4,10 @@ using Shop.Domain.Entities;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Shop.Application.Commands.ReviewComments.Commands.DeleteReviewComment
+namespace Shop.Application.Commands.ReviewLikes.Commands.DeleteReviewLike
 {
     public class DeleteReviewLikeCommandValidator
-        : AbstractValidator<DeleteReviewCommentCommand>
+        : AbstractValidator<DeleteReviewLikeCommand>
     {
         private readonly IDataBaseContext _dbContext;
 
@@ -19,13 +19,13 @@ namespace Shop.Application.Commands.ReviewComments.Commands.DeleteReviewComment
                 .NotEmpty().WithMessage("ID is required.")
                 .NotNull().WithMessage("ID can not be equeal null.")
                 .GreaterThan(0).WithMessage("ID must be greater than zero.")
-                .MustAsync(CommentExist).WithMessage("There is no field with this ID.")
-                .WithMessage("The specified ReviewCommentId doesn't exist.");
+                .MustAsync(LikeExist).WithMessage("There is no field with this ID.")
+                .WithMessage("The specified ReviewLikeId doesn't exist.");
         }
 
-        public async Task<bool> CommentExist(long Id, CancellationToken cancellationToken)
+        public async Task<bool> LikeExist(long Id, CancellationToken cancellationToken)
         {
-            return await _dbContext.ReviewComment.AnyAsync(x => x.Id == Id);
+            return await _dbContext.ReviewLike.AnyAsync(x => x.Id == Id);
         }
     }
 }

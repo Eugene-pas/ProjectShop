@@ -7,6 +7,7 @@ using Shop.Application.Commands.ReviewComments.Commands.CreateReviewComment;
 using Shop.Application.Commands.ReviewComments.Commands.DeleteReviewComment;
 using Shop.Application.Commands.ReviewComments.Queries.GetReviewCommentList;
 using Shop.Application.Commands.ReviewComments.Queries.GetReviewComment;
+using Shop.Application.Commands.ReviewComments.Queries.GetReviewCommentForReview;
 
 namespace DemoApi.Controllers
 {
@@ -37,6 +38,12 @@ namespace DemoApi.Controllers
         public async Task<ActionResult<ReviewCommentsVm>> GetAll()
         {
             return await _mediator.Send(new GetReviewCommentListQuery { });
+        }
+
+        [HttpGet("GetReviewCommentForReview")]
+        public async Task<ActionResult<ReviewCommentsVm>> GetCommentForReview(long reviewid)
+        {
+            return await _mediator.Send(new GetReviewCommentForReviewQuery { ReviewId = reviewid });
         }
 
         [HttpDelete("delete")]

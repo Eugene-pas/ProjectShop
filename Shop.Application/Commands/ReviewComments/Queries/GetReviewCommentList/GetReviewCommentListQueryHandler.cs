@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
@@ -19,10 +20,16 @@ namespace Shop.Application.Commands.ReviewComments.Queries.GetReviewCommentList
             CancellationToken cancellationToken)
         {
             var reviewcommentquery = await _dbContext.ReviewComment
+                .Include(x => x.Review)
+                .Include(x => x.Customer)
                 .ProjectTo<ReviewCommentsLookupDto>(_mapper.ConfigurationProvider)
                 .ToListAsync(cancellationToken);
 
-            return _mapper.Map<ReviewCommentsVm>(reviewcommentquery);
+            return new ReviewCommentsVm
+            {
+                ReviewComments = reviewcommentquery,
+                TotalComments = reviewcommentquery.Count,
+            };
         }
     }
 }

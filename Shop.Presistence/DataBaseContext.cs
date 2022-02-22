@@ -20,5 +20,6 @@
         public virtual DbSet<Seller> Seller { get; set; }
         public virtual DbSet<Review> Review { get; set; }
         public virtual DbSet<ReviewComment> ReviewComment { get; set; }
+        public virtual DbSet<ReviewLike> ReviewLike { get; set; }
     }
 }

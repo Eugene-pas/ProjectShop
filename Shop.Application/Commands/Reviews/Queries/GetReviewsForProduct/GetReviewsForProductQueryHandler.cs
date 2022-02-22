@@ -20,21 +20,18 @@ namespace Shop.Application.Commands.Reviews.Queries.GetReviewsForProduct
         public async Task<ReviewsForProductVm> Handle(GetReviewsForProductQuery request,
                CancellationToken cancellationToken)
         {
-            var reviewsforproductquery = await _dbContext.Review
-                .Where(review => review.Product.Id == request.ProductId)
+            var reviews = await _dbContext.Review
+                .Where(x => x.Product.Id == request.ProductId)
                 .ProjectTo<ReviewsForProductLookupDto>(_mapper.ConfigurationProvider)
                 .ToListAsync(cancellationToken);
 
-            var totalreviews = reviewsforproductquery.Count;
-
-            double totalrating = Math.Round((double)reviewsforproductquery
-                .Sum(x => x.Rating) / totalreviews, 1);
-
             return new ReviewsForProductVm
             {
-                Reviews = reviewsforproductquery,
-                TotalRating = totalrating,
-                TotalReviews = totalreviews
+                Reviews = reviews,
+                TotalRating = Math.Round((double)reviews
+                                  .Sum(x => x.Rating) / reviews.Count, 1),
+                TotalReviews = reviews.Count,
+                
             };
         }
     }

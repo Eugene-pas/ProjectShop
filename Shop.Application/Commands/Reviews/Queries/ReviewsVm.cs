@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using AutoMapper;
 using Shop.Application.Commands.ReviewComments.Queries;
+using Shop.Application.Commands.ReviewLikes.Queries;
 using Shop.Application.Common.Mappings;
 using Shop.Domain.Entities;
 
@@ -25,12 +26,14 @@ namespace Shop.Application.Commands.Reviews.Queries
 
         public virtual IList<ReviewCommentVm> ReviewComments { get; set; }
 
+        public virtual IList<ReviewLikeVm> ReviewLikes { get; set; }
+
         public void Mapping(Profile profile)
         {
             profile.CreateMap<Review, ReviewsVm>()
                 .ForMember(x => x.Id,
                    opt => opt.MapFrom(x => x.Id))
-                 .ForMember(x => x.ProductId,
+                .ForMember(x => x.ProductId,
                    opt => opt.MapFrom(x => x.Product.Id))
                 .ForMember(x => x.CustomerId,
                    opt => opt.MapFrom(x => x.Customer.Id))
@@ -43,7 +46,9 @@ namespace Shop.Application.Commands.Reviews.Queries
                 .ForMember(x => x.Comment,
                    opt => opt.MapFrom(x => x.Comment))
                 .ForMember(x => x.ReviewComments,
-                   opt => opt.MapFrom(x => x.ReviewComments));
+                   opt => opt.MapFrom(x => x.ReviewComments))
+                .ForMember(x => x.ReviewLikes,
+                   opt => opt.MapFrom(x => x.ReviewLikes));
         }
     }
 }

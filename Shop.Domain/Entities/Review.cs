@@ -19,5 +19,7 @@ namespace Shop.Domain.Entities
         public virtual Customer Customer { get; set; }
 
         public virtual ICollection<ReviewComment> ReviewComments { get; set; }
+
+        public virtual ICollection<ReviewLike> ReviewLikes { get; set; }
     }
 }

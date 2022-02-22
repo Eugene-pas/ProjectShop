@@ -20,7 +20,7 @@ namespace Shop.Application.Commands.ReviewComments.Commands.CreateReviewComment
         {
             var comment = new ReviewComment
             {
-                ReviewId = request.ReviewId,
+                Review = _dbContext.Review.Find(request.ReviewId),
                 Customer = _dbContext.Customer.Find(request.CustomerId),
                 Comment = request.Comment,
                 CreationDate = DateTime.Now,

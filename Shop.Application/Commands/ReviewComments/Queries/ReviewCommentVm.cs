@@ -25,7 +25,7 @@ namespace Shop.Application.Commands.ReviewComments.Queries
                 .ForMember(x => x.Id,
                    opt => opt.MapFrom(x => x.Id))
                  .ForMember(x => x.ReviewId,
-                   opt => opt.MapFrom(x => x.ReviewId))
+                   opt => opt.MapFrom(x => x.Review.Id))
                 .ForMember(x => x.CustomerId,
                    opt => opt.MapFrom(x => x.Customer.Id))
                 .ForMember(x => x.CustomerName,

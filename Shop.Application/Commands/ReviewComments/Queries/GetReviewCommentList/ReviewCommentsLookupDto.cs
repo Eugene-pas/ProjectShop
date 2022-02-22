@@ -24,16 +24,16 @@ namespace Shop.Application.Commands.ReviewComments.Queries.GetReviewCommentList
             profile.CreateMap<ReviewComment, ReviewCommentsLookupDto>()
                 .ForMember(x => x.Id,
                    opt => opt.MapFrom(x => x.Id))
-                 .ForMember(x => x.ReviewId,
-                   opt => opt.MapFrom(x => x.ReviewId))
+                .ForMember(x => x.ReviewId,
+                   opt => opt.MapFrom(x => x.Review.Id))
                 .ForMember(x => x.CustomerId,
                    opt => opt.MapFrom(x => x.Customer.Id))
                 .ForMember(x => x.CustomerName,
                    opt => opt.MapFrom(x => x.Customer.Name))
-                .ForMember(x => x.CreationDate,
-                   opt => opt.MapFrom(x => x.CreationDate))
                 .ForMember(x => x.Comment,
-                   opt => opt.MapFrom(x => x.Comment));
+                   opt => opt.MapFrom(x => x.Comment))
+                .ForMember(x => x.CreationDate,
+                   opt => opt.MapFrom(x => x.CreationDate));
         }
     }
 }

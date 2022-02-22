@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using AutoMapper;
 using Shop.Application.Commands.ReviewComments.Queries;
+using Shop.Application.Commands.ReviewLikes.Queries;
 using Shop.Application.Common.Mappings;
 using Shop.Domain.Entities;
 
@@ -25,6 +27,14 @@ namespace Shop.Application.Commands.Reviews.Queries.GetReviewsForProduct
 
         public virtual IList<ReviewCommentVm> ReviewComments { get; set; }
 
+        public int TotalComment { get; set; }
+
+        public virtual IList<ReviewLikeVm> ReviewLikes { get; set; }
+
+        public int TotalLike { get; set; }
+
+        public int TotalDislike { get; set; }
+
         public void Mapping(Profile profile)
         {
             profile.CreateMap<Review, ReviewsForProductLookupDto>()
@@ -43,7 +53,15 @@ namespace Shop.Application.Commands.Reviews.Queries.GetReviewsForProduct
                 .ForMember(x => x.Comment,
                    opt => opt.MapFrom(x => x.Comment))
                 .ForMember(x => x.ReviewComments,
-                   opt => opt.MapFrom(x => x.ReviewComments));
+                   opt => opt.MapFrom(x => x.ReviewComments))
+                .ForMember(x => x.ReviewLikes,
+                   opt => opt.MapFrom(x => x.ReviewLikes))
+                .ForMember(x => x.TotalComment,
+                   opt => opt.MapFrom(x => x.ReviewComments.Count))
+                .ForMember(x => x.TotalLike,
+                   opt => opt.MapFrom(x => x.ReviewLikes.Count(x => x.IsLike == true)))
+                .ForMember(x => x.TotalDislike,
+                   opt => opt.MapFrom(x => x.ReviewLikes.Count(x => x.IsLike == false)));
         }
     }
 }

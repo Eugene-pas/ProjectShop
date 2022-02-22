@@ -15,22 +15,19 @@ namespace Shop.Application.Commands.ReviewComments.Commands.CreateReviewComment
         {
             _dbContext = dbContext;
 
-            RuleFor(createreviewcommentcommandvalidator =>
-                createreviewcommentcommandvalidator.CustomerId)
+            RuleFor(x => x.CustomerId)
                  .NotEqual(0)
                  .WithMessage("The CustomerId value must not equal to 0")
                  .MustAsync(CustomerExist)
                  .WithMessage("The specified CustomerId doesn't exist.");
 
-            RuleFor(createreviewcommentcommandvalidator =>
-                createreviewcommentcommandvalidator.ReviewId)
+            RuleFor(x => x.ReviewId)
                 .NotEqual(0)
                 .WithMessage("The ReviewId value must not equal to 0")
                 .MustAsync(ReviewExist)
                 .WithMessage("The specified ReviewId doesn't exist.");
 
-            RuleFor(createreviewcommentcommandvalidator =>
-                createreviewcommentcommandvalidator.Comment)
+            RuleFor(x => x.Comment)
                 .NotEmpty()
                 .NotNull().WithMessage("Comment is required.");
         }
