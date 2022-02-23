@@ -83,9 +83,14 @@ namespace DemoApi.Controllers
         }
 
         [HttpGet("getListByCategory")]
-        public async Task<ActionResult<ProductsListVm>> GetListByCategory(long categoryId)
+        public async Task<ActionResult<ProductPaginatedVm>> GetListByCategory(long categoryId, int page, int pageSize)
         {
-            return await _mediator.Send(new GetProductsListByCategoryQuery{CategoryId = categoryId});
+            return await _mediator.Send(new GetProductsListByCategoryQuery
+            {
+                CategoryId = categoryId,
+                PageNumber = page,
+                PageSize = pageSize
+            });
         }
 
         [HttpGet("getSortListByPriceIncrease")]
