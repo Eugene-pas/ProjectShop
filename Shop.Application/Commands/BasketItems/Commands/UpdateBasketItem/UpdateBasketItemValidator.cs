@@ -13,10 +13,10 @@ namespace Shop.Application.Commands.BasketItems.Commands.UpdateBasketItem
 
             RuleFor(updateBasketCommandValidator =>
             updateBasketCommandValidator.Id)
-            .NotEmpty().NotNull().WithMessage("Basket Id is required.")
-            .NotEqual(0).WithMessage("There is no basket with this ID")
-            .MustAsync(existTask.ExistBasket)
-            .WithMessage("The specified basket doesn't exist");
+            .NotEmpty().NotNull().WithMessage("BasketItem Id is required.")
+            .NotEqual(0).WithMessage("There is no basketItem with this ID")
+            .MustAsync(existTask.ExistBasketItem)
+            .WithMessage("The specified basketItem doesn't exist");
 
             RuleFor(updateBasketCommandValidator =>
             updateBasketCommandValidator.Count)

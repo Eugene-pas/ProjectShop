@@ -27,6 +27,11 @@ namespace Shop.Application.Commands.BasketItems.Commands.UpdateBasketItem
 
             if (basketItem.Count + request.Count <= _dbContext.Product.Find(basketItem.Product.Id).OnStorageCount)
                 basketItem.Count = request.Count;
+            else if (request.Count > _dbContext.Product.Find(basketItem.Product.Id).OnStorageCount)
+            {
+                throw new NotEnoughProductsOnStorageException(_dbContext.Product.Find(basketItem.Product.Id).Name,
+                    _dbContext.Product.Find(basketItem.Product.Id).OnStorageCount);
+            }
 
             await _dbContext.SaveChangesAsync(cancellationToken);
 
