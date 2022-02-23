@@ -22,9 +22,9 @@ namespace Shop.Application.Commands.Filters.FiltrationByRating
             var productList = _dbContext.Product
                 .Include(x => x.Category)
                 .Include(x => x.Review).ThenInclude(x => x.Rating)
-                .Where(x => x.Category.Id == request.CategoryId);
-              //  .Where(x => Math.Round(x.Review.) == request.Rating);
-              //  .SelectMany(x => x.Review.Select(x => x.Rating)).Where(x => x.)
+                .Where(x => x.Category.Id == request.CategoryId)
+                .Where(x => Math.Round((double)x.Review.Sum(y => y.Rating) / x.Review.Count) == request.Rating);
+
 
             var paginatedList = await PaginatedList<Product>
                 .CreateAsync(productList, request.PageNumber, request.PageSize);
