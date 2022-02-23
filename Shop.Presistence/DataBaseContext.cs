@@ -23,5 +23,8 @@ namespace Shop.Domain.Entities
         public virtual DbSet<Product> Product { get; set; }
         public virtual DbSet<ProductImage> ProductImage { get; set; }
         public virtual DbSet<Seller> Seller { get; set; }
+        public virtual DbSet<Review> Review { get; set; }
+        public virtual DbSet<ReviewComment> ReviewComment { get; set; }
+        public virtual DbSet<ReviewLike> ReviewLike { get; set; }
     }
 }
