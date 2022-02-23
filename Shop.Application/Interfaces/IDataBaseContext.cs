@@ -19,6 +19,9 @@ namespace Shop.Application.Interfaces
         DbSet<Product> Product { get; set; }
         DbSet<ProductImage> ProductImage { get; set; }
         DbSet<Seller> Seller { get; set; }
+        DbSet<Review> Review { get; set; }
+        DbSet<ReviewComment> ReviewComment { get; set; }
+        DbSet<ReviewLike> ReviewLike { get; set; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
 }
