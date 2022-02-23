@@ -27,16 +27,6 @@ namespace Shop.Application.Commands.Products.Queries.GetProductsListByCategory
             listCategories.Add(await _dbContext.Category
                 .Include(x => x.Product)
                 .FirstOrDefaultAsync(x => x.Id == request.CategoryId));
-            if (listCategories.Count == 0)
-            {
-                var category = await _dbContext.Category
-                    .Include(x => x.Product)
-                    .FirstOrDefaultAsync(x => x.Id == request.CategoryId, cancellationToken);
-                if (category != null)
-                {
-                    listCategories.Add(category);
-                }
-            }
             foreach (var category in listCategories)
             {
                 foreach (var item in category.Product)
