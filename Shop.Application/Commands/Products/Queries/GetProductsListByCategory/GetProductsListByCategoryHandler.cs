@@ -24,17 +24,19 @@ namespace Shop.Application.Commands.Products.Queries.GetProductsListByCategory
             var listCategories = SubcategoriesFind(_dbContext, request.CategoryId, new List<Category>());
             listCategories.Add(await _dbContext.Category
                 .Include(x => x.Product)
-                .FirstOrDefaultAsync(x => x.Id == request.CategoryId));
-                
+                .FirstOrDefaultAsync(x => x.Id == request.CategoryId, cancellationToken));
 
-            var listProduct = listCategories.SelectMany(category => category.Product).AsQueryable();
-            var paginatedList = await PaginatedList<Product>
-                .CreateAsync(listProduct, request.PageNumber, request.PageSize);
-
+            var productsPerPage = listCategories
+                .SelectMany(category => category.Product)
+                .Skip((request.PageNumber - 1) * request.PageSize)
+                .Take(request.PageSize)
+                .ToList();
+            var paginatedList = new PaginatedList<Product>(productsPerPage, productsPerPage.Count, request.PageNumber, request.PageSize);
+            
             return new ProductPaginatedVm
             {
-                Products = paginatedList,
-                Page = paginatedList.PageIndex,
+                Products = productsPerPage,
+                Page = request.PageNumber,
                 TotalPagesAmount = paginatedList.TotalPages,
                 HasNextPage = paginatedList.HasNextPage,
                 HasPreviousPage = paginatedList.HasPreviousPage

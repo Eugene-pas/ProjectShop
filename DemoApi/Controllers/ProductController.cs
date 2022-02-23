@@ -1,8 +1,7 @@
-﻿using System.Collections.Generic;
-using DemoApi.Models.ProductModels;
+﻿using DemoApi.Models.ProductModels;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Shop.Application.Commands.Filters;
+using Shop.Application.Commands.Filters.FiltrationByPrice;
 using Shop.Application.Commands.Filters.FiltrationByRating;
 using Shop.Application.Commands.Filters.FiltrationBySeller;
 using Shop.Application.Commands.Products;
@@ -10,14 +9,12 @@ using Shop.Application.Commands.Products.Commands.CreateProduct;
 using Shop.Application.Commands.Products.Commands.DeleteProduct;
 using Shop.Application.Commands.Products.Commands.UpdateProduct;
 using Shop.Application.Commands.Products.Queries.GetProduct;
-using Shop.Application.Commands.Products.Queries.GetProductsListByPrice;
-using Shop.Application.Commands.Products.Queries.GetProductsListByRating;
-using System.Threading.Tasks;
-using Shop.Application.Commands.Filters.FiltrationByPrice;
 using Shop.Application.Commands.Products.Queries.GetProductsList;
 using Shop.Application.Commands.Products.Queries.GetProductsListByCategory;
+using Shop.Application.Commands.Products.Queries.GetProductsListByPrice;
+using Shop.Application.Commands.Products.Queries.GetProductsListByRating;
 using Shop.Application.Commands.Products.Queries.GetProductsListPaginated;
-using Shop.Domain.Entities;
+using System.Threading.Tasks;
 
 namespace DemoApi.Controllers
 {
@@ -83,7 +80,7 @@ namespace DemoApi.Controllers
         }
 
         [HttpGet("getListByCategory")]
-        public async Task<ActionResult<ProductPaginatedVm>> GetListByCategory(long categoryId, int page, int pageSize)
+        public async Task<ActionResult<ProductPaginatedVm>> GetListByCategory(long categoryId, int page = 1, int pageSize = 5)
         {
             return await _mediator.Send(new GetProductsListByCategoryQuery
             {
@@ -94,41 +91,76 @@ namespace DemoApi.Controllers
         }
 
         [HttpGet("getSortListByPriceIncrease")]
-        public async Task<ActionResult<ProductsListVm>> GetAllByPriceIncrease(long categoryId)
+        public async Task<ActionResult<ProductPaginatedVm>> GetAllByPriceIncrease(long categoryId, int page = 1, int pageSize = 5)
         {
-            return await _mediator.Send(new GetProductsListByPriceIncreaseQuery { CategoryId = categoryId});
+            return await _mediator.Send(new GetProductsListByPriceIncreaseQuery
+            {
+                CategoryId = categoryId,
+                PageNumber = page,
+                PageSize = pageSize
+            });
         }
 
         [HttpGet("getSortListByPriceFalling")]
-        public async Task<ActionResult<ProductsListVm>> GetAllByPriceFalling(long categoryId)
+        public async Task<ActionResult<ProductPaginatedVm>> GetAllByPriceFalling(long categoryId, int page = 1, int pageSize = 5)
         {
-            return await _mediator.Send(new GetProductsListByPriceFallingQuery { CategoryId = categoryId });
+            return await _mediator.Send(new GetProductsListByPriceFallingQuery
+            {
+                CategoryId = categoryId,
+                PageNumber = page,
+                PageSize = pageSize
+            });
         }
 
         [HttpGet("getSortListByRating")]
-        public async Task<ActionResult<ProductsListVm>> GetAllByRating(long categoryId)
+        public async Task<ActionResult<ProductPaginatedVm>> GetAllByRating(long categoryId, int page = 1, int pageSize = 5)
         {
-            return await _mediator.Send(new GetProductsListByRatingQuery {CategoryId = categoryId});
+            return await _mediator.Send(new GetProductsListByRatingQuery
+            {
+                CategoryId = categoryId,
+                PageNumber = page,
+                PageSize = pageSize
+            });
         }
         
         [HttpGet("filterByRating")]
-        public async Task<ActionResult<FilteredProductsListVm>> GetFilterByRating(long categoryId, int rating)
+        public async Task<ActionResult<ProductPaginatedVm>> GetFilterByRating(long categoryId, int rating,
+            int page = 1, int pageSize = 5)
         {
-            return await _mediator.Send(new GetFiltrationByRatingQuery { CategoryId = categoryId, Rating = rating });
+            return await _mediator.Send(new GetFiltrationByRatingQuery
+            {
+                CategoryId = categoryId,
+                Rating = rating,
+                PageNumber = page,
+                PageSize = pageSize
+            });
         }
 
         [HttpGet("filterBySeller")]
-        public async Task<ActionResult<FilteredProductsListVm>> GetFilterBySeller(long categoryId, long sellerId)
+        public async Task<ActionResult<ProductPaginatedVm>> GetFilterBySeller(long categoryId, long sellerId,
+            int page = 1, int pageSize = 5)
         {
             return await _mediator.Send(new GetFiltrationBySellerQuery
-                { CategoryId = categoryId, SellerId = sellerId });
+            {
+                CategoryId = categoryId,
+                SellerId = sellerId,
+                PageNumber = page,
+                PageSize = pageSize
+            });
         }
 
         [HttpGet("filterByPrice")]
-        public async Task<ActionResult<FilteredProductsListVm>> GetFilterByPrice(long categoryId, decimal minPrice, decimal maxPrice)
+        public async Task<ActionResult<ProductPaginatedVm>> GetFilterByPrice(long categoryId, decimal minPrice,
+            decimal maxPrice, int page = 1, int pageSize = 5)
         {
             return await _mediator.Send(new GetFiltrationByPriceQuery
-                { CategoryId = categoryId, MinPrice = minPrice, MaxPrice = maxPrice});
+                { 
+                    CategoryId = categoryId,
+                    MinPrice = minPrice,
+                    MaxPrice = maxPrice,
+                    PageNumber = page,
+                    PageSize = pageSize
+            });
         }
     }
 }
