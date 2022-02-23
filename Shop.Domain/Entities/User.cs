@@ -17,5 +17,6 @@ namespace Shop.Domain.Entities
         public Customer Customer { get; set; }
 
         public Seller Seller { get; set; }
+
     }
 }
