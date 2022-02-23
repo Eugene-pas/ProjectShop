@@ -7,6 +7,8 @@ using Shop.Application.Commands.Orders.Commands.CreateOrder;
 using Shop.Application.Commands.Orders.Commands.DeleteOrder;
 using Shop.Application.Commands.Orders.Commands.UpdateOrder;
 using Shop.Application.Commands.Orders.Queries.GetOrder;
+using Shop.Application.Commands.Orders.Queries.GetOrderPaginatedList;
+using Shop.Application.Commands.Orders.Queries.GetOrderPaginatedListForCustomer;
 using Shop.Application.Commands.Orders.Queries.GetOrdersList;
 using Shop.Application.Commands.Orders.Queries.GetOrdersListForCustomer;
 
@@ -68,5 +70,25 @@ namespace DemoApi.Controllers
             return await _mediator.Send(new GetOrdersListQuery { });
         }
 
+        [HttpGet("getOrdersPaginatedListForCustomer/{customerId}")]
+        public async Task<ActionResult<GetOrderPaginatedListForCustomerVm>> GetOrdersPaginatedListForCustomer(long customerId,int page, int pageSize)
+        {
+            return await _mediator.Send(new GetOrderPaginatedListForCustomerQuery
+            {
+                CustomerId = customerId,
+                Page = page,
+                PageSize = pageSize
+            });
+        }
+
+        [HttpGet("GetOrdersPaginatedList")]
+        public async Task<ActionResult<GetOrderPaginatedListVm>> GetPaginatedOrder(int page, int pageSize)
+        {
+            return await _mediator.Send(new GetOrderPaginatedListQuery
+            {
+                Page = page,
+                PageSize = pageSize
+            });
+        }
     }
 }

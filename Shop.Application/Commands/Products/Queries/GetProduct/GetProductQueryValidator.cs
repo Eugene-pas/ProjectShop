@@ -13,7 +13,7 @@ namespace Shop.Application.Commands.Products.Queries.GetProduct
             RuleFor(getProductQueryValidator =>
             getProductQueryValidator.Id).NotEmpty()
             .NotNull().WithMessage("ID is required.")
-            .WithMessage("The specified customerId doesn't exist")
+            .WithMessage("The specified CustomerId doesn't exist")
             .MustAsync(existTask.Exist);
         }
     }

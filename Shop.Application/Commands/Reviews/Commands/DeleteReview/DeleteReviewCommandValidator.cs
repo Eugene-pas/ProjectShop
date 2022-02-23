@@ -21,7 +21,7 @@ namespace Shop.Application.Commands.Reviews.Commands.DeleteReview
                 .NotNull().WithMessage("ID can not be equeal null.")
                 .GreaterThan(0).WithMessage("ID must be greater than zero.")
                 .MustAsync(ReviewExist).WithMessage("There is no field with this ID.")
-                .WithMessage("The specified customerId doesn't exist.");
+                .WithMessage("The specified CustomerId doesn't exist.");
         }
 
         public async Task<bool> ReviewExist(long Id, CancellationToken cancellationToken)

@@ -18,7 +18,7 @@ namespace Shop.Application.Commands.Orders.Queries.GetOrdersListForCustomer
                 .NotEmpty().WithMessage("ID is required.")
             .NotNull().WithMessage("ID can not be aqueal null.")
             .NotEqual(0).WithMessage("There is no field with this ID")
-            .MustAsync(Exist).WithMessage("The specified customerId doesn't exist");
+            .MustAsync(Exist).WithMessage("The specified CustomerId doesn't exist");
         }
         public async Task<bool> Exist(long customerId, CancellationToken cancellationToken)
         {

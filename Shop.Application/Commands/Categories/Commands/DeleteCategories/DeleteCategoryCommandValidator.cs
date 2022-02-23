@@ -17,7 +17,7 @@ namespace Shop.Application.Commands.Categories.Commands.DeleteCategories
                 .NotNull().WithMessage("ID can not be equeal null.")
                 .GreaterThan(0).WithMessage("ID must be greater than zero.")
                 .MustAsync(existTask.Exist).WithMessage("There is no field with this ID.")
-                .WithMessage("The specified customerId doesn't exist.");
+                .WithMessage("The specified CustomerId doesn't exist.");
         }
     }
 }

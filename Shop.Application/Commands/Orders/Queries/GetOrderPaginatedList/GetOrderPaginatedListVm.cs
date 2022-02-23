@@ -8,7 +8,7 @@ namespace Shop.Application.Commands.Orders.Queries.GetOrderPaginatedList
 {
     public class GetOrderPaginatedListVm
     {
-        public IList<GetOrderPaginatedListDto> ListCategory { get; set; }
+        public IList<GetOrderPaginatedListDto> ListOrders { get; set; }
         public int Page { get; set; }
         public int TotalPage { get; set; }
         public bool HasPreviousPage { get; set; }

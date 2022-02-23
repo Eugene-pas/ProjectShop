@@ -7,7 +7,7 @@ using MediatR;
 
 namespace Shop.Application.Commands.Orders.Queries.GetOrderPaginatedList
 {
-    internal class GetOrderPaginatedListQuery
+    public class GetOrderPaginatedListQuery
         : IRequest<GetOrderPaginatedListVm>
     {
         public int Page { get; set; }

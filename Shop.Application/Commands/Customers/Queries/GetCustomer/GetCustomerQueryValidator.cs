@@ -16,7 +16,7 @@ namespace Shop.Application.Commands.Customers.Queries.GetCustomer
             .NotEmpty().WithMessage("ID is required.")
             .NotNull().WithMessage("ID can not be aqueal null.")
             .NotEqual(0).WithMessage("There is no field with this ID")
-            .MustAsync(existTask.Exist).WithMessage("The specified customerId doesn't exist");
+            .MustAsync(existTask.Exist).WithMessage("The specified CustomerId doesn't exist");
         }
     }
 }
