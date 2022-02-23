@@ -1,12 +1,11 @@
-﻿using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using MediatR;
+﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Shop.Application.Commands.Products.Queries.GetProductsList;
 using Shop.Application.Common.Pagination;
 using Shop.Application.Interfaces;
 using Shop.Domain.Entities;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Shop.Application.Commands.Products.Queries.GetProductsListPaginated
 {

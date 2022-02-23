@@ -21,8 +21,8 @@ namespace Shop.Application.Commands.Orders.Commands.CreateOrder
             {
                 Date = DateTime.Now,
                 Adress = request.Adress,
-                Customer = _dbContext.Customer.Find(request.CustomerId),
-                Delivery = _dbContext.Delivery.Find(request.DeliveryId)
+                Customer = await _dbContext.Customer.FindAsync(request.CustomerId),
+                Delivery = await _dbContext.Delivery.FindAsync(request.DeliveryId)
             };
 
             await _dbContext.Order.AddAsync(order, cancellationToken);

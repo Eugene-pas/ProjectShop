@@ -1,34 +1,41 @@
-﻿using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using AutoMapper;
-using AutoMapper.QueryableExtensions;
-using MediatR;
+﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Shop.Application.Commands.Products.Queries.GetProductsList;
+using Shop.Application.Commands.Products.Queries.GetProductsListPaginated;
+using Shop.Application.Common.Pagination;
 using Shop.Application.Interfaces;
 using Shop.Domain.Entities;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Shop.Application.Commands.Products.Queries.GetProductsListByPrice
 {
     public class GetProductsListByPriceIncreaseQueryHandler
-        : IRequestHandler<GetProductsListByPriceIncreaseQuery, ProductsListVm>
+        : IRequestHandler<GetProductsListByPriceIncreaseQuery, ProductPaginatedVm>
     {
-        private readonly IMapper _mapper;
         private readonly IDataBaseContext _dbContext;
 
-        public GetProductsListByPriceIncreaseQueryHandler(IDataBaseContext dbContext, IMapper mapper) =>
-            (_dbContext, _mapper) = (dbContext, mapper);
+        public GetProductsListByPriceIncreaseQueryHandler(IDataBaseContext dbContext) =>
+            _dbContext = dbContext;
 
-        public async Task<ProductsListVm> Handle(GetProductsListByPriceIncreaseQuery request, CancellationToken cancellationToken)
+        public async Task<ProductPaginatedVm> Handle(GetProductsListByPriceIncreaseQuery request, CancellationToken cancellationToken)
         {
-            var productQuery = await _dbContext.Product
+            var productQuery = _dbContext.Product
                 .Include(x => x.Category)
                 .Where(x => x.Category.Id == request.CategoryId)
-                .OrderBy(x => x.Price)
-                .ToListAsync(cancellationToken);
+                .OrderBy(x => x.Price);
 
-            return new ProductsListVm { Products = productQuery };
+            var paginatedList = await PaginatedList<Product>
+                .CreateAsync(productQuery, request.PageNumber, request.PageSize);
+
+            return new ProductPaginatedVm
+            {
+                Products = paginatedList,
+                Page = paginatedList.PageIndex,
+                TotalPagesAmount = paginatedList.TotalPages,
+                HasNextPage = paginatedList.HasNextPage,
+                HasPreviousPage = paginatedList.HasPreviousPage
+            };
         }
     }
 }

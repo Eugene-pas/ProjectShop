@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using Shop.Application.Commands.Products.Queries.GetProductsList;
 using Shop.Application.Commands.Products.Queries.GetProductsListPaginated;
 
 namespace Shop.Application.Commands.Products.Queries.GetProductsListByCategory
