@@ -16,15 +16,23 @@ namespace Shop.Domain.Entities
         } 
         
         public string Name { get; set; }
+
         public decimal Price { get; set; }
+
         public string Description { get; set; }
+
         public int? OnStorageCount { get; set; }
-        public double Rating { get; set; }
     
         public virtual Category Category { get; set; }
-        public virtual ICollection<DeliveryProductConnection> DeliveryProductConnection { get; set; }
-        public virtual ICollection<OrderProductConnection> OrderProductConnection { get; set; }
+
         public virtual Seller Seller { get; set; }
+
+        public virtual ICollection<DeliveryProductConnection> DeliveryProductConnection { get; set; }
+
+        public virtual ICollection<OrderProductConnection> OrderProductConnection { get; set; }
+
         public virtual ICollection<ProductImage> ProductImage { get; set; }
+
+        public virtual ICollection<Review> Review { get; set; }
     }
 }

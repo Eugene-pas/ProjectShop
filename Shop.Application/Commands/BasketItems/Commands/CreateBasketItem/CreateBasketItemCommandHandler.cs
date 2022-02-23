@@ -3,6 +3,7 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Shop.Application.Commands.Baskets;
 using Shop.Application.Common;
+using Shop.Application.Exceptions;
 using Shop.Application.Interfaces;
 using Shop.Domain.Entities;
 using System;
@@ -46,7 +47,7 @@ namespace Shop.Application.Commands.BasketItems.Commands.CreateBasketItem
                         basketItem.Count += request.Count;
                 }
             }
-            catch(ArgumentException e)
+            catch(BasketItemErorException)
             {
             }
 

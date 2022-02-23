@@ -54,7 +54,6 @@ namespace DemoApi.Controllers
                 Price = product.Price,
                 Description = product.Description,
                 OnStorageCount = product.OnStorageCount,
-                Rating = product.Rating,
                 CategoryId=product.CategoryId,
                 SellerId=product.SellerId
                 

@@ -1,5 +1,6 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
+using System.Linq;
 using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -21,8 +22,10 @@ namespace Shop.Application.Commands.Products.Queries.GetProduct
             var product = await _dbContext.Product
                 .Include(x => x.Category)
                 .Include(x => x.Seller)
-                .FirstOrDefaultAsync(product => 
-            product.Id == request.Id, cancellationToken);
+                .Include(x => x.Review).ThenInclude(x => x.Customer)
+                .Include(x => x.Review).ThenInclude(x => x.ReviewComments)
+                .Include(x => x.Review).ThenInclude(x => x.ReviewLikes)
+                .FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken);
 
             _ = product ?? throw new NotFoundException(nameof(Product), request.Id);
 

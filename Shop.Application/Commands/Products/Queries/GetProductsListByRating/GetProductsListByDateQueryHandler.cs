@@ -24,7 +24,7 @@ namespace Shop.Application.Commands.Products.Queries.GetProductsListByRating
                 .Include(x => x.Category)
                 .Include(x => x.Seller)
                 .Where(x => x.Category.Id == request.CategoryId)
-                .OrderBy(x => x.Rating);
+                .OrderBy(x => x.Review.Sum(x => x.Rating));
 
             var paginatedList = await PaginatedList<Product>
                 .CreateAsync(productQuery, request.PageNumber, request.PageSize);

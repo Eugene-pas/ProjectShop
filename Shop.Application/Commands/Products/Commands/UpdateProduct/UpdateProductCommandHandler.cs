@@ -32,7 +32,6 @@ namespace Shop.Application.Commands.Products.Commands.UpdateProduct
             product.Price = request.Price;
             product.Description = request.Description;
             product.OnStorageCount = request.OnStorageCount;
-            product.Rating = request.Rating;
             product.Category = await _dbContext.Category.FindAsync(request.CategoryId);
             product.Seller = await _dbContext.Seller.FindAsync(request.SellerId);
 
