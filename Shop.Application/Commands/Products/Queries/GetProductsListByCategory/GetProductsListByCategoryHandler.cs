@@ -24,6 +24,9 @@ namespace Shop.Application.Commands.Products.Queries.GetProductsListByCategory
         {
             var listProduct = new List<Product>();
             var listCategories = SubcategoriesFind(_dbContext, request.CategoryId, new List<Category>());
+            listCategories.Add(await _dbContext.Category
+                .Include(x => x.Product)
+                .FirstOrDefaultAsync(x => x.Id == request.CategoryId));
             if (listCategories.Count == 0)
             {
                 var category = await _dbContext.Category
@@ -42,8 +45,6 @@ namespace Shop.Application.Commands.Products.Queries.GetProductsListByCategory
                 }
             }
 
-            // var paginatedList = await PaginatedList<Product>
-            //     .CreateAsync(listCategories, )
             return new ProductsListVm{Products = listProduct};
         }
     }

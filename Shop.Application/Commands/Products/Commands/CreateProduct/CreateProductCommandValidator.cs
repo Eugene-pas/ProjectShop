@@ -25,9 +25,6 @@ namespace Shop.Application.Commands.Products.Commands.CreateProduct
             createProductCommandValidator.OnStorageCount)
             .GreaterThan(-1).WithMessage("Count must be => 0");
 
-            RuleFor(createProductCommandValidator =>
-            createProductCommandValidator.Rating).InclusiveBetween(1, 5)
-            .WithMessage("1<= rating <=5");
         }
     }
 }

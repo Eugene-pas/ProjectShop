@@ -8,6 +8,7 @@ using Shop.Domain.Entities;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Shop.Application.Interfaces;
 
 namespace Shop.Application.Commands.Reviews.Commands.DeleteReview
 {

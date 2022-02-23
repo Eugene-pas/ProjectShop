@@ -1,16 +1,13 @@
 ﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using MediatR;
 using Shop.Application.Common;
+using Shop.Application.Common.Pagination;
 using Shop.Application.Interfaces;
-using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using AutoMapper.QueryableExtensions;
-using Microsoft.AspNetCore.Server.HttpSys;
-using Microsoft.EntityFrameworkCore;
-using Shop.Application.Common.Pagination;
-using Shop.Domain.Entities;
+using Shop.Application.Exceptions;
 
 namespace Shop.Application.Commands.Categories.Queries.GetCategoryPaginatedList
 {
@@ -22,12 +19,16 @@ namespace Shop.Application.Commands.Categories.Queries.GetCategoryPaginatedList
 
         public async Task<GetCategoryPaginatedListVm> Handle(GetCategoryPaginatedListQuery request, CancellationToken cancellationToken)
         {
-            var categories = from c in _dbContext.Category
-                .ProjectTo<GetCategoryPaginatedListDto>(_mapper.ConfigurationProvider) select c;
             
             var paginatedList = await PaginatedList<GetCategoryPaginatedListDto>
-                .CreateAsync(categories, request.Page, request.PageSize);
-            
+                .CreateAsync(_dbContext.Category
+                    .ProjectTo<GetCategoryPaginatedListDto>(_mapper.ConfigurationProvider)
+                    .Select(categories => categories),
+                    request.Page, request.PageSize);
+            if (request.Page > paginatedList.TotalPages)
+            {
+                throw new PageNotFoundException(request.Page);
+            }
             return new GetCategoryPaginatedListVm 
             {
                 ListCategory = paginatedList,

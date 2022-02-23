@@ -8,6 +8,7 @@ using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Shop.Application.Interfaces;
 
 namespace Shop.Application.Commands.Reviews.Queries.GetReviewsForProduct
 {

@@ -37,7 +37,6 @@ namespace DemoApi.Controllers
                 Description = product.Description,
                 CategoryId = product.CategoryId,
                 OnStorageCount = product.OnStorageCount,
-                Rating = product.Rating,
                 SellerId = product.SellerId
             });
         }

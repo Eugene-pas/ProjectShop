@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using Microsoft.EntityFrameworkCore;
+using Shop.Application.Interfaces;
 using Shop.Domain.Entities;
 using System.Threading;
 using System.Threading.Tasks;
