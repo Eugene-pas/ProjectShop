@@ -12,6 +12,7 @@ using Shop.Presistence;
 using System.Reflection;
 using Shop.Application.Commands.ProductImages.FileServices;
 using Shop.Application.Interfaces;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace DemoApi
 {
@@ -33,10 +34,17 @@ namespace DemoApi
                 config.AddProfile(new AssemblyMappingProfile(typeof(IDataBaseContext).Assembly));
             });
 
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(option =>
+                {
+                    option.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login");
+                });
+
             services.AddControllersWithViews()
                  .AddNewtonsoftJson(options =>
                   options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
             );
+
             services.AddApplication();
             services.AddPersistence(Configuration);
             services.AddControllers();
@@ -71,7 +79,8 @@ namespace DemoApi
             app.UseHttpsRedirection();
             app.UseCors("AllowAll");
 
-            //app.UseAuthorization();
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

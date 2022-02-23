@@ -25,7 +25,7 @@ namespace Shop.Application.Commands.Sellers.Commands.UpdateSeller
 
             _ = seller ?? throw new NotFoundException(nameof(Seller), seller.Id);
 
-            seller.Name = request.Name;
+            seller.StoreName = request.Name;
             seller.Description = request.Description;
             seller.Contact = request.Contact;
 

@@ -26,5 +26,6 @@ namespace Shop.Domain.Entities
         public virtual DbSet<Review> Review { get; set; }
         public virtual DbSet<ReviewComment> ReviewComment { get; set; }
         public virtual DbSet<ReviewLike> ReviewLike { get; set; }
+        public virtual DbSet<User> User { get; set; }
     }
 }

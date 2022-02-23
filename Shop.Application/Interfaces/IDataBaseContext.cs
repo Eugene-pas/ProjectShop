@@ -22,6 +22,7 @@ namespace Shop.Application.Interfaces
         DbSet<Review> Review { get; set; }
         DbSet<ReviewComment> ReviewComment { get; set; }
         DbSet<ReviewLike> ReviewLike { get; set; }
+        DbSet<User> User { get; set; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
 }

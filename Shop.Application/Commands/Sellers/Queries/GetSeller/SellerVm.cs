@@ -17,7 +17,7 @@ namespace Shop.Application.Commands.Sellers.Queries.GetSeller
                 .ForMember(SellerVm => SellerVm.Id, 
                    opt => opt.MapFrom(Seller => Seller.Id))
                 .ForMember(SellerVm => SellerVm.Name, 
-                   opt => opt.MapFrom(Seller => Seller.Name))
+                   opt => opt.MapFrom(Seller => Seller.StoreName))
                 .ForMember(SellerVm => SellerVm.Description, 
                    opt => opt.MapFrom(Seller => Seller.Description))
                 .ForMember(SellerVm => SellerVm.Contact, 

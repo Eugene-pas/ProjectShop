@@ -20,7 +20,7 @@ namespace Shop.Application.Commands.Sellers.Commands.CreateSeller
         {
             var seller = new Seller
             {
-                Name = request.Name,
+                StoreName = request.Name,
                 Description = request.Description,
                 Contact = request.Contact,
                 Product = null
