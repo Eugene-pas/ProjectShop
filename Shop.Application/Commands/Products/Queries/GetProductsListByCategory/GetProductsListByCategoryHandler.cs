@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using Shop.Application.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Shop.Application.Commands.Products.Queries.GetProductsList;
+using Shop.Application.Common.Pagination;
 
 namespace Shop.Application.Commands.Products.Queries.GetProductsListByCategory
 {
@@ -27,7 +28,7 @@ namespace Shop.Application.Commands.Products.Queries.GetProductsListByCategory
             {
                 var category = await _dbContext.Category
                     .Include(x => x.Product)
-                    .FirstOrDefaultAsync(x => x.Id == request.CategoryId);
+                    .FirstOrDefaultAsync(x => x.Id == request.CategoryId, cancellationToken);
                 if (category != null)
                 {
                     listCategories.Add(category);
@@ -40,6 +41,9 @@ namespace Shop.Application.Commands.Products.Queries.GetProductsListByCategory
                     listProduct.Add(item);
                 }
             }
+
+            // var paginatedList = await PaginatedList<Product>
+            //     .CreateAsync(listCategories, )
             return new ProductsListVm{Products = listProduct};
         }
     }

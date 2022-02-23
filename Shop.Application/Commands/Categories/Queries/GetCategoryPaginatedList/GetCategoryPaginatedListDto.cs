@@ -12,9 +12,9 @@ namespace Shop.Application.Commands.Categories.Queries.GetCategoryPaginatedList
         public void Mapping(Profile profile)
         {
             profile.CreateMap<Category, GetCategoryPaginatedListDto>()
-                .ForMember(CategoryVm => CategoryVm.Id,
+                .ForMember(categoryVm => categoryVm.Id,
                     opt => opt.MapFrom(category => category.Id))
-                .ForMember(CategoryVm => CategoryVm.Name,
+                .ForMember(categoryVm => categoryVm.Name,
                     opt => opt.MapFrom(category => category.Name));
         }
     }

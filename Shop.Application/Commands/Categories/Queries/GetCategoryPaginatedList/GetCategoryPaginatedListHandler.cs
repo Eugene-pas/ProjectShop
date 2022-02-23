@@ -24,8 +24,8 @@ namespace Shop.Application.Commands.Categories.Queries.GetCategoryPaginatedList
         {
             var categories = from c in _dbContext.Category
                 .ProjectTo<GetCategoryPaginatedListDto>(_mapper.ConfigurationProvider) select c;
-
-            PaginatedList<GetCategoryPaginatedListDto> paginatedList = await PaginatedList<GetCategoryPaginatedListDto>
+            
+            var paginatedList = await PaginatedList<GetCategoryPaginatedListDto>
                 .CreateAsync(categories, request.Page, request.PageSize);
             
             return new GetCategoryPaginatedListVm 

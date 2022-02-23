@@ -1,13 +1,10 @@
-﻿using AutoMapper;
-using AutoMapper.QueryableExtensions;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using AutoMapper;
-using AutoMapper.QueryableExtensions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Shop.Application.Interfaces;
-using Shop.Domain.Entities;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Shop.Application.Commands.Products.Queries.GetProductsList
 {
@@ -15,9 +12,9 @@ namespace Shop.Application.Commands.Products.Queries.GetProductsList
         : IRequestHandler<GetProductsListQuery, ProductsListVm>
     {
         private readonly IDataBaseContext _dbContext;
-        private readonly IMapper _mapper;
-        public GetProductsListQueryHandler(IDataBaseContext dbContext, IMapper mapper) =>
-            (_dbContext, _mapper) = (dbContext, mapper);
+
+        public GetProductsListQueryHandler(IDataBaseContext dbContext) =>
+            _dbContext = dbContext;
 
         public async Task<ProductsListVm> Handle(GetProductsListQuery request, 
             CancellationToken cancellationToken)

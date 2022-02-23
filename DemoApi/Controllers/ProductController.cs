@@ -16,6 +16,7 @@ using System.Threading.Tasks;
 using Shop.Application.Commands.Filters.FiltrationByPrice;
 using Shop.Application.Commands.Products.Queries.GetProductsList;
 using Shop.Application.Commands.Products.Queries.GetProductsListByCategory;
+using Shop.Application.Commands.Products.Queries.GetProductsListPaginated;
 using Shop.Domain.Entities;
 
 namespace DemoApi.Controllers
@@ -71,9 +72,15 @@ namespace DemoApi.Controllers
         }
 
         [HttpGet("getList")]
-        public async Task<ActionResult<ProductsListVm>> GetAll()
+        public async Task<ActionResult<ProductsListVm>> GetAll(int pageNumber)
         {
             return await _mediator.Send(new GetProductsListQuery());
+        }
+
+        [HttpGet("getPaginatedList")]
+        public async Task<ActionResult<ProductPaginatedVm>> GetAllPaginated(int pageNumber = 1, int pageSize = 5)
+        {
+            return await _mediator.Send(new GetProductsListPaginatedQuery(pageNumber, pageSize));
         }
 
         [HttpGet("getListByCategory")]
