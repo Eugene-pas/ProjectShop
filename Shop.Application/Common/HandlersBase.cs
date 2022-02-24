@@ -19,6 +19,9 @@ namespace Shop.Application.Common
 
             var list = dataBase.CategoryConnection
                 .Include(x => x.Category.Product)
+                .ThenInclude(x => x.Review)
+                .Include(x => x.Category.Product)
+                .ThenInclude(x => x.Seller)
                 .Where(x => x.ParentId == parenrId).ToList();
             foreach (var item in list)
             {

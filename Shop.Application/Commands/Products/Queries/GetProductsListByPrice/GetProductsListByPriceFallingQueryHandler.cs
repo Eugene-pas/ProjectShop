@@ -28,9 +28,10 @@ namespace Shop.Application.Commands.Products.Queries.GetProductsListByPrice
                 .Include(x => x.Category)
                 .Include(x => x.Seller)
                 .Where(x => x.Category.Id == request.CategoryId)
+                .ProjectTo<ProductsLookupDto>(_mapper.ConfigurationProvider)
                 .OrderByDescending(x => x.Price);
 
-            var paginatedList = await PaginatedList<Product>
+            var paginatedList = await PaginatedList<ProductsLookupDto>
                 .CreateAsync(productQuery, request.PageNumber, request.PageSize);
 
             return new ProductPaginatedVm

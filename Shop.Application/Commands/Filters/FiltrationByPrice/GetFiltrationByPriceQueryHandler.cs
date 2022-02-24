@@ -32,9 +32,11 @@ namespace Shop.Application.Commands.Filters.FiltrationByPrice
             var productList = _dbContext.Product
                 .Include(x => x.Category)
                 .Where(x => x.Category.Id == request.CategoryId)
-                .Where(x => x.Price >= minPrice && x.Price <= maxPrice);
+                .Where(x => x.Price >= minPrice && x.Price <= maxPrice)
+                .ProjectTo<ProductsLookupDto>(_mapper.ConfigurationProvider);
+                
 
-            var paginatedList = await PaginatedList<Product>
+            var paginatedList = await PaginatedList<ProductsLookupDto>
                 .CreateAsync(productList, request.PageNumber, request.PageSize);
 
             return new ProductPaginatedVm

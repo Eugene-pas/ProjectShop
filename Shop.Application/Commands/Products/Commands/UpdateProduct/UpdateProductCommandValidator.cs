@@ -15,7 +15,7 @@ namespace Shop.Application.Commands.Products.Commands.UpdateProduct
             deleteProductCommandValidator.Id).NotEmpty()
             .NotNull().WithMessage("ID is required.")
             .NotEqual(0).WithMessage("There is no field with this ID")
-            .MustAsync(existTask.Exist)
+            .MustAsync(existTask.ProductExist)
             .WithMessage("The specified CustomerId doesn't exist");
 
             RuleFor(createProductCommandValidator =>

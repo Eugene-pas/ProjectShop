@@ -15,28 +15,28 @@ using Shop.Application.Commands.Products.Queries.GetProductsList;
 namespace Shop.Application.Commands.Filters.FiltrationByRating
 {
     internal class GetFiltrationByRatingQueryHandler
-    : IRequestHandler<GetFiltrationByRatingQuery, ProductPaginatedVm>
+    : IRequestHandler<GetFiltrationByRatingQuery, FiltrationByRatingVm>
     {
         private readonly IDataBaseContext _dbContext;
         private readonly IMapper _mapper;
         public GetFiltrationByRatingQueryHandler(IDataBaseContext dbContext, IMapper mapper) =>
             (_dbContext, _mapper) = (dbContext, mapper);
 
-        public async Task<ProductPaginatedVm> Handle(GetFiltrationByRatingQuery request, CancellationToken cancellationToken)
+        public async Task<FiltrationByRatingVm> Handle(GetFiltrationByRatingQuery request, CancellationToken cancellationToken)
         {
             var productList = _dbContext.Product
                 .Include(x => x.Category)
                 .Include(x => x.Review)
-                .ThenInclude(x => x.Rating)
+                .Include(x => x.Seller)
                 .Where(x => x.Category.Id == request.CategoryId)
-                .Where(x => Math.Round((double) x.Review.Sum(y => y.Rating) / x.Review.Count) == request.Rating);
-                
-
-
+                .Where(x =>
+                    Math.Round((double) x.Review.Sum(y => y.Rating)
+                               / (x.Review.Count == 0 ? 1 : x.Review.Count)) == request.Rating);
+            
             var paginatedList = await PaginatedList<Product>
                 .CreateAsync(productList, request.PageNumber, request.PageSize);
 
-            return new ProductPaginatedVm
+            return new FiltrationByRatingVm
             {
                 Products = paginatedList,
                 Page = paginatedList.PageIndex,

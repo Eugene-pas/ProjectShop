@@ -11,7 +11,7 @@ namespace Shop.Application.Commands.Products
         public ProductExistTask(IDataBaseContext dbContext) =>
             _dbContext = dbContext;
 
-        public async Task<bool> Exist(long productId, CancellationToken cancellationToken)
+        public async Task<bool> ProductExist(long productId, CancellationToken cancellationToken)
         {
             return await _dbContext.Product
                 .AnyAsync(x => x.Id == productId, cancellationToken);

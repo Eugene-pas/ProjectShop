@@ -79,7 +79,7 @@ namespace DemoApi.Controllers
         }
 
         [HttpGet("getListByCategory")]
-        public async Task<ActionResult<ProductPaginatedVm>> GetListByCategory(long categoryId, int page = 1, int pageSize = 5)
+        public async Task<ActionResult<GetProductsListByCategoryVm>> GetListByCategory(long categoryId, int page = 1, int pageSize = 5)
         {
             return await _mediator.Send(new GetProductsListByCategoryQuery
             {
@@ -123,7 +123,7 @@ namespace DemoApi.Controllers
         }
         
         [HttpGet("filterByRating")]
-        public async Task<ActionResult<ProductPaginatedVm>> GetFilterByRating(long categoryId, int rating,
+        public async Task<ActionResult<FiltrationByRatingVm>> GetFilterByRating(long categoryId, double rating,
             int page = 1, int pageSize = 5)
         {
             return await _mediator.Send(new GetFiltrationByRatingQuery

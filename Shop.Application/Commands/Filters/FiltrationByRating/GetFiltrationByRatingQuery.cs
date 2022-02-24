@@ -3,7 +3,7 @@ using Shop.Application.Commands.Products.Queries.GetProductsListPaginated;
 
 namespace Shop.Application.Commands.Filters.FiltrationByRating
 {
-    public class GetFiltrationByRatingQuery : IRequest<ProductPaginatedVm>
+    public class GetFiltrationByRatingQuery : IRequest<FiltrationByRatingVm>
     {
         public int PageNumber { get; set; }
 
@@ -11,6 +11,6 @@ namespace Shop.Application.Commands.Filters.FiltrationByRating
         
         public long CategoryId { get; set; }
 
-        public int Rating { get; set; }
+        public double Rating { get; set; }
     }
 }

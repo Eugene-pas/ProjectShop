@@ -20,7 +20,7 @@ namespace Shop.Application.Commands.Categories.Commands.CreateCategories
             //createCategoryCammandValidator.ParentId)
             //    .Empty()
             //    .GreaterThan(0).WithMessage("Parent ID must be greater than zero.")
-            //    .MustAsync(existTask.Exist).WithMessage("There is no field with this Parent ID.");
+            //    .MustAsync(existTask.ProductExist).WithMessage("There is no field with this Parent ID.");
         }
     }
 }

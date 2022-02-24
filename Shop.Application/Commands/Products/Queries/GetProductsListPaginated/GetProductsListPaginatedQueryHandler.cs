@@ -27,9 +27,11 @@ namespace Shop.Application.Commands.Products.Queries.GetProductsListPaginated
                 .Include(x => x.Category)
                 .Include(x => x.Seller)
                 .Include(x => x.Review)
-                .Select(product => product);
+                .Select(product => product)
+                .ProjectTo<ProductsLookupDto>(_mapper.ConfigurationProvider);
+                
 
-            var paginatedList = await PaginatedList<Product>
+            var paginatedList = await PaginatedList<ProductsLookupDto>
                 .CreateAsync(productQuery, request.PageNumber, request.PageSize);
 
             return new ProductPaginatedVm

@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Shop.Application.Commands.Products.Queries.GetProductsList;
 using Shop.Domain.Entities;
 
-namespace Shop.Application.Commands.Products.Queries.GetProductsListPaginated
+namespace Shop.Application.Commands.Filters.FiltrationByRating
 {
-    public class ProductPaginatedVm
+    public class FiltrationByRatingVm
     {
-        public IList<ProductsLookupDto> Products { get; set; }
+        public IList<Product> Products { get; set; }
         public int Page { get; set; }
         public int TotalPagesAmount { get; set; }
         public bool HasNextPage { get; set; }
