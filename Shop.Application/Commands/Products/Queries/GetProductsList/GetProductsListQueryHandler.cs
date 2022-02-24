@@ -23,16 +23,9 @@ namespace Shop.Application.Commands.Products.Queries.GetProductsList
             CancellationToken cancellationToken)
         {
             var productQuery = await _dbContext.Product
-                .Include(x => x.Category)
-                .Include(x => x.Seller)
-                .Include(x => x.Review)
-                .ThenInclude(x => x.ReviewComments)
-                .Include(x => x.Review)
-                .ThenInclude(x => x.ReviewLikes)
-                .Include(x => x.Review)
-                .ThenInclude(x => x.Customer)
                 .ProjectTo<ProductsLookupDto>(_mapper.ConfigurationProvider)
                 .ToListAsync(cancellationToken);
+
             return new ProductsListVm { Products = productQuery };
         }
     }
