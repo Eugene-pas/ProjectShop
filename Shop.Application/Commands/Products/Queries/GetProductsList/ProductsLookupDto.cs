@@ -1,4 +1,6 @@
-﻿using AutoMapper;
+﻿using System.Collections.Generic;
+using System.Linq;
+using AutoMapper;
 using Shop.Application.Common.Mappings;
 using Shop.Domain.Entities;
 
@@ -16,7 +18,7 @@ namespace Shop.Application.Commands.Products.Queries.GetProductsList
 
         public int? OnStorageCount { get; set; }
 
-        public double? Rating { get; set; }
+        public List<Review> Review { get; set; }
 
         public long CategoryId { get; set; }
 
@@ -35,8 +37,8 @@ namespace Shop.Application.Commands.Products.Queries.GetProductsList
                     opt => opt.MapFrom(product => product.Description))
                  .ForMember(productDto => productDto.OnStorageCount,
                     opt => opt.MapFrom(product => product.OnStorageCount))
-                 .ForMember(productDto => productDto.Rating,
-                    opt => opt.MapFrom(product => product.Rating))
+                 .ForMember(productDto => productDto.Review,
+                    opt => opt.MapFrom(product => product.Review.ToList()))
                 .ForMember(productDto => productDto.CategoryId,
                     opt => opt.MapFrom(product => product.Category.Id))
                 .ForMember(productDto => productDto.SellerId,

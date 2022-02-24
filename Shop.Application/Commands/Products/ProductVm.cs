@@ -39,9 +39,9 @@ namespace Shop.Application.Commands.Products
                     opt => opt.MapFrom(product => product.Seller.Id))
                 .ForMember(productVm => productVm.Name,
                    opt => opt.MapFrom(product => product.Name))
-                .ForMember(productVm => productVm.Rating,
-                    opt => opt.MapFrom(product => Math.Round((double)product.Review
-                                                      .Sum(x => x.Rating) / product.Review.Count, 1)))
+                //.ForMember(productVm => productVm.Rating,
+                //    opt => opt.MapFrom(product =>
+                //        Math.Round((double)product.Review.Sum(x => x.Rating) / (product.Review.Count == 0 ? 1 : product.Review.Count), 1)))
                 .ForMember(productVm => productVm.Price,
                     opt => opt.MapFrom(product => product.Price))
                 .ForMember(productVm => productVm.Description,

@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Shop.Application.Commands.Products.Queries.GetProductsList;
 
 namespace Shop.Application.Commands.Products.Queries.GetProductsListByCategory
 {

@@ -7,16 +7,20 @@ using Shop.Domain.Entities;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using AutoMapper;
+using AutoMapper.QueryableExtensions;
+using Shop.Application.Commands.Products.Queries.GetProductsList;
 
 namespace Shop.Application.Commands.Products.Queries.GetProductsListByPrice
 {
     public class GetProductsListByPriceFallingQueryHandler
         : IRequestHandler<GetProductsListByPriceFallingQuery, ProductPaginatedVm>
     {
+        private readonly IMapper _mapper;
         private readonly IDataBaseContext _dbContext;
+        public GetProductsListByPriceFallingQueryHandler(IDataBaseContext dbContext, IMapper mapper) =>
+            (_dbContext, _mapper) = (dbContext, mapper);
 
-        public GetProductsListByPriceFallingQueryHandler(IDataBaseContext dbContext) =>
-            _dbContext = dbContext;
 
         public async Task<ProductPaginatedVm> Handle(GetProductsListByPriceFallingQuery request, CancellationToken cancellationToken)
         {

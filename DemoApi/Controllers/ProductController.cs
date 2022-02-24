@@ -67,7 +67,7 @@ namespace DemoApi.Controllers
         }
 
         [HttpGet("getList")]
-        public async Task<ActionResult<ProductsListVm>> GetAll(int pageNumber)
+        public async Task<ActionResult<ProductsListVm>> GetAll()
         {
             return await _mediator.Send(new GetProductsListQuery());
         }
