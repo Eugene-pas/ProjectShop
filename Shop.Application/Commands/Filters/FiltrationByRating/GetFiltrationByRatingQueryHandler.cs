@@ -1,11 +1,10 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Shop.Domain.Entities;
+using Shop.Application.Interfaces;
 using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Shop.Application.Interfaces;
 
 namespace Shop.Application.Commands.Filters.FiltrationByRating
 {
