@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Shop.Application.Commands.Products;
 using Shop.Application.Common.Mappings;
 using Shop.Domain.Entities;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace Shop.Application.Commands.OrderProducts.Queries.GetOrdersProductList
 
         public long OrderId { get; set; }
 
-        public ProductLookupDto Product { get; set; }
+        public ProductVm Product { get; set; }
 
         public void Mapping(Profile profile)
         {
