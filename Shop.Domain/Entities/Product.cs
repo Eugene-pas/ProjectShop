@@ -11,7 +11,7 @@ namespace Shop.Domain.Entities
         public Product()
         {
             this.DeliveryProductConnection = new HashSet<DeliveryProductConnection>();
-            this.OrderProductConnection = new HashSet<OrderProductConnection>();
+            this.OrderProductConnection = new HashSet<OrderProduct>();
             this.ProductImage = new HashSet<ProductImage>();
         } 
         
@@ -29,7 +29,7 @@ namespace Shop.Domain.Entities
 
         public virtual ICollection<DeliveryProductConnection> DeliveryProductConnection { get; set; }
 
-        public virtual ICollection<OrderProductConnection> OrderProductConnection { get; set; }
+        public virtual ICollection<OrderProduct> OrderProductConnection { get; set; }
 
         public virtual ICollection<ProductImage> ProductImage { get; set; }
 

@@ -15,6 +15,6 @@ namespace Shop.Application.Commands.Orders.Commands.CreateOrder
         public long CustomerId { get; set; }
         public long DeliveryId { get; set; }
         
-        public virtual ICollection<OrderProductConnection> OrderProductConnection { get; set; }
+        public virtual ICollection<OrderProduct> OrderProductConnection { get; set; }
     }
 }

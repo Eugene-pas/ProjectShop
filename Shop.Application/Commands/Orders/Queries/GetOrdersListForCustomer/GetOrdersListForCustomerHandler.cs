@@ -13,7 +13,7 @@ using Shop.Domain.Entities;
 namespace Shop.Application.Commands.Orders.Queries.GetOrdersListForCustomer
 {
     public class GetOrdersListForCustomerHandler
-        : IRequestHandler<GetOrdersListForCustomerQuery, OrderListVm>
+        : IRequestHandler<GetOrdersListForCustomerQuery, OrdersListVm>
     {
         private readonly IDataBaseContext _dbContext;
         private readonly IMapper _mapper;
@@ -21,19 +21,19 @@ namespace Shop.Application.Commands.Orders.Queries.GetOrdersListForCustomer
         public GetOrdersListForCustomerHandler(IDataBaseContext dbContext,
             IMapper mapper) => (_dbContext, _mapper) = (dbContext, mapper);
 
-        public async Task<OrderListVm> Handle(GetOrdersListForCustomerQuery request, CancellationToken cancellationToken)
+        public async Task<OrdersListVm> Handle(GetOrdersListForCustomerQuery request, CancellationToken cancellationToken)
         {
-            var orders = await _dbContext.Order.Include(x => x.Customer)
-                .Where(order =>
-                order.Customer.Id == request.customerId)
-                .ProjectTo<OrderLookupDto>(_mapper.ConfigurationProvider)
+            var orders = await _dbContext.Order
+                .Include(x => x.Customer)
+                .Where(x => x.Customer.Id == request.CustomerId)
+                .ProjectTo<OrdersLookupDto>(_mapper.ConfigurationProvider)
                 .ToListAsync(cancellationToken);
 
             if(orders.Count == 0) orders = null;
 
-            _ = orders ?? throw new NotFoundException(nameof(Order), $"CategoryId :{request.customerId}");
+            _ = orders ?? throw new NotFoundException(nameof(Order), $"CategoryId :{request.CustomerId}");
 
-             return new OrderListVm { Order = orders };
+             return new OrdersListVm { Order = orders };
         }
     }
 }

@@ -4,8 +4,8 @@ using Shop.Application.Commands.Orders.Queries.GetOrdersList;
 namespace Shop.Application.Commands.Orders.Queries.GetOrdersListForCustomer
 {
     public class GetOrdersListForCustomerQuery
-        : IRequest<OrderListVm>
+        : IRequest<OrdersListVm>
     {
-        public long  customerId { get; set; }
+        public long CustomerId { get; set; }
     }
 }

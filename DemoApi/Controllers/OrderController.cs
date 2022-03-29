@@ -59,19 +59,19 @@ namespace DemoApi.Controllers
         }
 
         [HttpGet("getOrdersListForCustomer/{CustomerId}")]
-        public async Task<ActionResult<OrderListVm>> GetOrdersListForCustomer(long CustomerId)
+        public async Task<ActionResult<OrdersListVm>> GetOrdersListForCustomer(long CustomerId)
         {
-            return await _mediator.Send(new GetOrdersListForCustomerQuery { customerId = CustomerId });
+            return await _mediator.Send(new GetOrdersListForCustomerQuery { CustomerId = CustomerId });
         }
 
         [HttpGet("GetOrdersList")]
-        public async Task<ActionResult<OrderListVm>> GetAllOrder()
+        public async Task<ActionResult<OrdersListVm>> GetAllOrder()
         {
             return await _mediator.Send(new GetOrdersListQuery { });
         }
 
         [HttpGet("getOrdersPaginatedListForCustomer/{customerId}")]
-        public async Task<ActionResult<GetOrderPaginatedListForCustomerVm>> GetOrdersPaginatedListForCustomer(long customerId,int page, int pageSize)
+        public async Task<ActionResult<OrderPaginatedListForCustomerVm>> GetOrdersPaginatedListForCustomer(long customerId, int page, int pageSize)
         {
             return await _mediator.Send(new GetOrderPaginatedListForCustomerQuery
             {
@@ -82,7 +82,7 @@ namespace DemoApi.Controllers
         }
 
         [HttpGet("GetOrdersPaginatedList")]
-        public async Task<ActionResult<GetOrderPaginatedListVm>> GetPaginatedOrder(int page, int pageSize)
+        public async Task<ActionResult<OrderPaginatedListVm>> GetPaginatedOrder(int page, int pageSize)
         {
             return await _mediator.Send(new GetOrderPaginatedListQuery
             {

@@ -15,7 +15,7 @@ namespace Shop.Application.Interfaces
         DbSet<Delivery> Delivery { get; set; }
         DbSet<DeliveryProductConnection> DeliveryProductConnection { get; set; }
         DbSet<Order> Order { get; set; }
-        DbSet<OrderProductConnection> OrderProductConnection { get; set; }
+        DbSet<OrderProduct> OrderProduct { get; set; }
         DbSet<Product> Product { get; set; }
         DbSet<ProductImage> ProductImage { get; set; }
         DbSet<Seller> Seller { get; set; }

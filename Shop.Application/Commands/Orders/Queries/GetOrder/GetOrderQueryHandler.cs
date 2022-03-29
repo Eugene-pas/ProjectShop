@@ -17,11 +17,12 @@ namespace Shop.Application.Commands.Orders.Queries.GetOrder
 
         public async Task<OrderVm> Handle(GetOrderQuery request, CancellationToken cancellationToken)
         {
-            var orderquery = await _dbContext.Order
-                .ProjectTo<OrderVm>(_mapper.ConfigurationProvider)
-                .ToListAsync(cancellationToken);
+            var product = await _dbContext.Order
+                .Include(x => x.Customer)
+                .Include(x => x.OrderProduct).ThenInclude(x => x.Product)
+                .FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken);
 
-            return orderquery.FirstOrDefault(x => x.Id == request.Id);
+            return _mapper.Map<OrderVm>(product);
         }
     }
 }

@@ -19,7 +19,7 @@ namespace Shop.Domain.Entities
         public virtual DbSet<Delivery> Delivery { get; set; }
         public virtual DbSet<DeliveryProductConnection> DeliveryProductConnection { get; set; }
         public virtual DbSet<Order> Order { get; set; }
-        public virtual DbSet<OrderProductConnection> OrderProductConnection { get; set; }
+        public virtual DbSet<OrderProduct> OrderProduct { get; set; }
         public virtual DbSet<Product> Product { get; set; }
         public virtual DbSet<ProductImage> ProductImage { get; set; }
         public virtual DbSet<Seller> Seller { get; set; }

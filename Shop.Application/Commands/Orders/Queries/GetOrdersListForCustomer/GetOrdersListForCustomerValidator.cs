@@ -14,16 +14,16 @@ namespace Shop.Application.Commands.Orders.Queries.GetOrdersListForCustomer
         {
             _dbContext = dataBase;
             RuleFor(Order =>
-                Order.customerId)
+                Order.CustomerId)
                 .NotEmpty().WithMessage("ID is required.")
             .NotNull().WithMessage("ID can not be aqueal null.")
             .NotEqual(0).WithMessage("There is no field with this ID")
             .MustAsync(Exist).WithMessage("The specified CustomerId doesn't exist");
         }
-        public async Task<bool> Exist(long customerId, CancellationToken cancellationToken)
+        public async Task<bool> Exist(long CustomerId, CancellationToken cancellationToken)
         {
             return await _dbContext.Order.Include(x => x.Customer)
-                .AnyAsync(x => x.Customer.Id == customerId);
+                .AnyAsync(x => x.Customer.Id == CustomerId);
         }
     }
 }
